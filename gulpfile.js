@@ -66,7 +66,6 @@ gulp.task("deploy", ["jekyll-build"], function () {
         .pipe(deploy({
             branch: "master",
             remoteUrl: "https://github.com/dphuang2/dphuang2.github.io.git",
-            origin: "deploy",
         }));
 });
 
