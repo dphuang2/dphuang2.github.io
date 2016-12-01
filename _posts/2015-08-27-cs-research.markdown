@@ -2,8 +2,6 @@
 layout: post
 title: "Research with UIUC CS Department"
 date: 2015-8-27
-categories:
-  - Career
 description: 
 image: https://ws.engr.illinois.edu/blogs/viewphoto.aspx?id=10691&.png
 ---
