@@ -246,7 +246,8 @@ section {
             animation: fade-in 1s both; }
   .preview__link {
     display: block;
-    padding: 2em 1em; }
+    padding: 2em 1em;
+    position: relative; }
     @media (min-width: 54em) {
       .preview__link {
         padding: 1em 8em; } }
@@ -676,3 +677,13 @@ section {
 #picture-caption {
   margin-left: .5em;
   font-size: 0.7em; }
+
+.post-image {
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  position: absolute;
+  right: 6em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }

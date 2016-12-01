@@ -1,11 +1,11 @@
 @import
-  'base',
-  'mixins',
-  'extends',
-  'layout',
-  'components',
-  'animations',
-  'helpers'
+'base',
+'mixins',
+'extends',
+'layout',
+'components',
+'animations',
+'helpers'
 ;
 
 .icon{
@@ -26,3 +26,12 @@
     font-size: 0.7em;
 }
 
+.post-image{
+    height: 5em;
+    width: 5em;
+    border-radius: 50%;
+    position: absolute;
+    right: 6em;
+    top: 50%;
+    transform: translateY(-50%);
+}
