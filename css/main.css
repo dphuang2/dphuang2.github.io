@@ -670,4 +670,9 @@ section {
   font-size: 1.3em; }
 
 #about {
-  padding: 30px; }
+  padding: 30px;
+  margin: 0; }
+
+#picture-caption {
+  margin-left: .5em;
+  font-size: 0.7em; }

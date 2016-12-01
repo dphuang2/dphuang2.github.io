@@ -19,6 +19,7 @@ profile: Web enthusiast, Computer Engineer, Dog Lover
 social:
   github: https://github.com/dphuang2
   linkedin: https://www.linkedin.com/in/dphuang2
+  youtube: https://www.youtube.com/user/Balphis/videos
 
 # Build settings
 exclude: ["node_modules", "gulpfile.js", "package.json", "_screenshots", "Gemfile", "Gemfile.lock"]
