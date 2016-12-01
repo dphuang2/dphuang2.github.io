@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 /**
  * Base Variables
  */
@@ -35,7 +36,7 @@ body {
 
 h1, h2 {
   margin: 0;
-  font-family: "Space Mono", monospace; }
+  font-family: "Raleway", serif; }
 
 @media (min-width: 54em) {
   h1 {
@@ -99,7 +100,7 @@ ol, ul {
  * Letter Spacing
  */
 .tabs, .previews__container span, .preview__more, .card__more, .pagination, .footer__archive, .nav, .next__container span, .archives__header {
-  font-family: "Space Mono", monospace;
+  font-family: "Raleway", serif;
   letter-spacing: 0.05em;
   text-transform: uppercase; }
 
@@ -262,7 +263,7 @@ section {
         padding-left: 10em;
         padding-right: 14em; } }
   .preview__date {
-    font-family: "Space Mono", monospace;
+    font-family: "Raleway", serif;
     color: #0a0a0a; }
   .preview__header {
     color: #9f8f68; }
@@ -271,7 +272,7 @@ section {
   .preview__more {
     display: inline-block;
     padding: 0.5em;
-    font-family: "Space Mono", monospace;
+    font-family: "Raleway", serif;
     color: #9f8f68;
     border: 3px solid #9f8f68;
     box-shadow: inset 0 0 0 0 #9f8f68;
@@ -350,7 +351,7 @@ section {
 .card__more {
   display: inline-block;
   padding: 0.25em;
-  font-family: "Space Mono", monospace;
+  font-family: "Raleway", serif;
   color: #9f8f68;
   border: 3px solid #9f8f68;
   box-shadow: inset 0 0 0 0 #9f8f68;
