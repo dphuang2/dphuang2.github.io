@@ -27,12 +27,34 @@
     font-size: 0.7em;
 }
 
-.post-image{
-    height: 5em;
-    width: 5em;
+.post-image-wrapper{
+    height: 7em;
+    width: 7em;
     border-radius: 50%;
     position: absolute;
     right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+
+    @media(min-width: $mq-md){
+        right: 2em;
+    }
+    @media(min-width: $mq-lg){
+        right: 3em;
+    }
+    @media(min-width: $mq-xl){
+        right: 5em;
+    }
+}
+
+.post-image{
+    width: initial;
+    max-width: initial;
+
+    height: inherit;
+    min-width: 100%;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }

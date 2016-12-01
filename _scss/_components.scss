@@ -89,18 +89,26 @@
   &__link {
     display: block;
     //padding: 2em 1em;
-    padding: 2em calc(2em + 3.5em) 2em 1em;
+    padding: 2em calc(2em + 6.5em) 2em 1em;
     position: relative;
 
     @media (min-width: $mq-md) {
       //padding: 3em 8em;
-      padding: 3em calc(3em + 3.5em) 3em 8em;
+      padding: 3em calc(3em + 5em) 3em 2em;
+    }
+
+    @media (min-width: $mq-lg) {
+      padding: 3em calc(3em + 8em) 3em 3em;
+    }
+
+    @media (min-width: $mq-xl) {
+      padding: 3em calc(3em + 8em) 3em 5em;
     }
 
     @media (min-width: $mq-xxl) {
       padding-left: 10em;
       //padding-right: 10em;
-      padding-right: 13.5em;
+      padding-right: 14em;
     }
   }
 
