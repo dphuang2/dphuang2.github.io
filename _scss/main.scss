@@ -5,7 +5,8 @@
 'layout',
 'components',
 'animations',
-'helpers'
+'helpers',
+'syntax'
 ;
 
 .icon{
@@ -17,7 +18,7 @@
 }
 
 #about{
-    padding: 30px;
+    padding: 30px ;
     margin: 0;
 }
 
@@ -31,7 +32,7 @@
     width: 5em;
     border-radius: 50%;
     position: absolute;
-    right: 6em;
+    right: 1em;
     top: 50%;
     transform: translateY(-50%);
 }

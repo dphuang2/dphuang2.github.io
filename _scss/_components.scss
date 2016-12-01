@@ -88,16 +88,19 @@
 
   &__link {
     display: block;
-    padding: 2em 1em;
+    //padding: 2em 1em;
+    padding: 2em calc(2em + 3.5em) 2em 1em;
     position: relative;
 
     @media (min-width: $mq-md) {
-      padding: 1em 8em;
+      //padding: 3em 8em;
+      padding: 3em calc(3em + 3.5em) 3em 8em;
     }
 
     @media (min-width: $mq-xxl) {
       padding-left: 10em;
-      padding-right: 10em;
+      //padding-right: 10em;
+      padding-right: 13.5em;
     }
   }
 
