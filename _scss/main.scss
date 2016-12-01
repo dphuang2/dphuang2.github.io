@@ -1,0 +1,21 @@
+@import
+  'base',
+  'mixins',
+  'extends',
+  'layout',
+  'components',
+  'animations',
+  'helpers'
+;
+
+.icon{
+    color: white;
+}
+
+.bullet-desc{
+    font-size: 1.3em;
+}
+
+#about{
+    padding: 30px;
+}

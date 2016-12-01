@@ -1,0 +1,12 @@
+---
+layout: post
+title: "ARM Internship"
+date: 2017-5-22
+categories:
+  - Career
+description: 
+image: https://media.glassdoor.com/o/d0/58/2f/dd/our-new-austin-office.jpg
+---
+
+On May 22, 2017, I will be starting my internship for Arm Holdings as a Server Performance Intern for the span of Summer 2017. The position is located in Austin, Texas.
+

@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Google Summer of Code Internship"
+date: 2016-5-20
+categories:
+  - Career
+description: 
+image: https://upload.wikimedia.org/wikipedia/commons/f/f9/Berkman_Center.jpg
+image-sm: https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BKC_Ltd_Horz_RGB.png/300px-BKC_Ltd_Horz_RGB.png
+---
+• Worked on data integration to allow quick and scalable calculations of data for the Data Platform and Dashboard Widgets
+
+• Ruby on Rails, JavaSript, and Data integration platform experience
+
+
+
