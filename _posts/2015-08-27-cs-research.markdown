@@ -15,3 +15,5 @@ image: https://ws.engr.illinois.edu/blogs/viewphoto.aspx?id=10691&.png
 
 • Currently refactoring entire website with Ruby on Rails
 
+Working under PhD Candidate [Kristen Vaccaro](http://kvaccaro.com/) and Professor [Karrie Karahalios](http://social.cs.uiuc.edu/people/kkarahal.html).
+

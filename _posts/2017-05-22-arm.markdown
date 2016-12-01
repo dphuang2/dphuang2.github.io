@@ -2,8 +2,6 @@
 layout: post
 title: "ARM Internship"
 date: 2017-5-22
-categories:
-  - Career
 description: 
 image: https://media.glassdoor.com/o/d0/58/2f/dd/our-new-austin-office.jpg
 ---
