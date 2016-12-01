@@ -1,0 +1,78 @@
+.hello-wrap
+  display: flex
+  min-height: 700px
+  position: relative
+  overflow: hidden
+  font-family: 'Open Sans', sans-serif
+  video
+    position: absolute
+    min-width: 100%
+    min-height: 700px
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+  .hello-text
+    position: relative
+    color: white
+    font-size: 50px
+    padding: auto
+    margin: auto auto
+    width: 640px
+    border-radius: 10px
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .7)
+    display: block
+    .name
+      display: none
+    img
+      position: relative
+      width: 550px
+      height: 111px
+.controls-wrap
+  width: 50px
+  height: 100vh
+  position: fixed
+  display: block
+  right: 0px
+  text-align: center
+  z-index: 1
+  .controls
+    position: relative
+    top: 30vh
+    width: 50px
+    right: 10px
+  .controls-slider
+    input[type=range]
+      -webkit-appearance: slider-vertical
+      width: 50px
+
+  .controls-checkbox
+    margin-bottom: 10px
+    input[type="checkbox"]
+      display: none
+    input[type="checkbox"]+label
+      height: 50px
+      width: 50px
+      display: block
+      img
+        height: 100%
+        width: 100%
+
+
+
+
+
+@media (max-width: 640px)
+  .hello-wrap .hello-text
+    font-size: 35px
+    img
+      // display: none
+      max-width: 100%
+      height: auto
+
+  // .hello-wrap .hello-text .name
+  //     display: inline
+  //     margin-left: 10px
+// @media (max-width: 720px)
+//   .hello-wrap
+//     .hello-text
+//       background-color:  rgba(0, 0, 0, 0.5)

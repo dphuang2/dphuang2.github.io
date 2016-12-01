@@ -1,0 +1,56 @@
+.contact-wrap
+  display: flex
+  height: 400px
+  background-color: #261758
+  background-size: cover
+  transition: all 0.1s ease-in-out
+  text-align: center
+  flex-flow: column
+  flex: 1 1 auto
+  font-family: 'Open Sans', sans-serif
+  .information-wrap
+    background-color: #261758
+    width: 100%
+    position: relative
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1)
+    margin: auto auto
+    img
+      width: 200px
+      height: 200px
+      transition: all 0.5s ease-in-out
+    img:hover
+      // transform: rotate(-10deg) scale(1.2)
+      transform-origin: top center
+      animation-name: swing
+      animation-duration: 1s
+      animation-timing-function: ease-in-out
+    #link
+      text-decoration: none
+      color: white
+      display: block
+      font-size: 60px
+      text-align: center
+      margin-bottom: 20px
+      margin-top: 30px
+    #link:hover
+      color: #7E64D6
+    #youtube
+      height: 200px
+      width: 220px
+
+
+@media (max-width: 500px)
+  .contact-wrap .information-wrap #me-image
+    margin-top: 0px
+  .contact-wrap .information-wrap img
+    margin-top: 40px
+    margin-right: none
+@media (max-width: 775px)
+  .contact-wrap .information-wrap #link
+    font-size: 45px
+@media (max-width: 574px)
+  .contact-wrap .information-wrap #link
+    font-size: 35px
+@media (max-width: 444px)
+  .contact-wrap .information-wrap #link
+    font-size: 25px

@@ -1,0 +1,17 @@
+section.hello-wrap
+  video#video(autoplay loop muted)
+    source(id="srcmp4" src="assets/videos/video.mp4" type="video/mp4")
+    source(id="srcwebm" src="assets/videos/video.webm" type="video/webm")
+  .hello-text Hello! My name is
+    .name Dylan Huang
+    img(src="assets/img/name.png")
+    |  and I like to program and capture videos.
+  .controls-wrap
+    .controls
+      .controls-checkbox
+        input(id="checkbox" type="checkbox" onchange="muteVideo()")
+        label(for="checkbox")
+          img(id="checkbox-image" src="assets/img/muted.png")
+      .controls-slider
+        input(id="slider" type="range" value="0.05" step="0.01" min="0" max="1" oninput="volumeVideo(this.value)")
+  

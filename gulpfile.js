@@ -3,7 +3,7 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
-var deploy      = require("gulp-gh-pages");
+var jade        = require('gulp-jade');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -41,32 +41,33 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task('sass', function () {
-    return gulp.src('_scss/main.scss')
+    return gulp.src('assets/css/main.scss')
         .pipe(sass({
-            includePaths: ['scss'],
+            includePaths: ['css'],
             onError: browserSync.notify
         }))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('_site/css'))
+        .pipe(gulp.dest('_site/assets/css'))
         .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'));
+        .pipe(gulp.dest('assets/css'));
 });
+
+// Inputting Jade into the environment
+gulp.task('jade', function(){
+  return gulp.src('_jadefiles/*.jade')
+  .pipe(jade())
+  .pipe(gulp.dest('_includes'));
+});
+
 
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html'], ['jekyll-rebuild']);
-});
-
-gulp.task("deploy", ["jekyll-build"], function () {
-    return gulp.src("./_site/**/*")
-        .pipe(deploy({
-            branch: "master",
-            remoteUrl: "https://github.com/dphuang2/dphuang2.github.io.git",
-        }));
+    gulp.watch('assets/**', ['sass']);
+    gulp.watch(['assets/js/*.js', '*.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
+    gulp.watch('_jadefiles/*.jade', ['jade']);
 });
 
 /**

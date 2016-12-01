@@ -1,0 +1,56 @@
+.projects-wrap
+  height: 700px
+  background-image: url(../img/code.png)
+  background-size: cover
+  background-position: center
+  width: 100%
+  font-family: 'Coda', cursive
+  overflow: hidden
+  #project-information
+    position: relative
+    font-size: 50px
+    color: white
+    margin: auto auto
+    top: 100px
+    font-weight: 550
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .7)
+    .title
+      position: relative
+      margin: auto auto
+      max-width: 840px
+      margin-bottom: 1px
+      font-size: 60px
+      .name
+        color: #00FF00
+.image-block
+  position: relative
+  max-width: 840px
+  max-height: 180px
+  margin: 0 auto
+  margin-top: 20px
+  // background-color: #eee
+  img
+    height: 100%
+    width: 100%
+    border-radius: 10px
+    transition: all 0.5s ease-in-out
+
+
+.hover-scale
+  img:hover
+    transform: scale(1.1)
+// @media (max-width: 775px)
+//   .hover-scale:hover
+//     transform: none
+@media (max-width: 775px)
+  .projects-wrap #project-information .title
+    font-size: 45px
+@media (max-width: 574px)
+  .projects-wrap #project-information .title
+    font-size: 40px
+@media (max-width: 444px)
+  .projects-wrap #project-information .title
+    font-size: 35px
+@media (max-width: 295px)
+  .projects-wrap #project-information .title
+    font-size: 30px

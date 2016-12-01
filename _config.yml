@@ -1,37 +1,4 @@
-# Site settings
-email: dylan.p.huang@gmail.com
-baseurl: ""
-paginate: 5
-paginate_path: "/blog/page-:num"
-google_analytics: UA-82333002-2
-
-# SEO settings
-title: Dylan Huang
-description: Web enthusiast, Computer Engineer, Dog Lover
-url: "dylanhuang.com"
-twitter_username: https://twitter.com/dhuangster
-default_img: https://scontent-iad3-1.xx.fbcdn.net/t31.0-8/13653050_1241431949208972_2082487078901060498_o.jpg
-
-# Profile settings
 name: Dylan Huang
-profile_img: https://scontent-iad3-1.xx.fbcdn.net/t31.0-8/13653050_1241431949208972_2082487078901060498_o.jpg
-profile: Web enthusiast, Computer Engineer, Dog Lover. <br><i><span id="sj-quote">"Everything around you that you call life was made up by people that were no smarter than you and you can change it, you can influence it, you can build your own things that other people can use. Once you learn that, you'll never be the same again."</span></i> ~ Steve Jobs
-social:
-  github: https://github.com/dphuang2
-  linkedin: https://www.linkedin.com/in/dphuang2
-  youtube: https://www.youtube.com/user/Balphis/videos
-
-# Build settings
-exclude: ["node_modules", "gulpfile.js", "package.json", "_screenshots", "Gemfile", "Gemfile.lock"]
-markdown: kramdown
-permalink: /:year/:month/:day/:title/
-
-# Sass
-sass:
-  style: compressed
-
-# Gems
-gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
-
-# Future posts to be published always
-future: true
+markdown: redcarpet
+highlighter: pygments # or rouge or null
+exclude: ["node_modules", "gulpfile.js", "package.json"]

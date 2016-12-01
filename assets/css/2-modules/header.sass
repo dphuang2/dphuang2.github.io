@@ -1,0 +1,67 @@
+.header-wrap header
+  display: none
+  position: fixed
+  width: 135px
+  height: 200px
+  background: white
+  padding: 30px 0
+  right: 0px
+  top: 200px
+  z-index: 5
+  .site-nav
+    position: absolute
+    ul
+      list-style: none
+      margin: 0px
+      text-align: left
+      position: absolute
+      left: -15px
+      li
+        font-size: 25px
+        line-height: 48px
+        a
+          text-decoration: none
+          color: #d3d3d3
+          transition: all 0.1s ease-in-out
+        a:hover
+          color: black
+@media (max-width: 775px)
+  .header-wrap header
+    position: fixed
+    transform: translateX(0%)
+    transition: all 0.3s ease-in-out
+    top: 120px
+  .mobile-nav-toggle
+    width: 30px
+    height: 50px
+    background: white
+    position: absolute
+    border-top-left-radius: 5px
+    border-bottom-left-radius: 5px
+    top: 100px
+    right: 135px
+    align-items: center
+    display: flex
+    span,
+    span:before,
+    span:after
+      content: ""
+      display: block
+      height: 2px
+      width: 100%
+      background: #333
+      position: relative
+      transition: all 0.3s ease-in-out
+    span:before
+      top: 12px
+    span:after
+      top: -13px
+    &:hover span
+      background: transparent
+    &:hover span:before,
+    &:hover span:after
+      transform-origin: center
+      transform: rotate(45deg)
+      top: 0
+    &:hover span:before,
+      transform: rotate(-45deg)

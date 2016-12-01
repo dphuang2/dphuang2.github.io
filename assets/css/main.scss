@@ -1,0 +1,92 @@
+@import "0-tools/normalize";
+@import "0-tools/bourbon/bourbon";
+@import "1-base/section";
+@import "2-modules/header";
+@import "2-modules/about";
+@import "2-modules/projects";
+@import "2-modules/hello";
+@import "2-modules/contact";
+@import "3-layouts/home";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Coda);
+
+body {
+    background: #eee;
+}
+@keyframes swing {
+  20% {
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  color: white;
+  font-size: inherit;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+}
