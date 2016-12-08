@@ -12,11 +12,9 @@ layout: default
     <div class="mast__container">
       <span><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
       <h1 itemprop="name headline">{{ page.title }}</h1>
-      {% if page.categories.size > 0 %}
         <span>
-          Posted in {{ page.categories | join: ', ' }}
+            {{ page.location }}
         </span>
-      {% endif %}
       <span></span>
     </div>
   </header>

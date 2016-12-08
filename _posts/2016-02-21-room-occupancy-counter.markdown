@@ -2,6 +2,7 @@
 layout: post
 title: "Hack Illinois 2016"
 date: 2016-2-21
+location: University of Illinois at Urbana–Champaign
 description: 
 image: http://i.imgur.com/JDOW1we.jpg
 ---

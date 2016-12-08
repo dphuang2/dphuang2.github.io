@@ -3,6 +3,7 @@ layout: post
 title: "Research with UIUC CS Department"
 date: 2015-8-27
 description: 
+location: University of Illinois at Urbana–Champaign
 image: https://ws.engr.illinois.edu/blogs/viewphoto.aspx?id=10691&.png
 ---
 • Designed website that hosts a control panel to filter a twitter handle’s news feed through algorithmically generated sentiment/friend groups and tweet metadata

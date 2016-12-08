@@ -2,6 +2,7 @@
 layout: post
 title: "Google Summer of Code Internship"
 date: 2016-5-20
+location: "Berkman Klein Center for Internet & Society at Harvard University"
 image: https://upload.wikimedia.org/wikipedia/commons/f/f9/Berkman_Center.jpg
 ---
 • Worked on data integration to allow quick and scalable calculations of data for the Data Platform and Dashboard Widgets
