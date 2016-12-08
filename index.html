@@ -43,8 +43,9 @@ layout: default
               <div class="post-image-wrapper">
                   <img class="post-image" src="{{post.image}}">
               </div>
-              <!--<p class="preview__excerpt" itemprop="description">{{ post.content | strip_html | truncatewords: 30 }}</p>-->
-              <!--<span class="preview__more">Read More</span>-->
+              <!--<p class="preview__excerpt" itemprop="description">{{ post.content | strip_html | truncatewords: 10 }}</p>-->
+              <p class="preview__excerpt" itemprop="description">{{ post.location }}</p>
+              <span class="preview__more">Read More</span>
             </a>
           </li>
         {% endfor %}
