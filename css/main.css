@@ -416,7 +416,10 @@ section {
     display: flex;
     margin-top: 1em;
     position: absolute;
-    bottom: 30px; }
+    bottom: 30px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
     @media (min-width: 30em) {
       .footer__social {
         margin-top: 0; } }
