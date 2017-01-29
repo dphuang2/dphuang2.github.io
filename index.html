@@ -29,10 +29,12 @@ layout: default
   <div>
     <header>
       <ul class="tabs">
-        <li class="tabs__item">Timeline</li>
         <li class="tabs__item">About</li>
+        <li class="tabs__item">Timeline</li>
       </ul>
     </header>
+
+    {% include about.html  %}
 
     <div class="tab">
       <ul itemscope itemtype="http://schema.org/Blog">
@@ -53,7 +55,6 @@ layout: default
       </ul>
     </div>
 
-    {% include about.html  %}
 
   </div>
 
