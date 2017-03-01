@@ -64,7 +64,7 @@ I also learned about Trees and its many forms, Graph implementations and graph a
 ### CS 173
 ---
 
-Number and graph theory, algorthm complexities, trees, sets and collection of sets. Overall the class was about a 7/10 in difficulty, mainly because I was in a lecture section that was far more difficult than the other lecture section. (UIUC CS Department needs to get their curriculum straight for this class as the disparity between lecture sections is so massicve that they are almost different classes)
+Number and graph theory, algorithm complexities, trees, sets and collection of sets. Overall the class was about a 7/10 in difficulty, mainly because I was in a lecture section that was far more difficult than the other lecture section. (UIUC CS Department needs to get their curriculum straight for this class as the disparity between lecture sections is so massive that they are almost different classes)
 
 ### PHYS 213
 ---
