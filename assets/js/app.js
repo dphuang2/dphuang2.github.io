@@ -1,6 +1,7 @@
 var Tabs = (function() {
   var s;
-
+  var lastTab;
+  
   return {
     settings: {
       tabs: document.getElementsByClassName('tabs__item'),
@@ -18,19 +19,32 @@ var Tabs = (function() {
         [].forEach.call(s.tab, function(tab) {
           tab.style.display = 'none';
         });
-        s.tab[0].style.display = 'block';
-        s.tab[0].classList.add('active');
-        s.tabs[0].classList.add('active');
+
+        // Set lastTab to stored lastTab from sessionStorage if the browser supports session storage
+        if (typeof(Storage) !== "undefined"){
+          if(sessionStorage.lastTab !== "undefined"){
+            lastTab = parseInt(sessionStorage.lastTab);
+          } else {
+            lastTab = 0; // If not, just default lastTab to 0
+          }
+        }
+
+        s.tab[lastTab].style.display = 'block';
+        s.tab[lastTab].classList.add('active');
+        s.tabs[lastTab].classList.add('active');
       }
     },
 
     click: function() {
       if (s.tabs.length) {
-        var currentIdx = 0,
+        var currentIdx = lastTab,
             prevIdx = currentIdx;
 
         [].forEach.call(s.tabs, function(tab, idx) {
           tab.addEventListener('click', function() {
+            // Store the last tab clicked on
+            if (typeof(Storage) !== "undefined") sessionStorage.lastTab = idx;
+
             prevIdx = currentIdx;
             currentIdx = idx;
 
