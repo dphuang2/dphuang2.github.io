@@ -1,6 +1,6 @@
 var Tabs = (function() {
   var s;
-  var lastTab;
+  var lastTab = 0;
   
   return {
     settings: {
@@ -22,10 +22,10 @@ var Tabs = (function() {
 
         // Set lastTab to stored lastTab from sessionStorage if the browser supports session storage
         if (typeof(Storage) !== "undefined"){
-          if(sessionStorage.lastTab !== "undefined"){
+          if(sessionStorage.lastTab !== undefined){
             lastTab = parseInt(sessionStorage.lastTab);
           } else {
-            lastTab = 0; // If not, just default lastTab to 0
+            lastTab = 0;
           }
         }
 
