@@ -1,7 +1,7 @@
 var Tabs = (function() {
   var s;
   var lastTab = 0;
-  
+
   return {
     settings: {
       tabs: document.getElementsByClassName('tabs__item'),
@@ -113,4 +113,5 @@ document.addEventListener('DOMContentLoaded', function() {
   Tabs.init();
   Preview.init();
   wow.init();
+  console.log("Nice to meet you fellow developer.");
 });
