@@ -325,7 +325,11 @@
 .nav {
   @extend %letter-spacing;
 
-  position: absolute;
+  position: fixed;
+  padding: .60975609756em;
+  background-color: rgba(0, 0, 0, 0.23);
+  border-radius: .4em;
+
   top: 1.25em;
   left: 1em;
   z-index: 99;
