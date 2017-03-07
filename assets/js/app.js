@@ -109,9 +109,40 @@ var wow = new WOW({
   animateClass: 'fade-in'
 });
 
+var scrollSave = (function() {
+  var scroll = document.body.scrollTop;
+  return {
+
+    init: function() {
+      scrollSave.restore();
+      scrollSave.save();
+    },
+
+    save: function() {
+      window.onbeforeunload = function() {
+        if (typeof(Storage) !== "undefined"){
+          if (document.getElementsByTagName("title")[0].innerHTML == "Dylan Huang"){
+            sessionStorage.scrollTop = document.body.scrollTop;
+          }
+        }
+      }
+    },
+
+    restore: function() {
+      if (typeof(Storage) !== "undefined"){
+        if (document.getElementsByTagName("title")[0].innerHTML == "Dylan Huang"){
+          document.body.scrollTop = sessionStorage.scrollTop;
+        }
+      }
+    }
+
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   Tabs.init();
   Preview.init();
   wow.init();
+  scrollSave.init();
   console.log("Nice to meet you fellow developer.");
 });
