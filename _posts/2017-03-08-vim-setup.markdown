@@ -7,7 +7,7 @@ description:
 image: /assets/image/myvimsetup.png
 ---
 
-Vim has become an essential part of my development workflow. I started using Vim in the Summer of 2016 while working for a remote internship. Since I had the opportunity to spend time and learn something new, I decided that Vim was the next thing that I wanted to learn. It was a great decision that has lead me to become a more efficient coder. I became addicted to Vim so much that I created a small little [script](https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh) to setup my .vimrc and plugins on the engineering workstation at school. This script was especially helpfuly when I had to work on ECE 391 in the lab!
+Vim has become an essential part of my development workflow. I started using Vim in the Summer of 2016 while working for a remote internship. Since I had the opportunity to spend time and learn something new, I decided that Vim was the next thing that I wanted to learn. It was a great decision that has lead me to become a more efficient coder. I became addicted to Vim so much that I created a small little [script](https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh) to setup my .vimrc and plugins on the engineering workstation at school. This script was especially helpful when I had to work on ECE 391 in the lab!
 
 My favorite plugins are (ordered by use):
 - [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) - Fuzzy finder
