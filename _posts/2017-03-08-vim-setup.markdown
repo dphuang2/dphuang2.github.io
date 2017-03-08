@@ -7,21 +7,32 @@ description:
 image: /assets/image/myvimsetup.png
 ---
 
-Vim has become an essential part of my development workflow. I started using Vim in the Summer of 2016 while working for a remote internship. Since I had the opportunity to spend time and learn something new, I decided that Vim was the next thing that I wanted to learn. It was a great decision that has lead me to become a more efficient coder. I became addicted to Vim so much that I created a small little [script](https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh) to setup my .vimrc and plugins on the engineering workstation at school. This script was especially helpful when I had to work on ECE 391 in the lab!
+Vim has become an essential part of my development workflow. I started using Vim
+in the Summer of 2016 while working for a remote internship. Since I had the
+opportunity to spend time and learn something new, I decided that Vim was the
+next thing that I wanted to learn. It was a great decision that has lead me to
+become a more efficient coder. I became addicted to Vim so much that I created a
+small little
+[script](https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh) to setup
+my .vimrc and plugins on the engineering workstation at school. This script was
+especially helpful when I had to work on ECE 391 in the lab!
 
 My favorite plugins are (ordered by use):
 - [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim) - Fuzzy finder
 - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) - File explorer
-- [tpop/vim-surround](https://github.com/tpope/vim-surround) - Easy surroundings in pairs
-- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) - Auto insert and delete pairs
-- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak) - Jump to any location specified by two characters
+- [tpop/vim-surround](https://github.com/tpope/vim-surround) - Easy surroundings
+  in pairs
+- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) - Auto insert
+  and delete pairs
+- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak) - Jump to any
+  location specified by two characters
 
-<br>
-Here is also a link to my personal .vimrc that I have refined over the past 10 months:
+<br> Here is also a link to my personal .vimrc that I have refined over the past
+10 months:
 [dphuang2/dotfiles](https://github.com/dphuang2/dotfiles/blob/master/vimrc-mac)
 
 [Relevant](https://www.norfolkwinters.com/vim-creep/)
 
-Also, I have unfortunately became vim memer over time:
-![Vim Meme](/assets/image/vimmeme.jpg)
+Also, I have unfortunately became vim memer over time: ![Vim
+Meme](/assets/image/vimmeme.jpg)
 
