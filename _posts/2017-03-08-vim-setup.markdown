@@ -13,7 +13,7 @@ opportunity to spend time and learn something new, I decided that Vim was the
 next thing that I wanted to learn. It was a great decision that has lead me to
 become a more efficient coder. I became addicted to Vim so much that I created a
 small little
-[script](https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh) to setup
+[script](https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh) to set up
 my .vimrc and plugins on the engineering workstation at school. This script was
 especially helpful when I had to work on ECE 391 in the lab!
 
@@ -33,6 +33,5 @@ My favorite plugins are (ordered by use):
 
 [Relevant](https://www.norfolkwinters.com/vim-creep/)
 
-Also, I have unfortunately became a vim memer over time: ![Vim
+Also, I have unfortunately become a vim memer over time: ![Vim
 Meme](/assets/image/vimmeme.jpg)
-

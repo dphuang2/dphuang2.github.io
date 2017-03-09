@@ -1,4 +1,5 @@
---- layout: post
+---
+layout: post
 title: "Hack Illinois 2016"
 date: 2016-2-21
 location: University of Illinois at Urbana–Champaign
@@ -10,7 +11,6 @@ image: http://i.imgur.com/JDOW1we.jpg
 Winner of Intel's most Innovative use of Intel Edison Board at Hack Illinois 2016
 ---------------------
 ---------------------
-
 
 The site for this project is live at <a href="http://resumepipe.web.engr.illinois.edu"> resumepipe.web.engr.illinois.edu </a>. The code can be seen [here](https://github.com/dphuang2/RoomCounter-HackIllinois2016).
 

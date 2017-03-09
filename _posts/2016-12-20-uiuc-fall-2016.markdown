@@ -12,7 +12,7 @@ Classes taken (Ranked by difficulty):
 ---------------------
 <ul>
   <li> ECE 391 - Systems Programming  - 40 Hours per week</li>
-  <li> CS 225 - Data Structures - 10 Hour per week</li>
+  <li> CS 225 - Data Structures - 10 Hours per week</li>
   <li> CS 173 - Discrete Structures - 6 Hours per week</li>
   <li> PHYS 213 - Thermodynamics - 5 Hours per week </li>
   <li> PHYS 214 - Quantum Physics - 5 Hours per week </li>
@@ -70,7 +70,7 @@ Multi-terminal and Scheduling using a Round-robin algorithm</li> </ol>
 CS 225 was miles behind ECE 391 in terms of difficulty and number of hours spent
 on the class, but nonetheless is still an essential class in understanding the
 study of Computer Science.  In this class I learned about how basic data
-structures such as Stacks, Queues, Linked Lists, etc.  are implemented and the
+structures such as Stacks, Queues, Linked Lists, etc. are implemented and the
 design choices that are made to keep the complexity of operations on these
 functions at a minimum.  I also learned about Trees and its many forms, Graph
 implementations and graph algorithms (Kruskal, Dijkstra, Prims).
