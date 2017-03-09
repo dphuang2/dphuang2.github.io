@@ -20,7 +20,6 @@ GEM
       pathutil (~> 0.9)
       rouge (~> 1.7)
       safe_yaml (~> 1.0)
-    jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-sitemap (1.0.0)
@@ -50,7 +49,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll-paginate
   jekyll-sitemap
   octopress-autoprefixer
 

@@ -1,8 +1,6 @@
 # Site settings
 email: dylan.p.huang@gmail.com
 baseurl: ""
-paginate: 5
-paginate_path: "/blog/page-:num"
 google_analytics: UA-82333002-2
 
 # SEO settings
@@ -33,7 +31,7 @@ sass:
   style: compressed
 
 # Gems
-gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
+gems: [jekyll-sitemap, octopress-autoprefixer]
 
 # Future posts to be published always
 future: true
