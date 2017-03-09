@@ -33,6 +33,6 @@ My favorite plugins are (ordered by use):
 
 [Relevant](https://www.norfolkwinters.com/vim-creep/)
 
-Also, I have unfortunately became vim memer over time: ![Vim
+Also, I have unfortunately became a vim memer over time: ![Vim
 Meme](/assets/image/vimmeme.jpg)
 
