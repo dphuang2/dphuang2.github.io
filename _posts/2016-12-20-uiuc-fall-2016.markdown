@@ -65,7 +65,8 @@ programs</li> <li><b>Checkpoint 4</b> - Implement the rest of the system calls
 from read, open, write, vidmap, getargs, etc.</li> <li><b>Checkpoint 5</b> -
 Multi-terminal and Scheduling using a Round-robin algorithm</li> </ol>
 
-### CS 225 ---
+### CS 225 
+---
 
 CS 225 was miles behind ECE 391 in terms of difficulty and number of hours spent
 on the class, but nonetheless is still an essential class in understanding the
@@ -75,7 +76,8 @@ design choices that are made to keep the complexity of operations on these
 functions at a minimum.  I also learned about Trees and its many forms, Graph
 implementations and graph algorithms (Kruskal, Dijkstra, Prims).
 
-### CS 173 ---
+### CS 173 
+---
 
 Number and graph theory, algorithm complexities, trees, sets and collection of
 sets. Overall the class was about a 7/10 in difficulty, mainly because I was in
@@ -84,17 +86,20 @@ a lecture section that was far more difficult than the other lecture section.
 disparity between lecture sections is so massive that they are almost different
 classes)
 
-### PHYS 213 ---
+### PHYS 213 
+---
 
 Boltzmann distribution, Counting and Simple Harmonic Oscillators, Black-body
 radiation, monoatomic and diatomic energy relations, Heat Engines,
 Refrigerators, Heatpumps, Adiabatic/Isobaric/Isotermal Processes, and Chemical
 potentials.
 
-### PHYS 214 ---
+### PHYS 214 
+---
 
 One man: Schrodinger
 
-### MACS 100 ---
+### MACS 100 
+---
 
 TV, TV, TV, Corporate, TV, Movie, TV, Cultural Ideology, etc.
