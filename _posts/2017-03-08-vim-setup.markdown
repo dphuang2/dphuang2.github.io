@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My life as a vim addict"
+title: "Vim Addict"
 date: 2017-3-8
 location: Terminal
 description: 
