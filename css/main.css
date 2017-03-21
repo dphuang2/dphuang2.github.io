@@ -977,3 +977,11 @@ section {
 
 #sj-quote {
   font-size: .9em; }
+
+.post ul, .post ol {
+  margin: auto;
+  padding: 0px 0px 0px 20px;
+  list-style-type: unset; }
+
+.post .highlight {
+  overflow: auto; }
