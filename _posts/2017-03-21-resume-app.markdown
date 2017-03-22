@@ -29,7 +29,7 @@ took the opportunity to make one myself.
       - see all resumes
       - delete users
       - change role of users
-    - Employer: see all resumes
+    - Employer:
       - see all resumes
 
 ## Technologies
@@ -63,7 +63,7 @@ end
 ```
 
 Then I wanted to implement the code-based sign up so the first step was to put a
-code in the secrets.yml file. For developemnt, I simply just put in a two-letter
+code in the secrets.yml file. For development, I simply just put in a two-letter
 easy-to-type code. But for production, I planned on grabbing the secret code
 from environment variables.
 ```yml
@@ -124,7 +124,7 @@ pages based on roles.
 ### File Attachment
 ---
 
-The next hard-step was to implement file-attachments for each user. Fortunately,
+The next hard step was to implement file-attachments for each user. Fortunately,
 there is an extremely convenient ruby gem called 'paperclip' that helps you add
 a file to an already-existing model. This is easily done with a few lines of
 code and one migration.
