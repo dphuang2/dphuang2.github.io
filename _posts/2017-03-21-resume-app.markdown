@@ -150,7 +150,7 @@ And with a simple form, users can now just upload a pdf to the website!
 Now it was only until I actually pushed this deployment to production did I
 realize that the files that are uploaded through paperclip don't survive new
 deployments! This was a big issue because if the website had to be updated and
-every had already uploaded all their resumes, all the file storage would be lost
+everyone had already uploaded all their resumes, all the file storage would be lost
 and everyone would have to re-upload their resume. Thankfully, paperclip has an
 easy-to-do solution with their configuration to use Amazon S3 Buckets for file-storage
 instead of locally cached files on the web-server itself.
@@ -174,7 +174,7 @@ config.paperclip_defaults = {
 ### Conclusion
 ---
 Now aside from the specific additional routes, controller logic, and html.erb
-code, this concludes a pretty complete implementation of a resume database that
+code, this concludes a fairly complete implementation of a resume database that
 can easily be deployed to Heroku!
 
 [Link to Github Repo](https://github.com/dphuang2/kappathetatau)
