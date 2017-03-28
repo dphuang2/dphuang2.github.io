@@ -58,7 +58,7 @@ enum role: [:employer, :brother, :admin]
 after_initialize :set_default_role, :if => :new_record?
 
 def set_default_role
-self.role ||= :brother
+  self.role ||= :brother
 end
 ```
 
