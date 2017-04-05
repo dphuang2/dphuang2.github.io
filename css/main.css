@@ -985,3 +985,12 @@ section {
 
 .post .highlight {
   overflow: auto; }
+
+#vimaddict {
+  position: relative;
+  padding-left: 19px; }
+
+#vimsvg {
+  position: absolute;
+  top: 3px;
+  left: 0px; }
