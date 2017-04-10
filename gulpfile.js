@@ -76,7 +76,7 @@ gulp.task('watch', function () {
     gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/image/*', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
-gulp.task("deploy", ["jekyll-build", 'compress'], function () {
+gulp.task("deploy", ['compress'], function () {
     return gulp.src("./_site/**/*")
         .pipe(deploy({
             branch: "master",
