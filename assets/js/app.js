@@ -139,10 +139,34 @@ var scrollSave = (function() {
   }
 })();
 
+var GithubTab = (function() {
+  var state = false;
+  tab = document.getElementById('gh-button');
+  wrapper = document.getElementById('gh-wrapper');
+  return {
+    init: function() {
+      tab.addEventListener('click', function() {
+        if(state){
+          wrapper.style.left = "-17.3em";
+          state = false;
+        } else {
+          wrapper.style.left = "0em";
+          state = true;
+        }
+      });
+    }
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   Tabs.init();
   Preview.init();
   wow.init();
   scrollSave.init();
+  GithubTab.init();
+  GitHubActivity.feed({
+    username: "dphuang2",
+    selector: "#feed",
+  });
   console.log("Nice to meet you fellow developer.");
 });

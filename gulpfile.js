@@ -1,6 +1,8 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
+var uglify      = require('gulp-uglify');
+var pump        = require('pump');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
@@ -53,6 +55,19 @@ gulp.task('sass', function () {
 });
 
 /**
+ * minify javascript
+ */
+gulp.task('compress', function (cb) {
+  pump([
+        gulp.src('assets/js/*.js'),
+        uglify(),
+        gulp.dest('_site/assets/js')
+    ],
+    cb
+  );
+});
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
@@ -61,7 +76,7 @@ gulp.task('watch', function () {
     gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/image/*', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
-gulp.task("deploy", ["jekyll-build"], function () {
+gulp.task("deploy", ["jekyll-build", 'compress'], function () {
     return gulp.src("./_site/**/*")
         .pipe(deploy({
             branch: "master",

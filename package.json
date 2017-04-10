@@ -14,7 +14,9 @@
     "gulp-autoprefixer": "1.0.0",
     "gulp-gh-pages": "^0.5.4",
     "gulp-sass": "^2.1.0",
-    "gulp-util": "^1.0.0"
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^1.0.0",
+    "pump": "^1.0.2"
   },
   "repository": {
     "type": "git",
