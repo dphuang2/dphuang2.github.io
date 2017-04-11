@@ -107,10 +107,12 @@ var GithubTab = (function() {
       tab.addEventListener('click', function() {
         if(state){
           wrapper.style.left = "-17.3em";
-          state = false;
+          tab.style.cursor = "e-resize";
+          state = false; // Hidden
         } else {
+          tab.style.cursor = "w-resize";
           wrapper.style.left = "0em";
-          state = true;
+          state = true; // Expanded
         }
       });
     }
