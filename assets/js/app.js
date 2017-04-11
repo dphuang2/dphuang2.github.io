@@ -20,14 +20,12 @@ var Tabs = (function() {
           tab.style.display = 'none';
         });
 
+        lastTab = 0;
         // Set lastTab to stored lastTab from sessionStorage if the browser supports session storage
         if (typeof(Storage) !== "undefined"){
-          if(sessionStorage.lastTab !== undefined){
+          if(sessionStorage.lastTab !== undefined) // If sessionStorage lastTab exists
             lastTab = parseInt(sessionStorage.lastTab);
-          } else {
-            lastTab = 0;
-          }
-        }
+        } 
 
         s.tab[lastTab].style.display = 'block';
         s.tab[lastTab].classList.add('active');
@@ -42,11 +40,12 @@ var Tabs = (function() {
 
         [].forEach.call(s.tabs, function(tab, idx) {
           tab.addEventListener('click', function() {
-            // Store the last tab clicked on
-            if (typeof(Storage) !== "undefined") sessionStorage.lastTab = idx;
 
             prevIdx = currentIdx;
             currentIdx = idx;
+
+            // Store the last tab clicked on
+            if (typeof(Storage) !== "undefined") sessionStorage.lastTab = currentIdx;
 
             if (prevIdx !== currentIdx) {
               s.tab[prevIdx].style.display = 'none';
@@ -60,7 +59,6 @@ var Tabs = (function() {
         });
       }
     }
-
   }
 })();
 
