@@ -95,6 +95,7 @@
   position: fixed;
   top: 0px;
   transition: all 400ms ease;
+  z-index: 20;
 
   #feed{
     height: 100%;

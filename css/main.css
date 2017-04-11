@@ -1262,7 +1262,8 @@ span.gha-time {
   left: -17.3em;
   position: fixed;
   top: 0px;
-  transition: all 400ms ease; }
+  transition: all 400ms ease;
+  z-index: 20; }
   #gh-wrapper #feed {
     height: 100%;
     left: 0px;
