@@ -64,47 +64,6 @@ var Tabs = (function() {
   }
 })();
 
-var Preview = (function() {
-  var s;
-
-  return {
-    settings: {
-      img: document.getElementsByClassName('preview__img'),
-      post: document.getElementsByClassName('preview')
-    },
-
-    init: function() {
-      s = this.settings;
-      this.display();
-      this.mouseenter();
-    },
-
-    display: function() {
-      if (s.img.length) {
-        [].forEach.call(s.img, function(img) {
-          img.style.display = 'none';
-        });
-        s.img[0].style.display = 'block';
-      }
-    },
-
-    mouseenter: function() {
-      if (s.post.length) {
-        var currentIdx = 0,
-            prevIdx = currentIdx;
-
-        [].forEach.call(s.post, function(preview, idx) {
-          preview.addEventListener('mouseenter', function() {
-            prevIdx = currentIdx;
-            currentIdx = idx;
-
-          });
-        });
-      }
-    }
-  }
-})();
-
 var wow = new WOW({
   animateClass: 'fade-in'
 });
@@ -160,7 +119,6 @@ var GithubTab = (function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   Tabs.init();
-  Preview.init();
   wow.init();
   scrollSave.init();
   GithubTab.init();
