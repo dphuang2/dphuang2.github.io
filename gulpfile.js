@@ -1,11 +1,12 @@
-var gulp        = require('gulp');
 var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var uglify      = require('gulp-uglify');
-var pump        = require('pump');
-var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
+var gulp        = require('gulp');
+var prefix      = require('gulp-autoprefixer');
+var pump        = require('pump');
+var sass        = require('gulp-sass');
+var uglify      = require('gulp-uglify');
+var uglifycss   = require('gulp-uglifycss');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -55,7 +56,7 @@ gulp.task('sass', function () {
 });
 
 /**
- * minify javascript
+ * minify JavaScript and CSS
  */
 gulp.task('compress', function (cb) {
   pump([
@@ -65,6 +66,11 @@ gulp.task('compress', function (cb) {
     ],
     cb
   );
+  gulp.src('css/main.css')
+    .pipe(uglifycss({
+      "uglyComments": true
+    }))
+    .pipe(gulp.dest("_site/css/"));
 });
 
 /**

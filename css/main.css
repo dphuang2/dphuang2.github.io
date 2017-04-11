@@ -1296,9 +1296,6 @@ span.gha-time {
     background: white;
     z-index: 5;
     transition: all 400ms ease; }
-    #gh-wrapper #gh-button:hover {
-      background: #495961;
-      color: white; }
   @media (max-width: 54em) {
     #gh-wrapper {
       display: none; } }
