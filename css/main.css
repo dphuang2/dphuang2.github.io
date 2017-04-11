@@ -1295,8 +1295,7 @@ span.gha-time {
     left: 14em;
     width: 8em;
     background: white;
-    z-index: 5;
-    transition: all 400ms ease; }
+    z-index: 5; }
   @media (max-width: 54em) {
     #gh-wrapper {
       display: none; } }
