@@ -52,6 +52,20 @@ var Tabs = (function() {
             // Store the last tab clicked on
             if (typeof(Storage) !== "undefined") sessionStorage.lastTab = currentIdx;
           });
+          tab.addEventListener('touchstart', function() {
+            prevIdx = currentIdx;
+            currentIdx = idx;
+
+            s.tab[prevIdx].style.display = 'none';
+            s.tab[prevIdx].classList.remove('active');
+            s.tabs[prevIdx].classList.remove('active');
+            s.tab[currentIdx].style.display = 'block';
+            s.tab[currentIdx].classList.add('active');
+            s.tabs[currentIdx].classList.add('active');
+
+            // Store the last tab clicked on
+            if (typeof(Storage) !== "undefined") sessionStorage.lastTab = currentIdx;
+          });
         });
       }
     }
