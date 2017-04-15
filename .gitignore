@@ -1,7 +1,0 @@
-_site
-.idea
-node_modules
-.DS_store
-.publish
-*.swp
-tags
