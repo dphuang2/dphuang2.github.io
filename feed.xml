@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dylan Huang</title>
+    <description>Web enthusiast, Computer Engineer, Dog Lover</description>
+    <link>dylanhuang.com/</link>
+    <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 15 Apr 2017 16:41:52 -0500</pubDate>
+    <lastBuildDate>Sat, 15 Apr 2017 16:41:52 -0500</lastBuildDate>
+    <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>ARM Internship</title>
+        <description>&lt;p&gt;On May 22, 2017, I will be starting my internship for Arm Holdings as a Server Performance Intern for the span of Summer 2017. The position is located in Austin, Texas.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 22 May 2017 00:00:00 -0500</pubDate>
+        <link>dylanhuang.com/2017/05/22/arm/</link>
+        <guid isPermaLink="true">dylanhuang.com/2017/05/22/arm/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Resume Database Web App</title>
+        <description>&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;I will always take any opportunity that I can find to make a web app. 
+So when I found out that my fraternity did not have a web accessible resume database, I
+took the opportunity to make one myself.&lt;/p&gt;
+
+&lt;h2 id=&quot;goalsfunctionalities&quot;&gt;Goals/Functionalities&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;Friendly interface&lt;/li&gt;
+  &lt;li&gt;Persistent resume files on new deploys&lt;/li&gt;
+  &lt;li&gt;Resumes can be downloaded&lt;/li&gt;
+  &lt;li&gt;Only users with a code can sign up for an account&lt;/li&gt;
+  &lt;li&gt;Accounts
+    &lt;ul&gt;
+      &lt;li&gt;Roles ie. Brother, Admin, Employer
+        &lt;ul&gt;
+          &lt;li&gt;Brothers:
+            &lt;ul&gt;
+              &lt;li&gt;view other resumes that are not private&lt;/li&gt;
+              &lt;li&gt;upload own resume&lt;/li&gt;
+              &lt;li&gt;make own resume private&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Admin:
+            &lt;ul&gt;
+              &lt;li&gt;see all resumes&lt;/li&gt;
+              &lt;li&gt;delete users&lt;/li&gt;
+              &lt;li&gt;change role of users&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;Employer:
+            &lt;ul&gt;
+              &lt;li&gt;see all resumes&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;technologies&quot;&gt;Technologies&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/rails/rails&quot;&gt;rails&lt;/a&gt; - Web Framework&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/thoughtbot/paperclip&quot;&gt;paperclip&lt;/a&gt; - File Attachments&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/plataformatec/devise&quot;&gt;devise&lt;/a&gt; - Authentication&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/elabs/pundit&quot;&gt;pundit&lt;/a&gt; - Authorization&lt;/li&gt;
+  &lt;li&gt;Amazon S3 - File Storage&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;accounts&quot;&gt;Accounts&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;To begin, I needed to implement a complete account authentication and
+authorization system. To do this, I used a &lt;a href=&quot;https://github.com/RailsApps/rails-devise-pundit&quot;&gt;boilerplate rails app&lt;/a&gt; from github
+that implements basic user controller actions, sign up/in flow, and role-based
+authorization. I thought it would be a waste of my time to implement a complete
+role-based authentication and authorization app when someone has already laid
+the foundation of an app with that purpose. Why would I try to invent the wheel
+again, right?&lt;/p&gt;
+
+&lt;p&gt;The next step would be to customize this app so that it had the roles that I
+wanted as well as the code-based sign up functionality.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# app/models/user.rb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;role: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:employer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:brother&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;after_initialize&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:set_default_role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:new_record?&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;set_default_role&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;role&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||=&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:brother&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then I wanted to implement the code-based sign up so the first step was to put a
+code in the secrets.yml file. For development, I simply just put in a two-letter
+easy-to-type code. But for production, I planned on grabbing the secret code
+from environment variables.&lt;/p&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;brother_code&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tt&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;brother_code&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;lt;%= ENV[&quot;BROTHER_CODE&quot;] %&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;After adding the code, the next step was to customize the logic for signing up.
+The sign up action for devise is under the “create” function in the
+registrations’ controller. To override the “create” function, I
+had to first change some routes.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# config/routes.rb&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Not sure why I need to skip the sessions controller&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# but it fixed duplicate routes&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;devise_for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;skip: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:registrations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:sessions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;devise_for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;controllers: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;ss&quot;&gt;registrations: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'my_devise/registrations'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To then override the devise registration controller action for “create”, I created a folder
+called my_devise which would contain a registration controller that simply
+extends the base registration controller and has an additional if-else statement
+that checks the brother code in the Rails secret.yml file.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# controllers/my_devise/registrations_controller.rb&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyDevise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RegistrationsController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Devise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RegistrationsController&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# POST /resource&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rails&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;secrets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;brother_code&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; 
+       &lt;span class=&quot;n&quot;&gt;redirect_to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_user_registration_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:alert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Incorrect Code&quot;&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And lastly, I had to add the brother code text field to the sign up.&lt;/p&gt;
+&lt;div class=&quot;language-erb highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!--views/devise/registrations/new.html.erb--&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;form-group&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:code&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;password_field&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;class: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'form-control'&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And voila! I now had the roles that I wanted and code-based sign up implemented.
+And with the addition of pundit and some authorization logic put into
+app/policies/UserPolicy.rb, I was able to implement the authorization of certain
+pages based on roles.&lt;/p&gt;
+
+&lt;h3 id=&quot;file-attachment&quot;&gt;File Attachment&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;The next hard step was to implement file-attachments for each user. Fortunately,
+there is an extremely convenient ruby gem called ‘paperclip’ that helps you add
+a file to an already-existing model. This is easily done with a few lines of
+code and one migration.&lt;/p&gt;
+
+&lt;p&gt;First I just had to add the paperclip gem to my Gemfile and then add these two
+lines of code to my user model.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# app/models/user.rb&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;has_attached_file&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;styles: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;thumbnail: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;40x40#&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;validates_attachment&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;content_type: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;content_type: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;application/pdf&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And with a simple form, users can now just upload a pdf to the website!&lt;/p&gt;
+&lt;div class=&quot;language-erb highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;form-group&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;for=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user_document&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;document?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;document_file_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Document&quot;&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;/label&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;file_field&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;class: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'form-control'&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;surviving-new-deployments&quot;&gt;Surviving New Deployments&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;Now it was only until I actually pushed this deployment to production did I
+realize that the files that are uploaded through paperclip don’t survive new
+deployments! This was a big issue because if the website had to be updated and
+everyone had already uploaded all their resumes, all the file storage would be lost
+and everyone would have to re-upload their resume. Thankfully, paperclip has an
+easy-to-do solution with their configuration to use Amazon S3 Buckets for file-storage
+instead of locally cached files on the web-server itself.&lt;/p&gt;
+
+&lt;p&gt;To do this, all I had to add was this configuration to production.rb file:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# config/environments/production.rb&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Amazon S3 Bucket config&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;paperclip_defaults&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;storage: :s3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;s3_credentials: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;bucket: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'S3_BUCKET_NAME'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;access_key_id: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'AWS_ACCESS_KEY_ID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;secret_access_key: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'AWS_SECRET_ACCESS_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;s3_region: &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'AWS_REGION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;ss&quot;&gt;s3_host_name: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;s3-&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ENV&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'AWS_REGION'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.amazonaws.com&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;Now aside from the specific additional routes, controller logic, and html.erb
+code, this concludes a fairly complete implementation of a resume database that
+can easily be deployed to Heroku!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/kappathetatau&quot;&gt;Link to Github Repo&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 21 Mar 2017 00:00:00 -0500</pubDate>
+        <link>dylanhuang.com/2017/03/21/resume-app/</link>
+        <guid isPermaLink="true">dylanhuang.com/2017/03/21/resume-app/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Vim Addict</title>
+        <description>&lt;p&gt;Vim has become an essential part of my development workflow. I started using Vim
+in the Summer of 2016 while working for a remote internship. Since I had the
+opportunity to spend time and learn something new, I decided that Vim was the
+next thing that I wanted to learn. It was a great decision that has lead me to
+become a more efficient coder. I became addicted to Vim so much that I created a
+small little
+&lt;a href=&quot;https://github.com/dphuang2/dotfiles/blob/master/setupvim.sh&quot;&gt;script&lt;/a&gt; to set up
+my .vimrc and plugins on the engineering workstation at school. This script was
+especially helpful when I had to work on ECE 391 in the lab!&lt;/p&gt;
+
+&lt;p&gt;My favorite plugins are (ordered by use):&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ctrlpvim/ctrlp.vim&quot;&gt;ctrlpvim/ctrlp.vim&lt;/a&gt; - Fuzzy finder&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/scrooloose/nerdtree&quot;&gt;scrooloose/nerdtree&lt;/a&gt; - File explorer&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/tpope/vim-surround&quot;&gt;tpop/vim-surround&lt;/a&gt; - Easy surroundings
+in pairs&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jiangmiao/auto-pairs&quot;&gt;jiangmiao/auto-pairs&lt;/a&gt; - Auto insert
+and delete pairs&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/justinmk/vim-sneak&quot;&gt;justinmk/vim-sneak&lt;/a&gt; - Jump to any
+location specified by two characters&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt; Here is also a link to my personal .vimrc that I have refined over the past
+10 months:
+&lt;a href=&quot;https://github.com/dphuang2/dotfiles/blob/master/vimrc-mac&quot;&gt;dphuang2/dotfiles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.norfolkwinters.com/vim-creep/&quot;&gt;Relevant&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, I have unfortunately become a vim memer over time: &lt;img src=&quot;/assets/image/vimmeme.jpg&quot; alt=&quot;Vim
+Meme&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 -0600</pubDate>
+        <link>dylanhuang.com/2017/03/08/vim-setup/</link>
+        <guid isPermaLink="true">dylanhuang.com/2017/03/08/vim-setup/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Featured in the local news!</title>
+        <description>&lt;p&gt;While pledging for Theta Tau a group of 9 students and I are running a
+fundraiser for Camp Quality, a charity that helps kids with cancer, by
+delivering breakfast food to students the morning after Unofficial!&lt;/p&gt;
+
+&lt;p&gt;On Wednesday, March 1, 2017, we were featured in an online article in the local
+news. I was the main point of contact and was quoted throughout the article.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.news-gazette.com/news/local/2017-03-01/top-morning-march-1-2017.html&quot;&gt;Article Here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Update 3/6/2017 (Monday after fundraiser): Looks like the local senator approved
+of our fundraiser!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/unofficial-senator.jpg&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Mar 2017 00:00:00 -0600</pubDate>
+        <link>dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</link>
+        <guid isPermaLink="true">dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>UIUC Fall Semester 2016 Overview</title>
+        <description>&lt;h2 id=&quot;classes-taken-ranked-by-difficulty&quot;&gt;Classes taken (Ranked by difficulty):&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt; ECE 391 - Systems Programming  - 40 Hours per week&lt;/li&gt;
+  &lt;li&gt; CS 225 - Data Structures - 10 Hours per week&lt;/li&gt;
+  &lt;li&gt; CS 173 - Discrete Structures - 6 Hours per week&lt;/li&gt;
+  &lt;li&gt; PHYS 213 - Thermodynamics - 5 Hours per week &lt;/li&gt;
+  &lt;li&gt; PHYS 214 - Quantum Physics - 5 Hours per week &lt;/li&gt;
+  &lt;li&gt; MACS 100 - Intro to Popular TV &amp;amp; Movies - 1 Hour per week &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ece-391&quot;&gt;ECE 391&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;ECE 391 was by far the hardest part of my semester.  It consumed at least 40
+hours per week but the content was by far the most advanced and interesting
+stuff I have ever learned about in my life.  After having taken the class, I
+feel that I understand the core concepts and implementations of an operating
+system and why operating systems even exist in the first place.  Knowledge of
+bit manipulation, memory management, byte-addressable memory and low level C
+programming are essential prerequisite skills to understanding the material for
+this class.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-did-i-learn&quot;&gt;What did I learn?&lt;/h4&gt;
+
+&lt;p&gt;I learned the implementation and logic for a general design of an operating
+system all the way from assembly level ioctl functions, synchronization with
+semaphore and spin locks, memory management through paging, to thread handling
+through PIT (Programmable Interface Timer) implemented scheduling.  The first
+few weeks of the class were spent learning the x86 Intel syntax and
+understanding the registers that are protocol for x86 based systems such as the
+stack registers EBP and ESP.&lt;/p&gt;
+
+&lt;h4 id=&quot;mp1--missile-command&quot;&gt;MP1 — Missile Command&lt;/h4&gt;
+
+&lt;p&gt;With this newfound knowledge of Intel x86 assembly language, the first MP was to
+code Missile Command using a linked-list implementation for missiles and an RTC
+tasklet to control the speed of the game. This MP1 demonstrated the use of
+assembly linkage, rtc user program use, and jump tables.&lt;/p&gt;
+
+&lt;h4 id=&quot;mp2---ece-391-journey-game&quot;&gt;MP2 - ECE 391 Journey Game&lt;/h4&gt;
+
+&lt;p&gt;The second MP focused on VGA memory, Mode X display, VGA Color Palette through
+Octree, and a device driver for the Tux Controller.&lt;/p&gt;
+
+&lt;h3 id=&quot;mp3---build-your-own-os&quot;&gt;MP3 - Build your own OS&lt;/h3&gt;
+
+&lt;p&gt;This MP lasted 8 weeks and was done with a group of four people. There were 5
+checkpoints for the whole MP as follows.&lt;/p&gt;
+
+&lt;ol&gt; &lt;li&gt;&lt;b&gt;Checkpoint 1&lt;/b&gt; - Paging and Setting up the GDT/IDT&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Checkpoint 2&lt;/b&gt; - Terminal Driver and File System using EXT2 format&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Checkpoint 3&lt;/b&gt; - Execute and Halt system calls for user-level
+programs&lt;/li&gt; &lt;li&gt;&lt;b&gt;Checkpoint 4&lt;/b&gt; - Implement the rest of the system calls
+from read, open, write, vidmap, getargs, etc.&lt;/li&gt; &lt;li&gt;&lt;b&gt;Checkpoint 5&lt;/b&gt; -
+Multi-terminal and Scheduling using a Round-robin algorithm&lt;/li&gt; &lt;/ol&gt;
+
+&lt;h3 id=&quot;cs-225&quot;&gt;CS 225&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;CS 225 was miles behind ECE 391 in terms of difficulty and number of hours spent
+on the class, but nonetheless is still an essential class in understanding the
+study of Computer Science.  In this class I learned about how basic data
+structures such as Stacks, Queues, Linked Lists, etc. are implemented and the
+design choices that are made to keep the complexity of operations on these
+functions at a minimum.  I also learned about Trees and its many forms, Graph
+implementations and graph algorithms (Kruskal, Dijkstra, Prims).&lt;/p&gt;
+
+&lt;h3 id=&quot;cs-173&quot;&gt;CS 173&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Number and graph theory, algorithm complexities, trees, sets and collection of
+sets. Overall the class was about a 7/10 in difficulty, mainly because I was in
+a lecture section that was far more difficult than the other lecture section.
+(UIUC CS Department needs to get their curriculum straight for this class as the
+disparity between lecture sections is so massive that they are almost different
+classes)&lt;/p&gt;
+
+&lt;h3 id=&quot;phys-213&quot;&gt;PHYS 213&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;Boltzmann distribution, Counting and Simple Harmonic Oscillators, Black-body
+radiation, monoatomic and diatomic energy relations, Heat Engines,
+Refrigerators, Heatpumps, Adiabatic/Isobaric/Isotermal Processes, and Chemical
+potentials.&lt;/p&gt;
+
+&lt;h3 id=&quot;phys-214&quot;&gt;PHYS 214&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;One man: Schrodinger&lt;/p&gt;
+
+&lt;h3 id=&quot;macs-100&quot;&gt;MACS 100&lt;/h3&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;TV, TV, TV, Corporate, TV, Movie, TV, Cultural Ideology, etc.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 Dec 2016 00:00:00 -0600</pubDate>
+        <link>dylanhuang.com/2016/12/20/uiuc-fall-2016/</link>
+        <guid isPermaLink="true">dylanhuang.com/2016/12/20/uiuc-fall-2016/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>My viral web app, pogobag.me</title>
+        <description>&lt;p&gt;pogobag.me is a web application that I personally built with Ruby on Rails. It
+interfaces with an unofficial Pokemon Go API to extract data, analyze pokemon
+attributes, and display them on a responsive and easy to access website. In the
+first two weeks of my first deployment, this website went viral hitting 210,000+
+unique users and 3,304,043 Page views in two weeks. As of December 1, 2016 it
+yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
+
+&lt;p&gt;The project is open-sourced and the Github repo can be found
+&lt;a href=&quot;https://github.com/dphuang2/PoGoBag&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 27 Jul 2016 00:00:00 -0500</pubDate>
+        <link>dylanhuang.com/2016/07/27/pogobag/</link>
+        <guid isPermaLink="true">dylanhuang.com/2016/07/27/pogobag/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Google Summer of Code Internship</title>
+        <description>&lt;p&gt;• Worked on data integration to allow quick and scalable calculations of data for the Data Platform and Dashboard Widgets&lt;/p&gt;
+
+&lt;p&gt;• Ruby on Rails, JavaSript, and Data integration platform experience&lt;/p&gt;
+
+&lt;p&gt;Documentation for all of my work during the summer can be found &lt;a href=&quot;http://dylanhuang.com/streamsets_scripts/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>dylanhuang.com/2016/05/20/berkman/</link>
+        <guid isPermaLink="true">dylanhuang.com/2016/05/20/berkman/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Hack Illinois 2016</title>
+        <description>&lt;h1 id=&quot;automated-room-occupancy-counter&quot;&gt;&lt;em&gt;Automated Room Occupancy Counter&lt;/em&gt;&lt;/h1&gt;
+
+&lt;h2 id=&quot;winner-of-intels-most-innovative-use-of-intel-edison-board-at-hack-illinois-2016&quot;&gt;Winner of Intel’s most Innovative use of Intel Edison Board at Hack Illinois 2016&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;The site for this project is live at &lt;a href=&quot;http://resumepipe.web.engr.illinois.edu&quot;&gt; resumepipe.web.engr.illinois.edu &lt;/a&gt;. The code can be seen &lt;a href=&quot;https://github.com/dphuang2/RoomCounter-HackIllinois2016&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Total time spent: &lt;strong&gt;18&lt;/strong&gt; Hours&lt;/p&gt;
+
+&lt;h2 id=&quot;goal&quot;&gt;&lt;strong&gt;Goal&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The goal of this project is to provide an automated occupancy count of a
+  building or room that can be accessed wirelessly through a website.&lt;/p&gt;
+
+&lt;h2 id=&quot;real-world-application&quot;&gt;&lt;strong&gt;Real World Application&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;The principle idea is to be able to detect and track the number of people
+  entering and leaving a room in a given building (for now, the building of
+  choice is ECEB). This tracker device would be placed in all rooms in the
+  building. The number of people present in each given room would be sent to a
+  website and displayed for everyone to see. The website will eventually include
+  floor maps for the building with the number of people within the room. For the
+  future, all buildings on the University of Illinois campus would be included
+  on the website, giving a bigger scope for the student. This would allow
+  students to have a live feed for any available study rooms in the buildings of
+  their choice. Something similar is present for EWS stations but those are very
+  limited. &lt;br /&gt; If this device was installed in each room of every building on
+  campus, the data of the device could be used to visualize the occupancy
+  patterns of buildings on campus…down to a single room. Architects could use
+  this data to improve the efficiency and designs of their buildings, Now that
+  is awesome!&lt;/p&gt;
+
+&lt;h3 id=&quot;read-more&quot;&gt;&lt;a href=&quot;https://devpost.com/software/roomcounter&quot;&gt;Read More…&lt;/a&gt;&lt;/h3&gt;
+</description>
+        <pubDate>Sun, 21 Feb 2016 00:00:00 -0600</pubDate>
+        <link>dylanhuang.com/2016/02/21/room-occupancy-counter/</link>
+        <guid isPermaLink="true">dylanhuang.com/2016/02/21/room-occupancy-counter/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Research with UIUC CS Department</title>
+        <description>&lt;p&gt;• Designed website that hosts a control panel to filter a twitter handle’s news feed through algorithmically generated sentiment/friend groups and tweet metadata&lt;/p&gt;
+
+&lt;p&gt;• Investigating user preference and the possible placebo effect of a control panel&lt;/p&gt;
+
+&lt;p&gt;• Technologies: JavaScript, AJAX, PHP, and MySQL&lt;/p&gt;
+
+&lt;p&gt;• Currently refactoring entire website with Ruby on Rails&lt;/p&gt;
+
+&lt;p&gt;Working under PhD Candidate &lt;a href=&quot;http://kvaccaro.com/&quot;&gt;Kristen Vaccaro&lt;/a&gt; and Professor &lt;a href=&quot;http://social.cs.uiuc.edu/people/kkarahal.html&quot;&gt;Karrie Karahalios&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 27 Aug 2015 00:00:00 -0500</pubDate>
+        <link>dylanhuang.com/2015/08/27/cs-research/</link>
+        <guid isPermaLink="true">dylanhuang.com/2015/08/27/cs-research/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
