@@ -37,24 +37,20 @@ var Tabs = (function() {
       if (s.tabs.length) {
         var currentIdx = lastTab,
             prevIdx = currentIdx;
-
         [].forEach.call(s.tabs, function(tab, idx) {
           tab.addEventListener('click', function() {
-
             prevIdx = currentIdx;
             currentIdx = idx;
 
+            s.tab[prevIdx].style.display = 'none';
+            s.tab[prevIdx].classList.remove('active');
+            s.tabs[prevIdx].classList.remove('active');
+            s.tab[currentIdx].style.display = 'block';
+            s.tab[currentIdx].classList.add('active');
+            s.tabs[currentIdx].classList.add('active');
+
             // Store the last tab clicked on
             if (typeof(Storage) !== "undefined") sessionStorage.lastTab = currentIdx;
-
-            if (prevIdx !== currentIdx) {
-              s.tab[prevIdx].style.display = 'none';
-              s.tab[prevIdx].classList.remove('active');
-              s.tabs[prevIdx].classList.remove('active');
-              s.tab[currentIdx].style.display = 'block';
-              s.tab[currentIdx].classList.add('active');
-              s.tabs[currentIdx].classList.add('active');
-            }
           });
         });
       }
