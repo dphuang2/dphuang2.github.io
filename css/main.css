@@ -447,7 +447,12 @@ section {
         justify-content: flex-end;
     height: 100%;
     width: 90%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-top: 9em;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2.25em;
+    border-radius: .75em; }
   .mast h1 {
     line-height: 1.2; }
 
@@ -1300,3 +1305,6 @@ span.gha-time {
   @media (max-width: 54em) {
     #gh-wrapper {
       display: none; } }
+
+[class*=" devicon-"], [class^=devicon-] {
+  font-size: 1.5em; }

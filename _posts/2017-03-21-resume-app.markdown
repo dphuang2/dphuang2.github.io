@@ -4,6 +4,9 @@ title: "Resume Database Web App"
 date: 2017-3-21
 location: Champaign, Illinois
 description: 
+techs:
+  rails-plain-wordmark colored:
+  ruby-plain-wordmark colored:
 image: /assets/image/resume-app.png
 ---
 

@@ -4,6 +4,10 @@ title: "My viral web app, pogobag.me"
 date: 2016-7-27
 description: 
 location: Palo Alto, California
+techs:
+  postgresql-plain-wordmark colored:
+  rails-plain-wordmark colored:
+  ruby-plain-wordmark colored:
 image: http://i.imgur.com/oppNO4o.png
 ---
 pogobag.me is a web application that I personally built with Ruby on Rails. It

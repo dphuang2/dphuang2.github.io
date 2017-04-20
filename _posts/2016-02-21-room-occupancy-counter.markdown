@@ -4,6 +4,10 @@ title: "Hack Illinois 2016"
 date: 2016-2-21
 location: University of Illinois at Urbana–Champaign
 description: 
+techs:
+  c-plain-wordmark colored:
+  javascript-plain colored:
+  php-plain colored:
 image: http://i.imgur.com/JDOW1we.jpg
 ---
 # *Automated Room Occupancy Counter*

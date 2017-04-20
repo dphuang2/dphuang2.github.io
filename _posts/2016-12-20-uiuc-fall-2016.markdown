@@ -4,6 +4,9 @@ title: "UIUC Fall Semester 2016 Overview"
 date: 2016-12-20
 description: 
 location: University of Illinois at Urbana–Champaign
+techs:
+  cplusplus-plain-wordmark colored:
+  c-plain-wordmark colored:
 image: http://blog.admissions.illinois.edu/wp-content/uploads/2013/10/southquadfall.jpg
 ---
 

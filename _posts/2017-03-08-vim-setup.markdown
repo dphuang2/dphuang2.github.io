@@ -4,6 +4,8 @@ title: "Vim Addict"
 date: 2017-3-8
 location: Terminal
 description: 
+techs:
+  vim-plain colored:
 image: /assets/image/myvimsetup.png
 ---
 
