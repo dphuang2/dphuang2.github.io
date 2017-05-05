@@ -448,6 +448,7 @@ section {
     height: 100%;
     width: 90%;
     margin: 0 auto;
+    text-align: center;
     margin-top: 9em;
     height: auto;
     background-color: rgba(0, 0, 0, 0.7);
