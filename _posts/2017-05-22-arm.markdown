@@ -7,5 +7,18 @@ location: Austin, Texas
 image: https://www.arm.com/-/media/arm-com/company/offices/austin-office-700.jpg?h=700&w=700&la=en&hash=64423B1FA385EEFAE3CF27343DCA229C07E96E55
 ---
 
-On May 22, 2017, I will be starting my internship for Arm Holdings as a Server Performance Intern for the span of Summer 2017. The position is located in Austin, Texas.
+### Task 1 - Duration: 1 Week
+Read documentation on how to run a benchmark, setup git, and mechanics of Juju
+(anatomy of a charm)
 
+### Task 2 - Duration: 1 Week
+Flash Mellanox NICS with updated firmware and confirm that it can PXE boot. This
+required a lot of ipmitool, bash scripts, and reading Mellanox documentation.
+
+### Task 3 - Duration: ~3 Weeks 
+Re-write software infrastructure to be compatible with newer version of Juju.
+This meant re-writing the entire Python codebase that automates the recreations
+of benchmarks on readily deployable machines in a server lab to be compatible
+with a newer version of Juju (the team's deployment system). In addition to
+re-writing for newer software infrastructure, my job was also to migrate
+the code to Python 3.
