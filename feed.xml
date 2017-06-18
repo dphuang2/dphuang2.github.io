@@ -5,14 +5,27 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 May 2017 21:51:22 -0500</pubDate>
-    <lastBuildDate>Tue, 09 May 2017 21:51:22 -0500</lastBuildDate>
+    <pubDate>Sun, 18 Jun 2017 11:27:50 -0500</pubDate>
+    <lastBuildDate>Sun, 18 Jun 2017 11:27:50 -0500</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>ARM Internship</title>
-        <description>&lt;p&gt;On May 22, 2017, I will be starting my internship for Arm Holdings as a Server Performance Intern for the span of Summer 2017. The position is located in Austin, Texas.&lt;/p&gt;
+        <description>&lt;h3 id=&quot;task-1---duration-1-week&quot;&gt;Task 1 - Duration: 1 Week&lt;/h3&gt;
+&lt;p&gt;Read documentation on how to run a benchmark, setup git, and mechanics of Juju
+(anatomy of a charm)&lt;/p&gt;
 
+&lt;h3 id=&quot;task-2---duration-1-week&quot;&gt;Task 2 - Duration: 1 Week&lt;/h3&gt;
+&lt;p&gt;Flash Mellanox NICS with updated firmware and confirm that it can PXE boot. This
+required a lot of ipmitool, bash scripts, and reading Mellanox documentation.&lt;/p&gt;
+
+&lt;h3 id=&quot;task-3---duration-3-weeks&quot;&gt;Task 3 - Duration: ~3 Weeks&lt;/h3&gt;
+&lt;p&gt;Re-write software infrastructure to be compatible with newer version of Juju.
+This meant re-writing the entire Python codebase that automates the recreations
+of benchmarks on readily deployable machines in a server lab to be compatible
+with a newer version of Juju (the team’s deployment system). In addition to
+re-writing for newer software infrastructure, my job was also to migrate
+the code to Python 3.&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 May 2017 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2017/05/22/arm/</link>
