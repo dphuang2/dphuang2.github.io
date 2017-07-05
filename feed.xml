@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Jul 2017 23:31:06 -0500</pubDate>
-    <lastBuildDate>Mon, 03 Jul 2017 23:31:06 -0500</lastBuildDate>
+    <pubDate>Tue, 04 Jul 2017 21:42:47 -0500</pubDate>
+    <lastBuildDate>Tue, 04 Jul 2017 21:42:47 -0500</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -454,6 +454,50 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
       </item>
     
       <item>
+        <title>CodePath iOS Bootcamp</title>
+        <description>&lt;h1 id=&quot;codepath-ios-bootcamp&quot;&gt;CodePath iOS Bootcamp&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://codepath.com/&quot;&gt;CodePath&lt;/a&gt; is a 8-week long iOS bootcamp that is remotely administered.
+Concepts learned are outlined &lt;a href=&quot;http://guides.codepath.com/ios#fundamentals&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;final-project---personal-project&quot;&gt;Final Project - Personal Project&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/iOSDreamTeam/PostBoard&quot; target=&quot;_blank&quot;&gt;PostBoard&lt;/a&gt; is an app that allows users to post events happening at/near a university campus. Users can spread awareness of events that are coming up - no matter how big or how small the event may be. Have nothing to do on a Friday night? Pull up the app and check out what’s happening tonight near you!
+&lt;img src=&quot;http://i.imgur.com/Yy65paN.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;project-6---photoshare&quot;&gt;Project 6 - Photoshare&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/iOSDreamTeam/PostBoard&quot; target=&quot;_blank&quot;&gt;Photoshare&lt;/a&gt; is a photo sharing app using Parse as its backend.
+&lt;img src=&quot;http://i.imgur.com/MpbPbYa.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;project-4--5---twitter-clone&quot;&gt;Project 4 &amp;amp; 5 - Twitter Clone&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/iOSDreamTeam/PostBoard&quot; target=&quot;_blank&quot;&gt;Twitter Clone&lt;/a&gt; is a basic twitter app to read and compose tweets the &lt;a href=&quot;https://apps.twitter.com/&quot;&gt;Twitter API&lt;/a&gt;.
+&lt;img src=&quot;http://i.imgur.com/cNMeFOD.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;project-3---yelp-clone&quot;&gt;Project 3 - Yelp Clone&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/iOSDreamTeam/PostBoard&quot; target=&quot;_blank&quot;&gt;Yelp Clone&lt;/a&gt; is a Yelp search app using the &lt;a href=&quot;http://www.yelp.com/developers/documentation/v2/search_api&quot;&gt;Yelp API&lt;/a&gt;.
+&lt;img src=&quot;http://i.imgur.com/LcTWVmP.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;project-1--2---fandago-clone&quot;&gt;Project 1 &amp;amp; 2 - Fandago Clone&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/iOSDreamTeam/PostBoard&quot; target=&quot;_blank&quot;&gt;Fandago Clone&lt;/a&gt; is a movies app using the &lt;a href=&quot;http://docs.themoviedb.apiary.io/#&quot;&gt;The Movie Database API&lt;/a&gt;.
+&lt;img src=&quot;http://i.imgur.com/blbrnLg.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;application---tipping-calculator&quot;&gt;Application - Tipping Calculator&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tipper-iOS&quot; target=&quot;_blank&quot;&gt;Tipper&lt;/a&gt; is a tip calculator application for iOS.
+&lt;img src=&quot;http://i.imgur.com/YMsRMdG.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 May 2016 00:00:00 -0500</pubDate>
+        <link>dylanhuang.com/2016/05/10/codepath/</link>
+        <guid isPermaLink="true">dylanhuang.com/2016/05/10/codepath/</guid>
+        
+        
+      </item>
+    
+      <item>
         <title>Hack Illinois 2016</title>
         <description>&lt;h1 id=&quot;automated-room-occupancy-counter&quot;&gt;&lt;em&gt;Automated Room Occupancy Counter&lt;/em&gt;&lt;/h1&gt;
 
@@ -490,26 +534,6 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
         <pubDate>Sun, 21 Feb 2016 00:00:00 -0600</pubDate>
         <link>dylanhuang.com/2016/02/21/room-occupancy-counter/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/02/21/room-occupancy-counter/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Research with UIUC CS Department</title>
-        <description>&lt;p&gt;• Designed website that hosts a control panel to filter a twitter handle’s news feed through algorithmically generated sentiment/friend groups and tweet metadata&lt;/p&gt;
-
-&lt;p&gt;• Investigating user preference and the possible placebo effect of a control panel&lt;/p&gt;
-
-&lt;p&gt;• Technologies: JavaScript, AJAX, PHP, and MySQL&lt;/p&gt;
-
-&lt;p&gt;• Currently refactoring entire website with Ruby on Rails&lt;/p&gt;
-
-&lt;p&gt;Working under PhD Candidate &lt;a href=&quot;http://kvaccaro.com/&quot;&gt;Kristen Vaccaro&lt;/a&gt; and Professor &lt;a href=&quot;http://social.cs.uiuc.edu/people/kkarahal.html&quot;&gt;Karrie Karahalios&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 27 Aug 2015 00:00:00 -0500</pubDate>
-        <link>dylanhuang.com/2015/08/27/cs-research/</link>
-        <guid isPermaLink="true">dylanhuang.com/2015/08/27/cs-research/</guid>
         
         
       </item>
