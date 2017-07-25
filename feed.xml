@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Jul 2017 21:42:47 -0500</pubDate>
-    <lastBuildDate>Tue, 04 Jul 2017 21:42:47 -0500</lastBuildDate>
+    <pubDate>Mon, 24 Jul 2017 21:37:32 -0500</pubDate>
+    <lastBuildDate>Mon, 24 Jul 2017 21:37:32 -0500</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -19,13 +19,29 @@
 &lt;p&gt;Flash Mellanox NICS with updated firmware and confirm that it can PXE boot. This
 required a lot of ipmitool, bash scripts, and reading Mellanox documentation.&lt;/p&gt;
 
-&lt;h3 id=&quot;task-3---duration-3-weeks&quot;&gt;Task 3 - Duration: ~3 Weeks&lt;/h3&gt;
+&lt;h3 id=&quot;task-3---duration-8-weeks&quot;&gt;Task 3 - Duration: ~8 Weeks&lt;/h3&gt;
 &lt;p&gt;Re-write software infrastructure to be compatible with newer version of Juju.
-This meant re-writing the entire Python codebase that automates the recreations
-of benchmarks on readily deployable machines in a server lab to be compatible
-with a newer version of Juju (the team’s deployment system). In addition to
-re-writing for newer software infrastructure, my job was also to migrate
-the code to Python 3.&lt;/p&gt;
+This meant re-writing almost the entire Python codebase that automates the
+recreations of benchmarks on readily deployable machines in a server lab to be
+compatible with a newer version of Juju (the team’s deployment system). In addition
+to re-writing for newer software infrastructure, my job was also to migrate
+the code to Python 3 and document the whole process and design changes to a team
+of 25 people.&lt;/p&gt;
+
+&lt;h3 id=&quot;task-4---duration-4-weeks&quot;&gt;Task 4 - Duration: ~4 Weeks&lt;/h3&gt;
+&lt;p&gt;Create software to automate flake8/pylint processes on Gerrit patchset updates.
+This was accomplished through the use of Jenkins and about 300 lines of Python
+automation code. This task required a lot of string parsing and process development.&lt;/p&gt;
+
+&lt;h3 id=&quot;important-skills-learnedimproved&quot;&gt;Important skills learned/improved:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Software Development Lifecycle - Research/Learning, Development, Code Review Process, Version Control&lt;/li&gt;
+  &lt;li&gt;Strong Coding/Scripting Skills&lt;/li&gt;
+  &lt;li&gt;Python, Bash/Shell scripting&lt;/li&gt;
+  &lt;li&gt;Continuous Integration with Jenkins&lt;/li&gt;
+  &lt;li&gt;Oral Presentation Skills&lt;/li&gt;
+&lt;/ul&gt;
+
 </description>
         <pubDate>Mon, 22 May 2017 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2017/05/22/arm/</link>
