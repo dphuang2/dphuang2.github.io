@@ -18,10 +18,24 @@ Read documentation on how to run a benchmark, setup git, and mechanics of Juju
 Flash Mellanox NICS with updated firmware and confirm that it can PXE boot. This
 required a lot of ipmitool, bash scripts, and reading Mellanox documentation.
 
-### Task 3 - Duration: ~3 Weeks 
+### Task 3 - Duration: ~8 Weeks 
 Re-write software infrastructure to be compatible with newer version of Juju.
-This meant re-writing the entire Python codebase that automates the recreations
-of benchmarks on readily deployable machines in a server lab to be compatible
-with a newer version of Juju (the team's deployment system). In addition to
-re-writing for newer software infrastructure, my job was also to migrate
-the code to Python 3.
+This meant re-writing almost the entire Python codebase that automates the
+recreations of benchmarks on readily deployable machines in a server lab to be
+compatible with a newer version of Juju (the team's deployment system). In addition
+to re-writing for newer software infrastructure, my job was also to migrate
+the code to Python 3 and document the whole process and design changes to a team
+of 25 people.
+
+### Task 4 - Duration: ~4 Weeks
+Create software to automate flake8/pylint processes on Gerrit patchset updates.
+This was accomplished through the use of Jenkins and about 300 lines of Python
+automation code. This task required a lot of string parsing and process development.
+
+### Important skills learned/improved:
+ - Software Development Lifecycle - Research/Learning, Development, Code Review Process, Version Control
+ - Strong Coding/Scripting Skills
+ - Python, Bash/Shell scripting
+ - Continuous Integration with Jenkins
+ - Oral Presentation Skills
+
