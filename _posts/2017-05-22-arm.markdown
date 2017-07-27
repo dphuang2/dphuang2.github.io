@@ -32,6 +32,9 @@ Create software to automate flake8/pylint processes on Gerrit patchset updates.
 This was accomplished through the use of Jenkins and about 300 lines of Python
 automation code. This task required a lot of string parsing and process development.
 
+### Task 5 - Durection: ~3 Weeks
+Designing algorithm for estimating benchmark execution times
+
 ### Important skills learned/improved:
  - Software Development Lifecycle - Research/Learning, Development, Code Review Process, Version Control
  - Strong Coding/Scripting Skills
