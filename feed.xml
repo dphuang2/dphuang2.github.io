@@ -5,14 +5,14 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Jul 2017 21:37:32 -0500</pubDate>
-    <lastBuildDate>Mon, 24 Jul 2017 21:37:32 -0500</lastBuildDate>
+    <pubDate>Thu, 27 Jul 2017 17:56:11 -0500</pubDate>
+    <lastBuildDate>Thu, 27 Jul 2017 17:56:11 -0500</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>ARM Internship</title>
         <description>&lt;h3 id=&quot;task-1---duration-1-week&quot;&gt;Task 1 - Duration: 1 Week&lt;/h3&gt;
-&lt;p&gt;Read documentation on how to run a benchmark, setup git, and mechanics of Juju
+&lt;p&gt;Read documentation on how to run a benchmark, setup git, and learn the mechanics of Juju
 (anatomy of a charm)&lt;/p&gt;
 
 &lt;h3 id=&quot;task-2---duration-1-week&quot;&gt;Task 2 - Duration: 1 Week&lt;/h3&gt;
