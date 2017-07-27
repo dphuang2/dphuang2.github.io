@@ -11,7 +11,7 @@ image: https://www.arm.com/-/media/arm-com/company/offices/austin-office-700.jpg
 ---
 
 ### Task 1 - Duration: 1 Week
-Read documentation on how to run a benchmark, setup git, and mechanics of Juju
+Read documentation on how to run a benchmark, setup git, and learn the mechanics of Juju
 (anatomy of a charm)
 
 ### Task 2 - Duration: 1 Week
