@@ -5,44 +5,50 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Jul 2017 18:10:03 -0500</pubDate>
-    <lastBuildDate>Thu, 27 Jul 2017 18:10:03 -0500</lastBuildDate>
+    <pubDate>Sat, 19 Aug 2017 12:41:11 -0500</pubDate>
+    <lastBuildDate>Sat, 19 Aug 2017 12:41:11 -0500</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
         <title>ARM Internship</title>
         <description>&lt;h3 id=&quot;task-1---duration-1-week&quot;&gt;Task 1 - Duration: 1 Week&lt;/h3&gt;
-&lt;p&gt;Read documentation on how to run a benchmark, setup git, and learn the mechanics of Juju
-(anatomy of a charm)&lt;/p&gt;
+&lt;p&gt;Read documentation on how to run a benchmark, setup Git/Gerrit pre-commit hooks,
+and learn the mechanics of Juju (anatomy of a charm).&lt;/p&gt;
 
 &lt;h3 id=&quot;task-2---duration-1-week&quot;&gt;Task 2 - Duration: 1 Week&lt;/h3&gt;
-&lt;p&gt;Flash Mellanox NICS with updated firmware and confirm that it can PXE boot. This
+&lt;p&gt;Flash Mellanox NICs with updated firmware and confirm that it can PXE boot. This
 required a lot of ipmitool, bash scripts, and reading Mellanox documentation.&lt;/p&gt;
 
 &lt;h3 id=&quot;task-3---duration-8-weeks&quot;&gt;Task 3 - Duration: ~8 Weeks&lt;/h3&gt;
 &lt;p&gt;Re-write software infrastructure to be compatible with newer version of Juju.
 This meant re-writing almost the entire Python codebase that automates the
 recreations of benchmarks on readily deployable machines in a server lab to be
-compatible with a newer version of Juju (the team’s deployment system). In addition
-to re-writing for newer software infrastructure, my job was also to migrate
-the code to Python 3 and document the whole process and design changes to a team
-of 25 people.&lt;/p&gt;
+compatible with a newer version of Juju (the team’s deployment system). In
+addition to re-writing for newer software infrastructure, my job was also to
+migrate the code to Python 3, document the whole process, design changes to a
+team of 25 people.&lt;/p&gt;
 
 &lt;h3 id=&quot;task-4---duration-4-weeks&quot;&gt;Task 4 - Duration: ~4 Weeks&lt;/h3&gt;
-&lt;p&gt;Create software to automate flake8/pylint processes on Gerrit patchset updates.
-This was accomplished through the use of Jenkins and about 300 lines of Python
-automation code. This task required a lot of string parsing and process development.&lt;/p&gt;
+&lt;p&gt;Create software to automate flake8/pylint codestyling on Gerrit patch set
+updates and provide in-line feedback on the Gerrit front-end.  This was
+accomplished through the use of Jenkins and about ~400 lines of Python
+automation code. This task required a lot of string parsing (Regex), reading
+Gerrit API Docs, and desigining a well-engineered process for auto-linting.&lt;/p&gt;
 
-&lt;h3 id=&quot;task-5---durection-3-weeks&quot;&gt;Task 5 - Durection: ~3 Weeks&lt;/h3&gt;
-&lt;p&gt;Designing algorithm for estimating benchmark execution times&lt;/p&gt;
+&lt;h3 id=&quot;task-5---duration-3-weeks&quot;&gt;Task 5 - Duration: ~3 Weeks&lt;/h3&gt;
+&lt;p&gt;Designing algorithm to estimate benchmark run times given a yaml
+experiment file. Thought of idea to use chi-squared independence test to
+decrease estimation time by an average of around 700%&lt;/p&gt;
 
 &lt;h3 id=&quot;important-skills-learnedimproved&quot;&gt;Important skills learned/improved:&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Software Development Lifecycle - Research/Learning, Development, Code Review Process, Version Control&lt;/li&gt;
+  &lt;li&gt;Software Development Life cycle - Research/Learning, Development, Code Review Process&lt;/li&gt;
   &lt;li&gt;Strong Coding/Scripting Skills&lt;/li&gt;
   &lt;li&gt;Python, Bash/Shell scripting&lt;/li&gt;
   &lt;li&gt;Continuous Integration with Jenkins&lt;/li&gt;
+  &lt;li&gt;Using statistical tests to increase efficiency of calculations&lt;/li&gt;
   &lt;li&gt;Oral Presentation Skills&lt;/li&gt;
+  &lt;li&gt;Computer architecture and Workload Analysis&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>

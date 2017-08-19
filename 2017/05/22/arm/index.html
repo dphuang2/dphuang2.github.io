@@ -88,37 +88,43 @@
 
   <section class="section-padding post" itemprop="articleBody">
     <h3 id="task-1---duration-1-week">Task 1 - Duration: 1 Week</h3>
-<p>Read documentation on how to run a benchmark, setup git, and learn the mechanics of Juju
-(anatomy of a charm)</p>
+<p>Read documentation on how to run a benchmark, setup Git/Gerrit pre-commit hooks,
+and learn the mechanics of Juju (anatomy of a charm).</p>
 
 <h3 id="task-2---duration-1-week">Task 2 - Duration: 1 Week</h3>
-<p>Flash Mellanox NICS with updated firmware and confirm that it can PXE boot. This
+<p>Flash Mellanox NICs with updated firmware and confirm that it can PXE boot. This
 required a lot of ipmitool, bash scripts, and reading Mellanox documentation.</p>
 
 <h3 id="task-3---duration-8-weeks">Task 3 - Duration: ~8 Weeks</h3>
 <p>Re-write software infrastructure to be compatible with newer version of Juju.
 This meant re-writing almost the entire Python codebase that automates the
 recreations of benchmarks on readily deployable machines in a server lab to be
-compatible with a newer version of Juju (the team’s deployment system). In addition
-to re-writing for newer software infrastructure, my job was also to migrate
-the code to Python 3 and document the whole process and design changes to a team
-of 25 people.</p>
+compatible with a newer version of Juju (the team’s deployment system). In
+addition to re-writing for newer software infrastructure, my job was also to
+migrate the code to Python 3, document the whole process, design changes to a
+team of 25 people.</p>
 
 <h3 id="task-4---duration-4-weeks">Task 4 - Duration: ~4 Weeks</h3>
-<p>Create software to automate flake8/pylint processes on Gerrit patchset updates.
-This was accomplished through the use of Jenkins and about 300 lines of Python
-automation code. This task required a lot of string parsing and process development.</p>
+<p>Create software to automate flake8/pylint codestyling on Gerrit patch set
+updates and provide in-line feedback on the Gerrit front-end.  This was
+accomplished through the use of Jenkins and about ~400 lines of Python
+automation code. This task required a lot of string parsing (Regex), reading
+Gerrit API Docs, and desigining a well-engineered process for auto-linting.</p>
 
-<h3 id="task-5---durection-3-weeks">Task 5 - Durection: ~3 Weeks</h3>
-<p>Designing algorithm for estimating benchmark execution times</p>
+<h3 id="task-5---duration-3-weeks">Task 5 - Duration: ~3 Weeks</h3>
+<p>Designing algorithm to estimate benchmark run times given a yaml
+experiment file. Thought of idea to use chi-squared independence test to
+decrease estimation time by an average of around 700%</p>
 
 <h3 id="important-skills-learnedimproved">Important skills learned/improved:</h3>
 <ul>
-  <li>Software Development Lifecycle - Research/Learning, Development, Code Review Process, Version Control</li>
+  <li>Software Development Life cycle - Research/Learning, Development, Code Review Process</li>
   <li>Strong Coding/Scripting Skills</li>
   <li>Python, Bash/Shell scripting</li>
   <li>Continuous Integration with Jenkins</li>
+  <li>Using statistical tests to increase efficiency of calculations</li>
   <li>Oral Presentation Skills</li>
+  <li>Computer architecture and Workload Analysis</li>
 </ul>
 
 
