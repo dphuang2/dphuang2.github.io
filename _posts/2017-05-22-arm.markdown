@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "ARM Internship"
+title: "Arm Internship"
 date: 2017-5-22
 description: 
 location: Austin, Texas
 techs:
   python-plain-wordmark colored:
   ubuntu-plain-wordmark colored:
-image: https://www.arm.com/-/media/arm-com/company/offices/austin-office-700.jpg?h=700&w=700&la=en&hash=64423B1FA385EEFAE3CF27343DCA229C07E96E55
+image: /assets/image/arm/arm_interns.jpg
 ---
 
 ### Task 1 - Duration: 1 Week
@@ -48,3 +48,15 @@ decrease estimation time by an average of around 700%
  - Oral Presentation Skills
  - Computer architecture and Workload Analysis
 
+<hr>
+
+## Pictures!
+Silly pic 😝
+![Group picture](/assets/image/arm/silly_interns.jpg "Silly pic")
+Floor 3 squad 👥
+![Group picture](/assets/image/arm/floor_3_squa.jpg "Floor 3 Squad picture")
+Climbing 🤘
+<video autoplay loop muted controls style="width: 100%;">
+  <source src="/assets/image/arm/fly.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
