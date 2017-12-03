@@ -95,3 +95,7 @@ gulp.task("deploy", ['compress'], function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+/*
+ * Testing this stupid pdf issue with gulp-gh-pages
+ */
