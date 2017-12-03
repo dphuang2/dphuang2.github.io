@@ -151,46 +151,43 @@ again, right?</p>
 
 <p>The next step would be to customize this app so that it had the roles that I
 wanted as well as the code-based sign up functionality.</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/models/user.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/models/user.rb</span>
 <span class="n">enum</span> <span class="ss">role: </span><span class="p">[</span><span class="ss">:employer</span><span class="p">,</span> <span class="ss">:brother</span><span class="p">,</span> <span class="ss">:admin</span><span class="p">]</span>
 <span class="n">after_initialize</span> <span class="ss">:set_default_role</span><span class="p">,</span> <span class="ss">:if</span> <span class="o">=&gt;</span> <span class="ss">:new_record?</span>
 
 <span class="k">def</span> <span class="nf">set_default_role</span>
   <span class="nb">self</span><span class="p">.</span><span class="nf">role</span> <span class="o">||=</span> <span class="ss">:brother</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then I wanted to implement the code-based sign up so the first step was to put a
 code in the secrets.yml file. For development, I simply just put in a two-letter
 easy-to-type code. But for production, I planned on grabbing the secret code
 from environment variables.</p>
-<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">development</span><span class="pi">:</span>
-  <span class="s">brother_code</span><span class="pi">:</span> <span class="s">tt</span>
-<span class="s">production</span><span class="pi">:</span>
-  <span class="s">brother_code</span><span class="pi">:</span> <span class="s">&lt;%= ENV["BROTHER_CODE"] %&gt;</span>
-</code></pre>
-</div>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">development</span><span class="pi">:</span>
+  <span class="na">brother_code</span><span class="pi">:</span> <span class="s">tt</span>
+<span class="na">production</span><span class="pi">:</span>
+  <span class="na">brother_code</span><span class="pi">:</span> <span class="s">&lt;%= ENV["BROTHER_CODE"] %&gt;</span>
+</code></pre></div></div>
 
 <p>After adding the code, the next step was to customize the logic for signing up.
 The sign up action for devise is under the “create” function in the
 registrations’ controller. To override the “create” function, I
 had to first change some routes.</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/routes.rb</span>
 <span class="c1"># Not sure why I need to skip the sessions controller</span>
 <span class="c1"># but it fixed duplicate routes</span>
 <span class="n">devise_for</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">skip: </span><span class="p">[</span><span class="ss">:registrations</span><span class="p">,</span> <span class="ss">:sessions</span><span class="p">]</span>
 <span class="n">devise_for</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">controllers: </span><span class="p">{</span>
 <span class="ss">registrations: </span><span class="s1">'my_devise/registrations'</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To then override the devise registration controller action for “create”, I created a folder
 called my_devise which would contain a registration controller that simply
 extends the base registration controller and has an additional if-else statement
 that checks the brother code in the Rails secret.yml file.</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># controllers/my_devise/registrations_controller.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># controllers/my_devise/registrations_controller.rb</span>
 <span class="k">class</span> <span class="nc">MyDevise</span><span class="o">::</span><span class="no">RegistrationsController</span> <span class="o">&lt;</span> <span class="no">Devise</span><span class="o">::</span><span class="no">RegistrationsController</span>
   <span class="c1"># POST /resource</span>
    <span class="k">def</span> <span class="nf">create</span>
@@ -201,19 +198,17 @@ that checks the brother code in the Rails secret.yml file.</p>
      <span class="k">end</span>
    <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And lastly, I had to add the brother code text field to the sign up.</p>
-<div class="language-erb highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!--views/devise/registrations/new.html.erb--&gt;</span>
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--views/devise/registrations/new.html.erb--&gt;</span>
 ...
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
   <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">label</span> <span class="ss">:code</span> <span class="cp">%&gt;</span>
   <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">password_field</span> <span class="ss">:code</span><span class="p">,</span> <span class="ss">class: </span><span class="s1">'form-control'</span> <span class="cp">%&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
 ...
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And voila! I now had the roles that I wanted and code-based sign up implemented.
 And with the addition of pundit and some authorization logic put into
@@ -230,19 +225,17 @@ code and one migration.</p>
 
 <p>First I just had to add the paperclip gem to my Gemfile and then add these two
 lines of code to my user model.</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/models/user.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/models/user.rb</span>
 <span class="n">has_attached_file</span> <span class="ss">:document</span><span class="p">,</span> <span class="ss">styles: </span><span class="p">{</span><span class="ss">thumbnail: </span><span class="p">[</span><span class="s2">"40x40#"</span><span class="p">,</span> <span class="ss">:png</span><span class="p">]}</span>
 <span class="n">validates_attachment</span> <span class="ss">:document</span><span class="p">,</span> <span class="ss">content_type: </span><span class="p">{</span> <span class="ss">content_type: </span><span class="s2">"application/pdf"</span> <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And with a simple form, users can now just upload a pdf to the website!</p>
-<div class="language-erb highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"user_document"</span><span class="nt">&gt;</span> <span class="cp">&lt;%=</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">document?</span> <span class="p">?</span> <span class="vi">@user</span><span class="p">.</span><span class="nf">document_file_name</span><span class="p">.</span><span class="nf">to_s</span> <span class="p">:</span> <span class="s2">"Document"</span> <span class="cp">%&gt;</span> <span class="nt">&lt;/label&gt;</span>
   <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">file_field</span> <span class="ss">:document</span><span class="p">,</span> <span class="ss">class: </span><span class="s1">'form-control'</span> <span class="cp">%&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="surviving-new-deployments">Surviving New Deployments</h3>
 <hr />
@@ -255,7 +248,7 @@ easy-to-do solution with their configuration to use Amazon S3 Buckets for file-s
 instead of locally cached files on the web-server itself.</p>
 
 <p>To do this, all I had to add was this configuration to production.rb file:</p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># config/environments/production.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># config/environments/production.rb</span>
 <span class="c1"># Amazon S3 Bucket config</span>
 <span class="n">config</span><span class="p">.</span><span class="nf">paperclip_defaults</span> <span class="o">=</span> <span class="p">{</span>
   <span class="ss">storage: :s3</span><span class="p">,</span>
@@ -267,8 +260,7 @@ instead of locally cached files on the web-server itself.</p>
   <span class="p">},</span>
   <span class="ss">s3_host_name: </span><span class="s2">"s3-</span><span class="si">#{</span><span class="no">ENV</span><span class="p">[</span><span class="s1">'AWS_REGION'</span><span class="p">]</span><span class="si">}</span><span class="s2">.amazonaws.com"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="conclusion">Conclusion</h3>
 <hr />
