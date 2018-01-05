@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 02 Dec 2017 23:31:21 -0600</pubDate>
-    <lastBuildDate>Sat, 02 Dec 2017 23:31:21 -0600</lastBuildDate>
+    <pubDate>Fri, 05 Jan 2018 05:37:09 -0800</pubDate>
+    <lastBuildDate>Fri, 05 Jan 2018 05:37:09 -0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -67,7 +67,7 @@ Climbing 🤘&lt;/p&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;
 </description>
-        <pubDate>Mon, 22 May 2017 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 22 May 2017 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2017/05/22/arm/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/05/22/arm/</guid>
         
@@ -81,7 +81,7 @@ Climbing 🤘&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tic-tac-toe-React&quot;&gt;Repo&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 08 May 2017 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 08 May 2017 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2017/05/08/first-react-app/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/05/08/first-react-app/</guid>
         
@@ -274,7 +274,7 @@ can easily be deployed to Heroku!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/kappathetatau&quot;&gt;Link to Github Repo&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 21 Mar 2017 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 21 Mar 2017 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2017/03/21/resume-app/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/21/resume-app/</guid>
         
@@ -314,7 +314,7 @@ location specified by two characters&lt;/li&gt;
 &lt;p&gt;Also, I have unfortunately become a vim memer over time: &lt;img src=&quot;/assets/image/vimmeme.jpg&quot; alt=&quot;Vim
 Meme&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 08 Mar 2017 00:00:00 -0600</pubDate>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2017/03/08/vim-setup/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/08/vim-setup/</guid>
         
@@ -337,7 +337,7 @@ of our fundraiser!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/unofficial-senator.jpg&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 01 Mar 2017 00:00:00 -0600</pubDate>
+        <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</guid>
         
@@ -442,7 +442,7 @@ potentials.&lt;/p&gt;
 
 &lt;p&gt;TV, TV, TV, Corporate, TV, Movie, TV, Cultural Ideology, etc.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 20 Dec 2016 00:00:00 -0600</pubDate>
+        <pubDate>Tue, 20 Dec 2016 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2016/12/20/uiuc-fall-2016/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/12/20/uiuc-fall-2016/</guid>
         
@@ -462,7 +462,7 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/dphuang2/PoGoBag&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 27 Jul 2016 00:00:00 -0500</pubDate>
+        <pubDate>Wed, 27 Jul 2016 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2016/07/27/pogobag/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/07/27/pogobag/</guid>
         
@@ -478,7 +478,7 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
 &lt;p&gt;Documentation for all of my work during the summer can be found &lt;a href=&quot;http://dylanhuang.com/streamsets_scripts/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2016/05/20/berkman/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/05/20/berkman/</guid>
         
@@ -522,7 +522,7 @@ Concepts learned are outlined &lt;a href=&quot;http://guides.codepath.com/ios#fu
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tipper-iOS&quot; target=&quot;_blank&quot;&gt;Tipper&lt;/a&gt; is a tip calculator application for iOS.
 &lt;img src=&quot;http://i.imgur.com/YMsRMdG.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 10 May 2016 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 10 May 2016 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2016/05/10/codepath/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/05/10/codepath/</guid>
         
@@ -563,7 +563,7 @@ Concepts learned are outlined &lt;a href=&quot;http://guides.codepath.com/ios#fu
 
 &lt;h3 id=&quot;read-more&quot;&gt;&lt;a href=&quot;https://devpost.com/software/roomcounter&quot;&gt;Read More…&lt;/a&gt;&lt;/h3&gt;
 </description>
-        <pubDate>Sun, 21 Feb 2016 00:00:00 -0600</pubDate>
+        <pubDate>Sun, 21 Feb 2016 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2016/02/21/room-occupancy-counter/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/02/21/room-occupancy-counter/</guid>
         
