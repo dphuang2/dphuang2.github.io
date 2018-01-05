@@ -12,7 +12,7 @@ techs:
   rails-plain-wordmark colored:
   ruby-plain-wordmark colored:
   twitter-plain colored:
-image: https://ws.engr.illinois.edu/blogs/viewphoto.aspx?id=10691&.png
+image: assets/image/ece.jpeg
 ---
 • Designed website that hosts a control panel to filter a twitter handle’s news feed through algorithmically generated sentiment/friend groups and tweet metadata
 

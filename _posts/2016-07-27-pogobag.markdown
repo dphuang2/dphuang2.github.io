@@ -8,7 +8,7 @@ techs:
   postgresql-plain-wordmark colored:
   rails-plain-wordmark colored:
   ruby-plain-wordmark colored:
-image: http://i.imgur.com/oppNO4o.png
+image: /assets/image/pogobag.png
 ---
 pogobag.me is a web application that I personally built with Ruby on Rails. It
 interfaces with an unofficial Pokemon Go API to extract data, analyze pokemon
