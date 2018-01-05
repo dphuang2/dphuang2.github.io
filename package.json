@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync",
   "dependencies": {
-    "gulp-uglifycss": "^1.0.8"
+    "gulp-uglifycss": "^1.0.8",
+    "run-sequence": "^2.2.1"
   }
 }

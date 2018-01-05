@@ -1,4 +1,5 @@
 var browserSync = require('browser-sync');
+var runSequence = require('run-sequence');
 var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
 var gulp        = require('gulp');
@@ -82,12 +83,24 @@ gulp.task('watch', function () {
     gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/image/*', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
-gulp.task("deploy", ['compress'], function () {
+/**
+ * Deploy to github
+ */
+gulp.task("gh-deploy", function(){
     return gulp.src("./_site/**/*")
-        .pipe(deploy({
-            branch: "master",
-            remoteUrl: "https://github.com/dphuang2/dphuang2.github.io.git",
-        }));
+      .pipe(deploy({
+        branch: "master",
+        remoteUrl: "https://github.com/dphuang2/dphuang2.github.io.git",
+      }));
+});
+
+/* 
+ * Concatenate these tasks
+ */
+gulp.task("deploy", function (done) {
+  runSequence('jekyll-build', 'compress', 'gh-deploy', function(){
+    done();
+  });
 });
 
 /**
@@ -95,7 +108,3 @@ gulp.task("deploy", ['compress'], function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
-
-/*
- * Testing this stupid pdf issue with gulp-gh-pages
- */
