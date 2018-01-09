@@ -12,7 +12,7 @@ techs:
   rails-plain-wordmark colored:
   ruby-plain-wordmark colored:
   twitter-plain colored:
-image: assets/image/ece.jpeg
+image: /assets/image/webp/ece.webp
 ---
 • Designed website that hosts a control panel to filter a twitter handle’s news feed through algorithmically generated sentiment/friend groups and tweet metadata
 
@@ -23,4 +23,3 @@ image: assets/image/ece.jpeg
 • Currently refactoring entire website with Ruby on Rails
 
 Working under PhD Candidate [Kristen Vaccaro](http://kvaccaro.com/) and Professor [Karrie Karahalios](http://social.cs.uiuc.edu/people/kkarahal.html).
-

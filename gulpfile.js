@@ -4,8 +4,7 @@ var deploy      = require("gulp-gh-pages");
 var gulp        = require('gulp');
 var prefix      = require('gulp-autoprefixer');
 var pump        = require('pump');
-var runSequence = require('run-sequence');
-var sass        = require('gulp-sass');
+var runSequence = require('run-sequence'); var sass        = require('gulp-sass');
 var uglify      = require('gulp-uglify');
 var uglifycss   = require('gulp-uglifycss');
 var webp        = require('gulp-webp');
@@ -20,7 +19,7 @@ var messages = {
  */
 gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
+    cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -82,7 +81,6 @@ gulp.task('imagemin', function() {
   return gulp.src('assets/image/**')
     .pipe(webp())
     .pipe(gulp.dest('_site/assets/image/webp'))
-    .pipe(gulp.dest('assets/image/webp'));
 });
 
 /**
@@ -91,7 +89,8 @@ gulp.task('imagemin', function() {
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/image/**', 'assets/js/*'], ['jekyll-rebuild']);
+    gulp.watch('assets/image/**', ['imagemin']);
+    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
 /**
@@ -109,7 +108,7 @@ gulp.task("gh-deploy", function(){
  * Concatenate these tasks
  */
 gulp.task("deploy", function (done) {
-  runSequence('jekyll-build', 'compress', 'gh-deploy', function(){
+  runSequence('jekyll-build', 'compress', 'imagemin', 'gh-deploy', function(){
     done();
   });
 });
@@ -118,4 +117,8 @@ gulp.task("deploy", function (done) {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('default', function(done) {
+  runSequence('imagemin', 'browser-sync', 'watch', function(){
+    done();
+  });
+});

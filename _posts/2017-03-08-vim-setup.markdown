@@ -6,7 +6,7 @@ location: Terminal
 description: 
 techs:
   vim-plain colored:
-image: /assets/image/myvimsetup.png
+image: /assets/image/webp/myvimsetup.webp
 ---
 
 Vim has become an essential part of my development workflow. I started using Vim
@@ -36,4 +36,4 @@ My favorite plugins are (ordered by use):
 [Relevant](https://www.norfolkwinters.com/vim-creep/)
 
 Also, I have unfortunately become a vim memer over time: ![Vim
-Meme](/assets/image/vimmeme.jpg)
+Meme](/assets/image/webp/vimmeme.jpg)

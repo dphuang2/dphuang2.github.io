@@ -6,7 +6,7 @@ location: Online
 description: 
 techs:
   devicon-swift-plain-wordmark:
-image: /assets/image/codepath.png
+image: /assets/image/webp/codepath.webp
 ---
 
 # CodePath iOS Bootcamp

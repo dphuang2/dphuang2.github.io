@@ -4,7 +4,7 @@ title: "Featured in the local news!"
 date: 2017-3-1
 description: 
 location: East Central Illinois
-image: /assets/image/unofficial.jpeg
+image: /assets/image/webp/unofficial.webp
 ---
 
 While pledging for Theta Tau a group of 9 students and I are running a
@@ -19,4 +19,4 @@ news. I was the main point of contact and was quoted throughout the article.
 Update 3/6/2017 (Monday after fundraiser): Looks like the local senator approved
 of our fundraiser!
 
-<img src="/assets/image/unofficial-senator.jpg">
+<img src="/assets/image/webp/unofficial-senator.jpg">

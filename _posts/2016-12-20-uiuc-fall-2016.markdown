@@ -7,7 +7,7 @@ location: University of Illinois at Urbana–Champaign
 techs:
   cplusplus-plain-wordmark colored:
   c-plain-wordmark colored:
-image: assets/image/southquadfall.jpg
+image: /assets/image/webp/southquadfall.webp
 ---
 
 Classes taken (Ranked by difficulty):

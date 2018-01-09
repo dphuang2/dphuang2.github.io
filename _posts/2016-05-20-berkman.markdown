@@ -7,7 +7,7 @@ techs:
   javascript-plain colored:
   rails-plain-wordmark colored:
   ruby-plain colored:
-image: https://upload.wikimedia.org/wikipedia/commons/f/f9/Berkman_Center.jpg
+image: /assets/image/webp/berkman.webp
 ---
 • Worked on data integration to allow quick and scalable calculations of data for the Data Platform and Dashboard Widgets
 

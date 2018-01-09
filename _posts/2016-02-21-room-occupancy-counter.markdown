@@ -8,7 +8,7 @@ techs:
   c-plain-wordmark colored:
   javascript-plain colored:
   php-plain colored:
-image: http://i.imgur.com/JDOW1we.jpg
+image: /assets/image/webp/hackathon.webp
 ---
 # *Automated Room Occupancy Counter*
 
