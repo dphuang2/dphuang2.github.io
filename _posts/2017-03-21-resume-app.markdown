@@ -56,6 +56,7 @@ again, right?
 
 The next step would be to customize this app so that it had the roles that I
 wanted as well as the code-based sign up functionality.
+ruby
 ```ruby
 # app/models/user.rb
 enum role: [:employer, :brother, :admin]
@@ -112,12 +113,12 @@ end
 And lastly, I had to add the brother code text field to the sign up.
 ```erb
 <!--views/devise/registrations/new.html.erb-->
-...
+<!--Other form HTML code above-->
 <div class="form-group">
   <%= f.label :code %>
   <%= f.password_field :code, class: 'form-control' %>
 </div>
-...
+<!--Other form HTML code below-->
 ```
 
 And voila! I now had the roles that I wanted and code-based sign up implemented.
