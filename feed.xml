@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 05 Jan 2018 06:04:08 -0800</pubDate>
-    <lastBuildDate>Fri, 05 Jan 2018 06:04:08 -0800</lastBuildDate>
+    <pubDate>Tue, 09 Jan 2018 10:46:12 -0800</pubDate>
+    <lastBuildDate>Tue, 09 Jan 2018 10:46:12 -0800</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -58,12 +58,12 @@ decrease estimation time by an average of around 700%&lt;/p&gt;
 
 &lt;h2 id=&quot;pictures&quot;&gt;Pictures!&lt;/h2&gt;
 &lt;p&gt;Silly pic 😝
-&lt;img src=&quot;/assets/image/arm/silly_interns.jpg&quot; alt=&quot;Group picture&quot; title=&quot;Silly pic&quot; /&gt;
+&lt;img src=&quot;/assets/image/webp/arm/silly_interns.webp&quot; alt=&quot;Group picture&quot; title=&quot;Silly pic&quot; /&gt;
 Floor 3 squad 👥
-&lt;img src=&quot;/assets/image/arm/floor_3_squa.jpg&quot; alt=&quot;Group picture&quot; title=&quot;Floor 3 Squad picture&quot; /&gt;
+&lt;img src=&quot;/assets/image/webp/arm/floor_3_squa.webp&quot; alt=&quot;Group picture&quot; title=&quot;Floor 3 Squad picture&quot; /&gt;
 Climbing 🤘&lt;/p&gt;
 &lt;video autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; controls=&quot;&quot; style=&quot;width: 100%;&quot;&gt;
-  &lt;source src=&quot;/assets/image/arm/fly.mov&quot; type=&quot;video/mp4&quot; /&gt;
+  &lt;source src=&quot;/assets/image/webp/arm/fly.mov&quot; type=&quot;video/mp4&quot; /&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;
 </description>
@@ -311,7 +311,7 @@ location specified by two characters&lt;/li&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.norfolkwinters.com/vim-creep/&quot;&gt;Relevant&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Also, I have unfortunately become a vim memer over time: &lt;img src=&quot;/assets/image/vimmeme.jpg&quot; alt=&quot;Vim
+&lt;p&gt;Also, I have unfortunately become a vim memer over time: &lt;img src=&quot;/assets/image/webp/vimmeme.jpg&quot; alt=&quot;Vim
 Meme&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 08 Mar 2017 00:00:00 -0800</pubDate>
@@ -335,7 +335,7 @@ news. I was the main point of contact and was quoted throughout the article.&lt;
 &lt;p&gt;Update 3/6/2017 (Monday after fundraiser): Looks like the local senator approved
 of our fundraiser!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/unofficial-senator.jpg&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/webp/unofficial-senator.jpg&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</link>
