@@ -1,13 +1,14 @@
 var browserSync = require('browser-sync');
-var runSequence = require('run-sequence');
 var cp          = require('child_process');
 var deploy      = require("gulp-gh-pages");
 var gulp        = require('gulp');
 var prefix      = require('gulp-autoprefixer');
 var pump        = require('pump');
+var runSequence = require('run-sequence');
 var sass        = require('gulp-sass');
 var uglify      = require('gulp-uglify');
 var uglifycss   = require('gulp-uglifycss');
+var webp        = require('gulp-webp');
 
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -74,13 +75,23 @@ gulp.task('compress', function (cb) {
     .pipe(gulp.dest("_site/css/"));
 });
 
+/*
+ * convert images to webp
+ */
+gulp.task('imagemin', function() {
+  return gulp.src('assets/image/**')
+    .pipe(webp())
+    .pipe(gulp.dest('_site/assets/image/webp'))
+    .pipe(gulp.dest('assets/image/webp'));
+});
+
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/image/*', 'assets/js/*'], ['jekyll-rebuild']);
+    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/image/**', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
 /**
