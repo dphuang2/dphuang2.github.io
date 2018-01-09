@@ -22,7 +22,7 @@ social:
   file-text-o: /DylanHuangResume.pdf
 
 # Build settings
-exclude: ["node_modules", "gulpfile.js", "package.json", "_screenshots", "Gemfile", "Gemfile.lock"]
+exclude: ["node_modules", "gulpfile.js", "package-lock.json", "package.json", "_screenshots", "Gemfile", "Gemfile.lock"]
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
 
