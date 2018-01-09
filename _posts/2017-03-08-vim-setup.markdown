@@ -37,4 +37,4 @@ My favorite plugins are (ordered by use):
 [Relevant](https://www.norfolkwinters.com/vim-creep/)
 
 Also, I have unfortunately become a vim memer over time: ![Vim
-Meme](/assets/image/webp/vimmeme.jpg)
+Meme](/assets/image/vimmeme.jpg)
