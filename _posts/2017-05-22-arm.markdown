@@ -7,7 +7,8 @@ location: Austin, Texas
 techs:
   python-plain-wordmark colored:
   ubuntu-plain-wordmark colored:
-image: /assets/image/webp/arm/arm_interns.webp
+image: /assets/image/arm/arm_interns.jpg
+image_webp: /assets/image/webp/arm/arm_interns.webp
 ---
 
 ### Task 1 - Duration: 1 Week
@@ -54,9 +55,9 @@ decrease estimation time by an average of around 700%
 
 ## Pictures!
 Silly pic 😝
-![Group picture](/assets/image/webp/arm/silly_interns.webp "Silly pic")
+![Group picture](/assets/image/webp/arm/silly_interns.jpg "Silly pic")
 Floor 3 squad 👥
-![Group picture](/assets/image/webp/arm/floor_3_squa.webp "Floor 3 Squad picture")
+![Group picture](/assets/image/webp/arm/floor_3_squa.jpg "Floor 3 Squad picture")
 Climbing 🤘
 <video autoplay loop muted controls style="width: 100%;">
   <source src="/assets/image/webp/arm/fly.mov" type="video/mp4">

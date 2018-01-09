@@ -6,7 +6,8 @@ location: Terminal
 description: 
 techs:
   vim-plain colored:
-image: /assets/image/webp/myvimsetup.webp
+image: /assets/image/myvimsetup.png
+image_webp: /assets/image/webp/myvimsetup.webp
 ---
 
 Vim has become an essential part of my development workflow. I started using Vim

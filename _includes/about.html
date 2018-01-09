@@ -8,5 +8,9 @@
         Besides learning about 💻 and honing my web development skills, I like to jam out on 🎸, play and watch 🏀/⚽/🏸, cruise around on my pennyboard, and make 🎥!
     </p>
     <span id="picture-caption"> Venice, Italy </span>
-    <img src="/assets/image/webp/venice.webp">
+    <picture>
+      <source srcset="{{site.about_img_webp}}" type="image/webp">
+      <source srcset="{{site.about_img}}" type="image/jpeg"> 
+      <img src="{{site.about_img}}" alt="Alt Text!">
+    </picture>
 </div>

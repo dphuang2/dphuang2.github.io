@@ -6,7 +6,8 @@ description:
 location: University of Illinois at Urbana–Champaign
 techs:
   react-original-wordmark colored:
-image: /assets/image/webp/react.webp
+image: /assets/image/react.png
+image_webp: /assets/image/webp/react.webp
 ---
 
 [Demo](http://dylanhuang.com/Tic-tac-toe-React/)

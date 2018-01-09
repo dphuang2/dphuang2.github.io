@@ -4,7 +4,8 @@ var deploy      = require("gulp-gh-pages");
 var gulp        = require('gulp');
 var prefix      = require('gulp-autoprefixer');
 var pump        = require('pump');
-var runSequence = require('run-sequence'); var sass        = require('gulp-sass');
+var del         = require('del');
+var runSequence = require('run-sequence'); var sass = require('gulp-sass');
 var uglify      = require('gulp-uglify');
 var uglifycss   = require('gulp-uglifycss');
 var webp        = require('gulp-webp');
@@ -108,6 +109,7 @@ gulp.task("gh-deploy", function(){
  * Concatenate these tasks
  */
 gulp.task("deploy", function (done) {
+  del(['_site/assets/image/webp']);
   runSequence('jekyll-build', 'compress', 'imagemin', 'gh-deploy', function(){
     done();
   });

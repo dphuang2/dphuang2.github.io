@@ -7,7 +7,8 @@ description:
 techs:
   rails-plain-wordmark colored:
   ruby-plain-wordmark colored:
-image: /assets/image/webp/resume-app.webp
+image: /assets/image/resume-app.png
+image_webp: /assets/image/webp/resume-app.webp
 ---
 
 ## Background

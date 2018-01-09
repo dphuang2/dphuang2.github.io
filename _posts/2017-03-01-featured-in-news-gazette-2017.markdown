@@ -4,7 +4,8 @@ title: "Featured in the local news!"
 date: 2017-3-1
 description: 
 location: East Central Illinois
-image: /assets/image/webp/unofficial.webp
+image: /assets/image/unofficial.jpeg
+image_webp: /assets/image/webp/unofficial.webp
 ---
 
 While pledging for Theta Tau a group of 9 students and I are running a

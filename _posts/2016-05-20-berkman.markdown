@@ -7,7 +7,8 @@ techs:
   javascript-plain colored:
   rails-plain-wordmark colored:
   ruby-plain colored:
-image: /assets/image/webp/berkman.webp
+image: /assets/image/berkman.jpg
+image_webp: /assets/image/webp/berkman.webp
 ---
 • Worked on data integration to allow quick and scalable calculations of data for the Data Platform and Dashboard Widgets
 
