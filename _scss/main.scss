@@ -150,3 +150,11 @@
 [class*=" devicon-"],[class^=devicon-]{
   font-size: 1.5em;
 }
+
+.no-webp .hero_profile_img {
+    background-image: url('/assets/image/profile.jpg');
+}
+
+.webp .hero_profile_img {
+    background-image: url('/assets/image/webp/profile.webp');
+}
