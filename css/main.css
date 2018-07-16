@@ -1338,3 +1338,9 @@ span.gha-time {
 
 .webp .hero_profile_img {
   background-image: url("/assets/image/webp/profile.webp"); }
+
+.no-webp .post_card_img {
+  background-image: url("/assets/image/card.jpg"); }
+
+.webp .post_card_img {
+  background-image: url("/assets/image/webp/card.webp"); }
