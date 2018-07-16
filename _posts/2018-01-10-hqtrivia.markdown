@@ -53,21 +53,21 @@ boosting).
 ### creating the features
 The next step was for me to create features. Below is a list of features that I
 designed using Google and Bing searches:
- - Google search each answer and count number of occurences for each evaluated important word
- - Bing search each answer and count number of occurences for each evaluated important word
+ - Google search each answer and count number of occurrences for each evaluated important word
+ - Bing search each answer and count number of occurrences for each evaluated important word
  - Google question and each answer, create document corpus from each answer search, compare cosine similarity of question search to corpus
- - Google search each important word and count number of occurences for each answer
- - Bing search each important word and count number of occurences for each answer
+ - Google search each important word and count number of occurrences for each answer
+ - Bing search each important word and count number of occurrences for each answer
  - Google question with each answer appended and count number of search results
  - Google question with each answer appended and count number of search results
  - Google important words with each answer appended and count number of search results
  - Google noun chunks with each answer appended and count number of search results
- - Wikipedia search each answer and count number of occurences for each evaluated important word
- - Google question with each answer appended in quotes and count occurences of each answer
- - Bing search question with each answer appended in quotes and count occurences of each answer
- - Google question with each answer appended in quotes and count occurences of each important word
- - Google evaluated noun chunks of question and count occurences of each answer
- - Google the question and count occurences of each answer
+ - Wikipedia search each answer and count number of occurrences for each evaluated important word
+ - Google question with each answer appended in quotes and count occurrences of each answer
+ - Bing search question with each answer appended in quotes and count occurrences of each answer
+ - Google question with each answer appended in quotes and count occurrences of each important word
+ - Google evaluated noun chunks of question and count occurrences of each answer
+ - Google the question and count occurrences of each answer
 
 ## Annoying thing
 Since google rate limits your searches, I had to use a VPN to change every 3
@@ -90,10 +90,9 @@ was executing for each question.
 After months of testing and gathering data to train my supervised model, I was
 able to get about a ~80% accuracy rate (which is not that great if you think
 about the chance of getting 12 right in a row .8 ^ 12 = .0687) and at an average
-time of ~7 seconds per questions. I gathered a total of 629 questions. An I was
-also able to win one game worth $53.19 dollars (note that its not my name
-because it was 3 of us and we decided to split on the last questions to
-guarantee a win)!
+time of ~7 seconds per questions. I gathered a total of 629 questions. And I
+also won a game worth $53.19 dollars (note that its not my name because it was 3
+of us and we decided to split on the last question to guarantee a win)!
 
 ![Yay!](/assets/image/hqtrivia/win.jpg) 
 
