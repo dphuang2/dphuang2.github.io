@@ -6,8 +6,8 @@ description:
 location: University of Illinois at Urbana–Champaign
 techs:
     python-plain-wordmark colored:
-image: /assets/image/hqtrivia/main.jpg
-image_webp: /assets/image/webp/hqtrivia/main.webp
+image: /assets/image/hqtrivia/preview.jpg
+image_webp: /assets/image/webp/hqtrivia/preview.webp
 ---
 
 ## Motivation

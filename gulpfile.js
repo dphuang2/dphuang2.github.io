@@ -90,7 +90,7 @@ gulp.task('imagemin', function() {
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch('assets/image/**', ['imagemin']);
+    gulp.watch('assets/image/**', ['imagemin', 'jekyll-rebuild']);
     gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
