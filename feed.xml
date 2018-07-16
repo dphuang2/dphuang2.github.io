@@ -5,9 +5,111 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Feb 2018 16:52:56 -0600</pubDate>
-    <lastBuildDate>Fri, 02 Feb 2018 16:52:56 -0600</lastBuildDate>
+    <pubDate>Sun, 15 Jul 2018 20:12:59 -0700</pubDate>
+    <lastBuildDate>Sun, 15 Jul 2018 20:12:59 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>Solving HQTrivia with machine learning</title>
+        <description>&lt;h2 id=&quot;motivation&quot;&gt;Motivation&lt;/h2&gt;
+&lt;p&gt;During the winter break of 2017, I decided to work on a project that would make
+me learning something new. Inspired by this
+&lt;a href=&quot;https://mux.com/blog/how-we-used-machine-learning-to-predict-hq-trivia-answers/&quot;&gt;article&lt;/a&gt;,
+I decided to make my own trivia solver based on the trending HQTrivia app. In
+the following section, I am going to outline the approach that I designed and
+implemented.&lt;/p&gt;
+
+&lt;h2 id=&quot;high-level-approach&quot;&gt;High-level approach&lt;/h2&gt;
+&lt;p&gt;If you have not played HQTrivia, the idea is to answer a multiple choice trivia
+question in under 10 seconds. If you can answer 12 questions in a row, you win a
+cash prize!&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-the-data&quot;&gt;getting the data&lt;/h3&gt;
+&lt;p&gt;The first thing that I needed to do was to find out how to grab the
+HQTrivia data. A lot of people used OCR along with hooking up their phone
+to their computer. But I figured there had to be a better way. After some
+research, I found someone who had sniffed the packets coming from their phone
+while the HQTrivia app was open and found out that HQTrivia serves their
+questions through a websocket connection (I had to learn how to use websockets).
+After doing the same thing, I was able to discover the schema and HQTrivia’s
+schema for questions. To do the packet sniffing, I used a web debugging proxy
+called &lt;a href=&quot;https://www.charlesproxy.com/&quot;&gt;Charles&lt;/a&gt; and proxied my phone’s network
+through my computer.&lt;/p&gt;
+
+&lt;h3 id=&quot;choosing-the-model&quot;&gt;choosing the model&lt;/h3&gt;
+&lt;p&gt;The next thing I knew was that I wanted to use some sort of machine learning
+model to solve the questions (lol buzz words), but I had no previous experience using a model to
+solve anything. The first thing I did was learn about what exactly a “model” is,
+what models currently exist, and what the hell a feature is.&lt;/p&gt;
+
+&lt;p&gt;After learning about my options for a model, I decided on using a decision tree
+with gradient boosting from the
+&lt;a href=&quot;https://www.google.com/search?num=20&amp;amp;ei=Iv5LW-OuLpDcswW3nIygAg&amp;amp;btnG=Search&amp;amp;q=light+gbm&quot;&gt;LightGBM&lt;/a&gt;
+by Microsoft because it was proven to be better than
+&lt;a href=&quot;https://github.com/dmlc/xgboost&quot;&gt;xgboost&lt;/a&gt;, but xgboost has proven to be
+extremely effective in machine learning competitions that require quick
+learning, classification, or learning on small amounts of data (due to gradient
+boosting).&lt;/p&gt;
+
+&lt;h3 id=&quot;creating-the-features&quot;&gt;creating the features&lt;/h3&gt;
+&lt;p&gt;The next step was for me to create features. Below is a list of features that I
+designed using Google and Bing searches:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Google search each answer and count number of occurences for each evaluated important word&lt;/li&gt;
+  &lt;li&gt;Bing search each answer and count number of occurences for each evaluated important word&lt;/li&gt;
+  &lt;li&gt;Google question and each answer, create document corpus from each answer search, compare cosine similarity of question search to corpus&lt;/li&gt;
+  &lt;li&gt;Google search each important word and count number of occurences for each answer&lt;/li&gt;
+  &lt;li&gt;Bing search each important word and count number of occurences for each answer&lt;/li&gt;
+  &lt;li&gt;Google question with each answer appended and count number of search results&lt;/li&gt;
+  &lt;li&gt;Google question with each answer appended and count number of search results&lt;/li&gt;
+  &lt;li&gt;Google important words with each answer appended and count number of search results&lt;/li&gt;
+  &lt;li&gt;Google noun chunks with each answer appended and count number of search results&lt;/li&gt;
+  &lt;li&gt;Wikipedia search each answer and count number of occurences for each evaluated important word&lt;/li&gt;
+  &lt;li&gt;Google question with each answer appended in quotes and count occurences of each answer&lt;/li&gt;
+  &lt;li&gt;Bing search question with each answer appended in quotes and count occurences of each answer&lt;/li&gt;
+  &lt;li&gt;Google question with each answer appended in quotes and count occurences of each important word&lt;/li&gt;
+  &lt;li&gt;Google evaluated noun chunks of question and count occurences of each answer&lt;/li&gt;
+  &lt;li&gt;Google the question and count occurences of each answer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;annoying-thing&quot;&gt;Annoying thing&lt;/h2&gt;
+&lt;p&gt;Since google rate limits your searches, I had to use a VPN to change every 3
+questions during a game because I was doing upwards of 40 google searches for
+each question, depending on the evaluation of the question. Also, since network
+requests are relatively slow to CPU computation, I had to implement an immense
+amount of multithreading to deal with the massive amount of network I/O that I
+was executing for each question.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-i-learned&quot;&gt;What I learned&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Gradient Boosting and LightGBM&lt;/li&gt;
+  &lt;li&gt;NLP with &lt;a href=&quot;https://spacy.io/&quot;&gt;spaCy&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Machine Learning Features&lt;/li&gt;
+  &lt;li&gt;Websockets&lt;/li&gt;
+  &lt;li&gt;TF-IDF / Cosine Similarity&lt;/li&gt;
+  &lt;li&gt;Multithreading network requests&lt;/li&gt;
+  &lt;li&gt;Lots of Python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;After months of testing and gathering data to train my supervised model, I was
+able to get about a ~80% accuracy rate (which is not that great if you think
+about the chance of getting 12 right in a row .8 ^ 12 = .0687) and at an average
+time of ~7 seconds per questions. I gathered a total of 629 questions. An I was
+also able to win one game worth $53.19 dollars (note that its not my name
+because it was 3 of us and we decided to split on the last questions to
+guarantee a win)!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/image/hqtrivia/yay.jpg&quot; alt=&quot;Yay!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All the gathered questions, mode, and source code can be found &lt;a href=&quot;https://github.com/dphuang2/hqtrivia-solver&quot;&gt;here&lt;/a&gt; :)!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Mar 2018 00:00:00 -0700</pubDate>
+        <link>dylanhuang.com/2018/03/22/hqtrivia/</link>
+        <guid isPermaLink="true">dylanhuang.com/2018/03/22/hqtrivia/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Arm Internship</title>
@@ -67,7 +169,7 @@ Climbing 🤘&lt;/p&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;
 </description>
-        <pubDate>Mon, 22 May 2017 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 22 May 2017 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2017/05/22/arm/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/05/22/arm/</guid>
         
@@ -81,7 +183,7 @@ Climbing 🤘&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tic-tac-toe-React&quot;&gt;Repo&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 08 May 2017 00:00:00 -0500</pubDate>
+        <pubDate>Mon, 08 May 2017 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2017/05/08/first-react-app/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/05/08/first-react-app/</guid>
         
@@ -275,7 +377,7 @@ can easily be deployed to Heroku!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/kappathetatau&quot;&gt;Link to Github Repo&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 21 Mar 2017 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 21 Mar 2017 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2017/03/21/resume-app/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/21/resume-app/</guid>
         
@@ -315,7 +417,7 @@ location specified by two characters&lt;/li&gt;
 &lt;p&gt;Also, I have unfortunately become a vim memer over time: &lt;img src=&quot;/assets/image/vimmeme.jpg&quot; alt=&quot;Vim
 Meme&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 08 Mar 2017 00:00:00 -0600</pubDate>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2017/03/08/vim-setup/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/08/vim-setup/</guid>
         
@@ -338,7 +440,7 @@ of our fundraiser!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/webp/unofficial-senator.jpg&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 01 Mar 2017 00:00:00 -0600</pubDate>
+        <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</guid>
         
@@ -443,7 +545,7 @@ potentials.&lt;/p&gt;
 
 &lt;p&gt;TV, TV, TV, Corporate, TV, Movie, TV, Cultural Ideology, etc.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 20 Dec 2016 00:00:00 -0600</pubDate>
+        <pubDate>Tue, 20 Dec 2016 00:00:00 -0800</pubDate>
         <link>dylanhuang.com/2016/12/20/uiuc-fall-2016/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/12/20/uiuc-fall-2016/</guid>
         
@@ -463,7 +565,7 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/dphuang2/PoGoBag&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 27 Jul 2016 00:00:00 -0500</pubDate>
+        <pubDate>Wed, 27 Jul 2016 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2016/07/27/pogobag/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/07/27/pogobag/</guid>
         
@@ -479,7 +581,7 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
 &lt;p&gt;Documentation for all of my work during the summer can be found &lt;a href=&quot;http://dylanhuang.com/streamsets_scripts/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2016/05/20/berkman/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/05/20/berkman/</guid>
         
@@ -523,50 +625,9 @@ Concepts learned are outlined &lt;a href=&quot;http://guides.codepath.com/ios#fu
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tipper-iOS&quot; target=&quot;_blank&quot;&gt;Tipper&lt;/a&gt; is a tip calculator application for iOS.
 &lt;img src=&quot;http://i.imgur.com/YMsRMdG.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 10 May 2016 00:00:00 -0500</pubDate>
+        <pubDate>Tue, 10 May 2016 00:00:00 -0700</pubDate>
         <link>dylanhuang.com/2016/05/10/codepath/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/05/10/codepath/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Hack Illinois 2016</title>
-        <description>&lt;h1 id=&quot;automated-room-occupancy-counter&quot;&gt;&lt;em&gt;Automated Room Occupancy Counter&lt;/em&gt;&lt;/h1&gt;
-
-&lt;h2 id=&quot;winner-of-intels-most-innovative-use-of-intel-edison-board-at-hack-illinois-2016&quot;&gt;Winner of Intel’s most Innovative use of Intel Edison Board at Hack Illinois 2016&lt;/h2&gt;
-&lt;hr /&gt;
-
-&lt;p&gt;The site for this project is live at &lt;a href=&quot;http://resumepipe.web.engr.illinois.edu&quot;&gt; resumepipe.web.engr.illinois.edu &lt;/a&gt;. The code can be seen &lt;a href=&quot;https://github.com/dphuang2/RoomCounter-HackIllinois2016&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Total time spent: &lt;strong&gt;18&lt;/strong&gt; Hours&lt;/p&gt;
-
-&lt;h2 id=&quot;goal&quot;&gt;&lt;strong&gt;Goal&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;The goal of this project is to provide an automated occupancy count of a
-  building or room that can be accessed wirelessly through a website.&lt;/p&gt;
-
-&lt;h2 id=&quot;real-world-application&quot;&gt;&lt;strong&gt;Real World Application&lt;/strong&gt;&lt;/h2&gt;
-&lt;p&gt;The principle idea is to be able to detect and track the number of people
-  entering and leaving a room in a given building (for now, the building of
-  choice is ECEB). This tracker device would be placed in all rooms in the
-  building. The number of people present in each given room would be sent to a
-  website and displayed for everyone to see. The website will eventually include
-  floor maps for the building with the number of people within the room. For the
-  future, all buildings on the University of Illinois campus would be included
-  on the website, giving a bigger scope for the student. This would allow
-  students to have a live feed for any available study rooms in the buildings of
-  their choice. Something similar is present for EWS stations but those are very
-  limited. &lt;br /&gt; If this device was installed in each room of every building on
-  campus, the data of the device could be used to visualize the occupancy
-  patterns of buildings on campus…down to a single room. Architects could use
-  this data to improve the efficiency and designs of their buildings, Now that
-  is awesome!&lt;/p&gt;
-
-&lt;h3 id=&quot;read-more&quot;&gt;&lt;a href=&quot;https://devpost.com/software/roomcounter&quot;&gt;Read More…&lt;/a&gt;&lt;/h3&gt;
-</description>
-        <pubDate>Sun, 21 Feb 2016 00:00:00 -0600</pubDate>
-        <link>dylanhuang.com/2016/02/21/room-occupancy-counter/</link>
-        <guid isPermaLink="true">dylanhuang.com/2016/02/21/room-occupancy-counter/</guid>
         
         
       </item>
