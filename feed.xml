@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jul 2018 20:12:59 -0700</pubDate>
-    <lastBuildDate>Sun, 15 Jul 2018 20:12:59 -0700</lastBuildDate>
+    <pubDate>Sun, 15 Jul 2018 20:16:29 -0700</pubDate>
+    <lastBuildDate>Sun, 15 Jul 2018 20:16:29 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -100,7 +100,7 @@ also able to win one game worth $53.19 dollars (note that its not my name
 because it was 3 of us and we decided to split on the last questions to
 guarantee a win)!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/image/hqtrivia/yay.jpg&quot; alt=&quot;Yay!&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/image/hqtrivia/win.jpg&quot; alt=&quot;Yay!&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;All the gathered questions, mode, and source code can be found &lt;a href=&quot;https://github.com/dphuang2/hqtrivia-solver&quot;&gt;here&lt;/a&gt; :)!&lt;/p&gt;
 </description>
