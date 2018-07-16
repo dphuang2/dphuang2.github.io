@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jul 2018 20:16:29 -0700</pubDate>
-    <lastBuildDate>Sun, 15 Jul 2018 20:16:29 -0700</lastBuildDate>
+    <pubDate>Mon, 16 Jul 2018 10:15:47 -0700</pubDate>
+    <lastBuildDate>Mon, 16 Jul 2018 10:15:47 -0700</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -55,21 +55,21 @@ boosting).&lt;/p&gt;
 &lt;p&gt;The next step was for me to create features. Below is a list of features that I
 designed using Google and Bing searches:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Google search each answer and count number of occurences for each evaluated important word&lt;/li&gt;
-  &lt;li&gt;Bing search each answer and count number of occurences for each evaluated important word&lt;/li&gt;
+  &lt;li&gt;Google search each answer and count number of occurrences for each evaluated important word&lt;/li&gt;
+  &lt;li&gt;Bing search each answer and count number of occurrences for each evaluated important word&lt;/li&gt;
   &lt;li&gt;Google question and each answer, create document corpus from each answer search, compare cosine similarity of question search to corpus&lt;/li&gt;
-  &lt;li&gt;Google search each important word and count number of occurences for each answer&lt;/li&gt;
-  &lt;li&gt;Bing search each important word and count number of occurences for each answer&lt;/li&gt;
+  &lt;li&gt;Google search each important word and count number of occurrences for each answer&lt;/li&gt;
+  &lt;li&gt;Bing search each important word and count number of occurrences for each answer&lt;/li&gt;
   &lt;li&gt;Google question with each answer appended and count number of search results&lt;/li&gt;
   &lt;li&gt;Google question with each answer appended and count number of search results&lt;/li&gt;
   &lt;li&gt;Google important words with each answer appended and count number of search results&lt;/li&gt;
   &lt;li&gt;Google noun chunks with each answer appended and count number of search results&lt;/li&gt;
-  &lt;li&gt;Wikipedia search each answer and count number of occurences for each evaluated important word&lt;/li&gt;
-  &lt;li&gt;Google question with each answer appended in quotes and count occurences of each answer&lt;/li&gt;
-  &lt;li&gt;Bing search question with each answer appended in quotes and count occurences of each answer&lt;/li&gt;
-  &lt;li&gt;Google question with each answer appended in quotes and count occurences of each important word&lt;/li&gt;
-  &lt;li&gt;Google evaluated noun chunks of question and count occurences of each answer&lt;/li&gt;
-  &lt;li&gt;Google the question and count occurences of each answer&lt;/li&gt;
+  &lt;li&gt;Wikipedia search each answer and count number of occurrences for each evaluated important word&lt;/li&gt;
+  &lt;li&gt;Google question with each answer appended in quotes and count occurrences of each answer&lt;/li&gt;
+  &lt;li&gt;Bing search question with each answer appended in quotes and count occurrences of each answer&lt;/li&gt;
+  &lt;li&gt;Google question with each answer appended in quotes and count occurrences of each important word&lt;/li&gt;
+  &lt;li&gt;Google evaluated noun chunks of question and count occurrences of each answer&lt;/li&gt;
+  &lt;li&gt;Google the question and count occurrences of each answer&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;annoying-thing&quot;&gt;Annoying thing&lt;/h2&gt;
@@ -95,10 +95,9 @@ was executing for each question.&lt;/p&gt;
 &lt;p&gt;After months of testing and gathering data to train my supervised model, I was
 able to get about a ~80% accuracy rate (which is not that great if you think
 about the chance of getting 12 right in a row .8 ^ 12 = .0687) and at an average
-time of ~7 seconds per questions. I gathered a total of 629 questions. An I was
-also able to win one game worth $53.19 dollars (note that its not my name
-because it was 3 of us and we decided to split on the last questions to
-guarantee a win)!&lt;/p&gt;
+time of ~7 seconds per questions. I gathered a total of 629 questions. And I
+also won a game worth $53.19 dollars (note that its not my name because it was 3
+of us and we decided to split on the last question to guarantee a win)!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/hqtrivia/win.jpg&quot; alt=&quot;Yay!&quot; /&gt;&lt;/p&gt;
 
