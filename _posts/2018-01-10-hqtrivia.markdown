@@ -95,6 +95,6 @@ also able to win one game worth $53.19 dollars (note that its not my name
 because it was 3 of us and we decided to split on the last questions to
 guarantee a win)!
 
-![Yay!](/assets/image/hqtrivia/yay.jpg) 
+![Yay!](/assets/image/hqtrivia/win.jpg) 
 
 All the gathered questions, mode, and source code can be found [here](https://github.com/dphuang2/hqtrivia-solver) :)!
