@@ -18,7 +18,7 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build', ['compress', 'imagemin'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
@@ -110,7 +110,7 @@ gulp.task("gh-deploy", function(){
  */
 gulp.task("deploy", function (done) {
   del(['_site/assets/image/webp']);
-  runSequence('jekyll-build', 'compress', 'imagemin', 'gh-deploy', function(){
+  runSequence('jekyll-build', 'gh-deploy', function(){
     done();
   });
 });
