@@ -20,4 +20,4 @@ news. I was the main point of contact and was quoted throughout the article.
 Update 3/6/2017 (Monday after fundraiser): Looks like the local senator approved
 of our fundraiser!
 
-<img src="/assets/image/webp/unofficial-senator.jpg">
+<img src="/assets/image/unofficial-senator.jpg">
