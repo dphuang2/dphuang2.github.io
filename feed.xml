@@ -5,8 +5,8 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Aug 2018 20:45:26 -0700</pubDate>
-    <lastBuildDate>Mon, 06 Aug 2018 20:45:26 -0700</lastBuildDate>
+    <pubDate>Sat, 25 Aug 2018 02:26:20 -0500</pubDate>
+    <lastBuildDate>Sat, 25 Aug 2018 02:26:20 -0500</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -103,7 +103,7 @@ of us and we decided to split on the last question to guarantee a win)!&lt;/p&gt
 
 &lt;p&gt;All the gathered questions, mode, and source code can be found &lt;a href=&quot;https://github.com/dphuang2/hqtrivia-solver&quot;&gt;here&lt;/a&gt; :)!&lt;/p&gt;
 </description>
-        <pubDate>Thu, 22 Mar 2018 00:00:00 -0700</pubDate>
+        <pubDate>Thu, 22 Mar 2018 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2018/03/22/hqtrivia/</link>
         <guid isPermaLink="true">dylanhuang.com/2018/03/22/hqtrivia/</guid>
         
@@ -168,7 +168,7 @@ Climbing 🤘&lt;/p&gt;
   Your browser does not support the video tag.
 &lt;/video&gt;
 </description>
-        <pubDate>Mon, 22 May 2017 00:00:00 -0700</pubDate>
+        <pubDate>Mon, 22 May 2017 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2017/05/22/arm/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/05/22/arm/</guid>
         
@@ -182,7 +182,7 @@ Climbing 🤘&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tic-tac-toe-React&quot;&gt;Repo&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 08 May 2017 00:00:00 -0700</pubDate>
+        <pubDate>Mon, 08 May 2017 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2017/05/08/first-react-app/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/05/08/first-react-app/</guid>
         
@@ -254,9 +254,9 @@ the foundation of an app with that purpose. Why would I try to invent the wheel
 again, right?&lt;/p&gt;
 
 &lt;p&gt;The next step would be to customize this app so that it had the roles that I
-wanted as well as the code-based sign up functionality.
-ruby&lt;/p&gt;
+wanted as well as the code-based sign up functionality.&lt;/p&gt;
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# app/models/user.rb&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;role: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:employer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:brother&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;after_initialize&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:set_default_role&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:new_record?&lt;/span&gt;
 
@@ -269,7 +269,9 @@ ruby&lt;/p&gt;
 code in the secrets.yml file. For development, I simply just put in a two-letter
 easy-to-type code. But for production, I planned on grabbing the secret code
 from environment variables.&lt;/p&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# config/secrets.yml&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;development&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;brother_code&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tt&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;production&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;brother_code&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;lt;%= ENV[&quot;BROTHER_CODE&quot;] %&amp;gt;&lt;/span&gt;
@@ -280,6 +282,7 @@ The sign up action for devise is under the “create” function in the
 registrations’ controller. To override the “create” function, I
 had to first change some routes.&lt;/p&gt;
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# config/routes.rb&lt;/span&gt;
+
 &lt;span class=&quot;c1&quot;&gt;# Not sure why I need to skip the sessions controller&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;# but it fixed duplicate routes&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;devise_for&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;skip: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:registrations&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:sessions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
@@ -293,6 +296,7 @@ called my_devise which would contain a registration controller that simply
 extends the base registration controller and has an additional if-else statement
 that checks the brother code in the Rails secret.yml file.&lt;/p&gt;
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# controllers/my_devise/registrations_controller.rb&lt;/span&gt;
+
 &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyDevise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RegistrationsController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Devise&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RegistrationsController&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# POST /resource&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;create&lt;/span&gt;
@@ -331,6 +335,7 @@ code and one migration.&lt;/p&gt;
 &lt;p&gt;First I just had to add the paperclip gem to my Gemfile and then add these two
 lines of code to my user model.&lt;/p&gt;
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# app/models/user.rb&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;has_attached_file&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;styles: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;thumbnail: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;40x40#&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:png&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]}&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;validates_attachment&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;content_type: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;content_type: &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;application/pdf&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -354,6 +359,7 @@ instead of locally cached files on the web-server itself.&lt;/p&gt;
 
 &lt;p&gt;To do this, all I had to add was this configuration to production.rb file:&lt;/p&gt;
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# config/environments/production.rb&lt;/span&gt;
+
 &lt;span class=&quot;c1&quot;&gt;# Amazon S3 Bucket config&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;paperclip_defaults&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;ss&quot;&gt;storage: :s3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -376,7 +382,7 @@ can easily be deployed to Heroku!&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/kappathetatau&quot;&gt;Link to Github Repo&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 21 Mar 2017 00:00:00 -0700</pubDate>
+        <pubDate>Tue, 21 Mar 2017 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2017/03/21/resume-app/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/21/resume-app/</guid>
         
@@ -416,7 +422,7 @@ location specified by two characters&lt;/li&gt;
 &lt;p&gt;Also, I have unfortunately become a vim memer over time: &lt;img src=&quot;/assets/image/vimmeme.jpg&quot; alt=&quot;Vim
 Meme&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 08 Mar 2017 00:00:00 -0800</pubDate>
+        <pubDate>Wed, 08 Mar 2017 00:00:00 -0600</pubDate>
         <link>dylanhuang.com/2017/03/08/vim-setup/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/08/vim-setup/</guid>
         
@@ -439,7 +445,7 @@ of our fundraiser!&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/webp/unofficial-senator.jpg&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Wed, 01 Mar 2017 00:00:00 -0800</pubDate>
+        <pubDate>Wed, 01 Mar 2017 00:00:00 -0600</pubDate>
         <link>dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</link>
         <guid isPermaLink="true">dylanhuang.com/2017/03/01/featured-in-news-gazette-2017/</guid>
         
@@ -544,7 +550,7 @@ potentials.&lt;/p&gt;
 
 &lt;p&gt;TV, TV, TV, Corporate, TV, Movie, TV, Cultural Ideology, etc.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 20 Dec 2016 00:00:00 -0800</pubDate>
+        <pubDate>Tue, 20 Dec 2016 00:00:00 -0600</pubDate>
         <link>dylanhuang.com/2016/12/20/uiuc-fall-2016/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/12/20/uiuc-fall-2016/</guid>
         
@@ -564,7 +570,7 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
 &lt;a href=&quot;https://github.com/dphuang2/PoGoBag&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 27 Jul 2016 00:00:00 -0700</pubDate>
+        <pubDate>Wed, 27 Jul 2016 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2016/07/27/pogobag/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/07/27/pogobag/</guid>
         
@@ -580,7 +586,7 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
 &lt;p&gt;Documentation for all of my work during the summer can be found &lt;a href=&quot;http://dylanhuang.com/streamsets_scripts/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 20 May 2016 00:00:00 -0700</pubDate>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2016/05/20/berkman/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/05/20/berkman/</guid>
         
@@ -624,7 +630,7 @@ Concepts learned are outlined &lt;a href=&quot;http://guides.codepath.com/ios#fu
 &lt;p&gt;&lt;a href=&quot;https://github.com/dphuang2/Tipper-iOS&quot; target=&quot;_blank&quot;&gt;Tipper&lt;/a&gt; is a tip calculator application for iOS.
 &lt;img src=&quot;http://i.imgur.com/YMsRMdG.gif&quot; title=&quot;source: imgur.com&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Tue, 10 May 2016 00:00:00 -0700</pubDate>
+        <pubDate>Tue, 10 May 2016 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2016/05/10/codepath/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/05/10/codepath/</guid>
         
