@@ -684,7 +684,8 @@ section {
 
 .highlight {
   background-color: #002b36;
-  color: #93a1a1; }
+  color: #93a1a1;
+  padding-left: 5px; }
 
 .highlight .c {
   color: #586e75; }

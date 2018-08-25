@@ -56,9 +56,9 @@ again, right?
 
 The next step would be to customize this app so that it had the roles that I
 wanted as well as the code-based sign up functionality.
-ruby
 ```ruby
 # app/models/user.rb
+
 enum role: [:employer, :brother, :admin]
 after_initialize :set_default_role, :if => :new_record?
 
@@ -72,6 +72,8 @@ code in the secrets.yml file. For development, I simply just put in a two-letter
 easy-to-type code. But for production, I planned on grabbing the secret code
 from environment variables.
 ```yml
+# config/secrets.yml
+
 development:
   brother_code: tt
 production:
@@ -84,6 +86,7 @@ registrations' controller. To override the "create" function, I
 had to first change some routes.
 ```ruby
 # config/routes.rb
+
 # Not sure why I need to skip the sessions controller
 # but it fixed duplicate routes
 devise_for :users, skip: [:registrations, :sessions]
@@ -98,6 +101,7 @@ extends the base registration controller and has an additional if-else statement
 that checks the brother code in the Rails secret.yml file. 
 ```ruby
 # controllers/my_devise/registrations_controller.rb
+
 class MyDevise::RegistrationsController < Devise::RegistrationsController
   # POST /resource
    def create
@@ -138,6 +142,7 @@ First I just had to add the paperclip gem to my Gemfile and then add these two
 lines of code to my user model.
 ```ruby
 # app/models/user.rb
+
 has_attached_file :document, styles: {thumbnail: ["40x40#", :png]}
 validates_attachment :document, content_type: { content_type: "application/pdf" }
 ```
@@ -163,6 +168,7 @@ instead of locally cached files on the web-server itself.
 To do this, all I had to add was this configuration to production.rb file:
 ```ruby
 # config/environments/production.rb
+
 # Amazon S3 Bucket config
 config.paperclip_defaults = {
   storage: :s3,
