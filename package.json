@@ -17,7 +17,7 @@
     "gulp-uglify": "^2.1.2",
     "gulp-util": "^1.0.0",
     "gulp-webp": "^3.0.0",
-    "pump": "^1.0.2"
+    "pump": "^1.0.3"
   },
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
   "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync",
   "dependencies": {
     "del": "^3.0.0",
-    "gulp-uglifycss": "^1.0.8",
+    "gulp-uglifycss": "^1.1.0",
     "run-sequence": "^2.2.1"
   }
 }
