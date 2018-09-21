@@ -386,46 +386,6 @@
 }
 
 /**
- * Post
- */
-.post {
-  width: 90%;
-  max-width: $mq-md;
-  margin: 0 auto;
-
-  font-family: $font-post;
-
-  @media (min-width: $mq-md) {
-    width: 55%;
-  }
-
-  h1, 
-  h2 {
-    line-height: 1.2;
-  }
-
-  //p:first-child {
-    //font-size: 1.25em;
-  //}
-
-  a {
-    border-bottom: 1px solid $color-alpha;
-  }
-
-  img {
-    padding-bottom: 0.75em;
-  }
-
-  figure {
-    padding-bottom: 0.75em;
-  }
-
-  figure > img {
-    padding-bottom: 0;
-  }
-}
-
-/**
  * Profile Card
  */
 .profile {

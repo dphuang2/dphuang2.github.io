@@ -12,13 +12,11 @@ image_webp: /assets/image/webp/resume-app.webp
 ---
 
 ## Background
----
 I will always take any opportunity that I can find to make a web app. 
 So when I found out that my fraternity did not have a web accessible resume database, I
 took the opportunity to make one myself.
 
 ## Goals/Functionalities
----
 - Friendly interface 
 - Persistent resume files on new deploys
 - Resumes can be downloaded
@@ -37,7 +35,6 @@ took the opportunity to make one myself.
       - see all resumes
 
 ## Technologies
----
 - [rails](https://github.com/rails/rails) - Web Framework
 - [paperclip](https://github.com/thoughtbot/paperclip) - File Attachments
 - [devise](https://github.com/plataformatec/devise) - Authentication
@@ -45,7 +42,6 @@ took the opportunity to make one myself.
 - Amazon S3 - File Storage
 
 ### Accounts
----
 To begin, I needed to implement a complete account authentication and
 authorization system. To do this, I used a [boilerplate rails app](https://github.com/RailsApps/rails-devise-pundit) from github
 that implements basic user controller actions, sign up/in flow, and role-based
@@ -131,7 +127,6 @@ app/policies/UserPolicy.rb, I was able to implement the authorization of certain
 pages based on roles.
 
 ### File Attachment
----
 
 The next hard step was to implement file-attachments for each user. Fortunately,
 there is an extremely convenient ruby gem called 'paperclip' that helps you add
@@ -156,7 +151,6 @@ And with a simple form, users can now just upload a pdf to the website!
 ```
 
 ### Surviving New Deployments
----
 Now it was only until I actually pushed this deployment to production did I
 realize that the files that are uploaded through paperclip don't survive new
 deployments! This was a big issue because if the website had to be updated and
@@ -183,7 +177,6 @@ config.paperclip_defaults = {
 ```
 
 ### Conclusion
----
 Now aside from the specific additional routes, controller logic, and html.erb
 code, this concludes a fairly complete implementation of a resume database that
 can easily be deployed to Heroku!

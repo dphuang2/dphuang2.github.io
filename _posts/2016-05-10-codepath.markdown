@@ -11,36 +11,29 @@ image_webp: /assets/image/webp/codepath.webp
 ---
 
 # CodePath iOS Bootcamp
----
 [CodePath](https://codepath.com/) is a 8-week long iOS bootcamp that is remotely administered.
 Concepts learned are outlined <a href="http://guides.codepath.com/ios#fundamentals">here</a>.
 
 ## Final Project - Personal Project
----
 <a href="https://github.com/iOSDreamTeam/PostBoard" target="_blank">PostBoard</a> is an app that allows users to post events happening at/near a university campus. Users can spread awareness of events that are coming up - no matter how big or how small the event may be. Have nothing to do on a Friday night? Pull up the app and check out what's happening tonight near you!
 <img src="http://i.imgur.com/Yy65paN.gif" title="source: imgur.com" />
 
 ## Project 6 - Photoshare
----
 <a href="https://github.com/iOSDreamTeam/PostBoard" target="_blank">Photoshare</a> is a photo sharing app using Parse as its backend.
 <img src="http://i.imgur.com/MpbPbYa.gif" title="source: imgur.com" />
 
 ## Project 4 & 5 - Twitter Clone
----
 <a href="https://github.com/iOSDreamTeam/PostBoard" target="_blank">Twitter Clone</a> is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 <img src="http://i.imgur.com/cNMeFOD.gif" title="source: imgur.com" />
 
 ## Project 3 - Yelp Clone
----
 <a href="https://github.com/iOSDreamTeam/PostBoard" target="_blank">Yelp Clone</a> is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 <img src="http://i.imgur.com/LcTWVmP.gif" title="source: imgur.com" />
 
 ## Project 1 & 2 - Fandago Clone
----
 <a href="https://github.com/iOSDreamTeam/PostBoard" target="_blank">Fandago Clone</a> is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 <img src="http://i.imgur.com/blbrnLg.gif" title="source: imgur.com" />
 
 ## Application - Tipping Calculator
----
 <a href="https://github.com/dphuang2/Tipper-iOS" target="_blank">Tipper</a> is a tip calculator application for iOS.
 <img src="http://i.imgur.com/YMsRMdG.gif" title="source: imgur.com" />

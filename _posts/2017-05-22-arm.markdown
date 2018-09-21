@@ -49,10 +49,6 @@ decrease estimation time by an average of around 700%
  - Oral Presentation Skills
  - Computer architecture and Workload Analysis
 
-<br>
-<hr>
-<br>
-
 ## Pictures!
 Silly pic 😝
 ![Group picture](/assets/image/arm/silly_interns.jpg "Silly pic")

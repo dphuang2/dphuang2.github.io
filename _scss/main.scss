@@ -5,9 +5,10 @@
 'layout',
 'components',
 'animations',
-'helpers',
 'syntax',
-'github-activity'
+'helpers',
+'github-activity',
+'github-markdown'
 ;
 
 .icon{
@@ -61,17 +62,6 @@
 }
 #sj-quote{
   font-size: .9em;
-}
-
-.post{
-  ul, ol{
-    margin: auto;
-    padding: 0px 0px 0px 20px;
-    list-style-type: unset;
-  }
-  .highlight{
-    overflow: auto;
-  }
 }
 
 #vimaddict{
@@ -167,34 +157,23 @@
     background-image: url('/assets/image/webp/card.webp');
 }
 
-table {
-    padding: 0; 
-    overflow: scroll;
-    font-size: 80%;
-    table-layout: fixed;
-    display:block;
-    overflow-x: auto;
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+    ol, ul {
+        list-style-type: unset;
+    }
 }
-table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
-    margin: 0;
-padding: 0; }
-table tr:nth-child(2n) {
-background-color: #f8f8f8; }
-table tr th {
-    font-weight: bold;
-    border: 1px solid #cccccc;
-    text-align: left;
-    margin: 0;
-padding: 6px 13px; }
-table tr td {
-    border: 1px solid #cccccc;
-    text-align: left;
-    margin: 0;
-    white-space: nowrap;
-padding: 6px 13px; }
-table tr th :first-child, table tr td :first-child {
-margin-top: 0; }
-table tr th :last-child, table tr td :last-child {
-margin-bottom: 0; }
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+
+.highlight {
+    overflow: auto;
+}

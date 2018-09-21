@@ -90,7 +90,7 @@ gulp.task('imagemin', function() {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
+    gulp.watch(['_scss/*.scss', '_scss/*.css'], ['sass']);
     gulp.watch(['assets/image/**', '_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/js/*'], ['jekyll-rebuild']);
 });
 

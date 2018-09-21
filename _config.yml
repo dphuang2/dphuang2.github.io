@@ -35,10 +35,13 @@ sass:
   style: compressed
 
 # Gems
-gems: [jekyll-sitemap, octopress-autoprefixer]
+plugins: [jekyll-sitemap, octopress-autoprefixer]
 
 # Don't clobber webp generated images
 keep_files: [assets/image/webp]
 
 # Future posts to be published always
 future: true
+
+# Force highlighter to be rouge
+highlighter: rouge
