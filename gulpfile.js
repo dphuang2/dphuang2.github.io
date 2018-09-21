@@ -5,7 +5,8 @@ var gulp        = require('gulp');
 var prefix      = require('gulp-autoprefixer');
 var pump        = require('pump');
 var del         = require('del');
-var runSequence = require('run-sequence'); var sass = require('gulp-sass');
+var runSequence = require('run-sequence');
+var sass        = require('gulp-sass');
 var uglify      = require('gulp-uglify');
 var uglifycss   = require('gulp-uglifycss');
 var webp        = require('gulp-webp');
@@ -90,7 +91,7 @@ gulp.task('imagemin', function() {
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch('assets/image/**', ['imagemin', 'jekyll-rebuild']);
+    gulp.watch('assets/image/**', ['jekyll-rebuild']);
     gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
@@ -120,7 +121,7 @@ gulp.task("deploy", function (done) {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', function(done) {
-  runSequence('imagemin', 'browser-sync', 'watch', function(){
+  runSequence('browser-sync', 'watch', function(){
     done();
   });
 });
