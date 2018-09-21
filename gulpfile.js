@@ -19,7 +19,7 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['compress', 'imagemin'], function (done) {
+gulp.task('jekyll-build', function (done) {
     browserSync.notify(messages.jekyllBuild);
     cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
         .on('close', done);
@@ -91,8 +91,7 @@ gulp.task('imagemin', function() {
  */
 gulp.task('watch', function () {
     gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch('assets/image/**', ['jekyll-rebuild']);
-    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/js/*'], ['jekyll-rebuild']);
+    gulp.watch(['assets/image/**', '_config.yml', '*.html', '_layouts/*.html', '_posts/*', '_includes/*.html', 'assets/js/*'], ['jekyll-rebuild']);
 });
 
 /**
@@ -111,7 +110,7 @@ gulp.task("gh-deploy", function(){
  */
 gulp.task("deploy", function (done) {
   del(['_site/assets/image/webp']);
-  runSequence('jekyll-build', 'gh-deploy', function(){
+  runSequence('jekyll-build', 'compress', 'imagemin', 'gh-deploy', function(){
     done();
   });
 });
