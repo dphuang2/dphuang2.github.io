@@ -11,9 +11,7 @@ image: /assets/image/southquadfall.jpg
 image_webp: /assets/image/webp/southquadfall.webp
 ---
 
-Classes taken (Ranked by difficulty):
----------------------
----------------------
+# Classes taken (Ranked by difficulty):
 <ul>
   <li> ECE 391 - Systems Programming  - 40 Hours per week</li>
   <li> CS 225 - Data Structures - 10 Hours per week</li>
