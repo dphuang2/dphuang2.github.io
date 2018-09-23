@@ -16,7 +16,7 @@ strength/weakness analysis of myself in the form of a table with
 explanation/thoughts.  I will then do an external informal survey of my friends
 and family by asking them to list my strengths, weaknesses, attributes,
 characteristics.  I will take the results from this survey and perform a
-congruence analysis . I will then create a feature-benefit model of myself that
+congruence analysis. Then I will create a feature-benefit model of myself that
 reflects my personal brand.
 
 # Strengths and Weaknesses 
@@ -90,7 +90,7 @@ explaining this phenomenon.
 # External Analysis
 
 After interviewing a dozen of friends and a few family members, I came up with a
-summary of myself based on other people's perspective. The general consensus was
+summary of myself based on other people's perspective. The consensus was
 that I was a really hard-worker with lots of self-motivation. This was mainly
 due to a proven track-record of working hard and doing difficult things. Whether
 it was taking a lot of classes, going the extra mile at work, or working on a
@@ -105,7 +105,7 @@ believed my idea or method was superior without considering the ideas or methods
 of others. This is something I am always working on and feel has drastically
 improved during my time in college. No one mentioned anything about impostor
 syndrome or impatience. I was not surprised that no one mentioned impostor
-syndrome as that is an internal psychological phenomena that is not outwardly
+syndrome as it is an internal psychological phenomenon that is not outwardly
 obvious. But I was surprised that no one mentioned my impatience. I know from
 experience that I tend to get impatient when it comes to results or finding
 solutions—maybe it is a sign of improvement.
@@ -115,9 +115,19 @@ solutions—maybe it is a sign of improvement.
 I was lucky to find that my friends and family's perspectives of me aligned with
 my self-analysis. I think this is a testament to some of my self-awareness but
 obviously requires a larger sample size to truly determine the reality of other
-people's perspectives. I also think it is hard for friends/family to write about
-your weaknesses without exposing too much about what they think of you.
+people's perspectives. It is hard for friends/family to write about
+your weaknesses without exposing too much about what they think of you. It is
+good to know that there is congruence between my self-analysis and the external
+analysis because it means that I am self-aware and can expedite the
+self-discovery process for my weaknesses.
 
-# Feature-Benefit Model
+# "Feature-Benefit" Model
 
+My "feature-benefit" model relies on my unique combination of strengths. Each
+strength is a ordinary, but in synergy with my other strengths, becomes a whole
+greater than the sum of its parts. If chosen for a task, I will be able to use
+my quick learning and passion to get the job done quick but also with quality.
+My hard-working attitude will keep me working even through rough times. And
+provided with a team, my friendliness and natural leader strengths will help my
+team work together as a whole.
 
