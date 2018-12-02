@@ -9,7 +9,7 @@
         {% endfor %}
         <h2 class="preview__header" itemprop="name">{{ post.title }}</h2>
         <div class="post-image-wrapper">
-          <picture class="post-image">>
+          <picture class="post-image">
             <source srcset="{{post.image_webp}}" type="image/webp">
             <source srcset="{{post.image}}" type="image/jpeg"> 
             <img class="post-image" src="{{post.image}}" alt="Alt Text!">

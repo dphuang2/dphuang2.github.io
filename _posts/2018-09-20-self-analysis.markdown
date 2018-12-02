@@ -5,7 +5,7 @@ date: 2018-9-20
 description: 
 location: University of Illinois at Urbana–Champaign
 image: /assets/image/self-analysis.jpg
-image-webp: /assets/image/webp/self-analysis.webp
+image_webp: /assets/image/webp/self-analysis.webp
 ---
 
 # Why and How?
