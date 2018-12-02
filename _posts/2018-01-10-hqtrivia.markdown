@@ -35,6 +35,8 @@ schema for questions. To do the packet sniffing, I used a web debugging proxy
 called [Charles](https://www.charlesproxy.com/) and proxied my phone's network
 through my computer.
 
+![sniff sniff](/assets/image/hqtrivia/sniff.png) 
+
 ### choosing the model
 The next thing I knew was that I wanted to use some sort of machine learning
 model to solve the questions (lol buzz words), but I had no previous experience using a model to
@@ -96,4 +98,4 @@ of us and we decided to split on the last question to guarantee a win)!
 
 ![Yay!](/assets/image/hqtrivia/win.jpg) 
 
-All the gathered questions, mode, and source code can be found [here](https://github.com/dphuang2/hqtrivia-solver) :)!
+All the gathered questions, model, and source code can be found [here](https://github.com/dphuang2/hqtrivia-solver) :)!
