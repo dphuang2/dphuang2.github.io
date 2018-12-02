@@ -5,9 +5,77 @@
     <description>Web enthusiast, Computer Engineer, Dog Lover</description>
     <link>dylanhuang.com/</link>
     <atom:link href="dylanhuang.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 Sep 2018 19:01:44 -0500</pubDate>
-    <lastBuildDate>Sat, 22 Sep 2018 19:01:44 -0500</lastBuildDate>
+    <pubDate>Sun, 02 Dec 2018 02:00:13 -0600</pubDate>
+    <lastBuildDate>Sun, 02 Dec 2018 02:00:13 -0600</lastBuildDate>
     <generator>Jekyll v3.7.4</generator>
+    
+      <item>
+        <title>Human Thoughts</title>
+        <description>&lt;h2 id=&quot;initial-fears&quot;&gt;Initial fears&lt;/h2&gt;
+&lt;p&gt;There is so much to do in this world and so much that makes us humans so unique.
+Music, dance, film, stories, culture, attraction, love, fear…the list goes on.
+Every time I watch someone who is so good at what they do, I get so inspired to
+do the same but remember that we only have one lifetime to make the best of our
+energy. At the moment it feels like I focus on software and computers but a part
+of me feels like focusing my energy on making computers do work for us seems,
+dare I say it, boring and soulless. The things that we experience and people
+that we surround ourselves from early on in our life really affect the passions
+that we pursue. I think this has really affected my own “pursuables”. For
+example, From a young age I always loved to play with computers. I never knew
+how they worked but I was always aware of their complexity and the amount of man
+hours it took to create the machine that I am typing at. But to my child-like
+bliss of ignorance, I never took it upon myself to learn it in my early years.
+So deciding to study computers became a curiosity rather than a passion. And as
+I am nearing the end of my Computer Engineering academic career, I have a
+better—yet not complete—idea of what a computer is. And I also think I have
+procured a passion for using computers to make our lives easier. But I am also
+aware that I am highly interested in things that lie outside of the intersection
+of everything computers.&lt;/p&gt;
+
+&lt;h2 id=&quot;is-this-the-right-thing&quot;&gt;Is this the right thing?&lt;/h2&gt;
+&lt;p&gt;There are so many issues that are deeply embedded in today’s society such as
+racism and mental illnesses that still need to be solved. Can working on
+computers help solve these problems? Well, maybe, I think. It depends on what
+you choose to do with your knowledge of computers.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-inspired&quot;&gt;Getting inspired&lt;/h2&gt;
+&lt;p&gt;Recently, while working on a research project for one my classes and trying to
+devise an algorithm to do something, I realized how deep this field is and how
+many things are still yet to be discovered / improved. It inspires me to read
+research papers where people have devoted countless hours to improving the
+efficiency of memory representation. But then I come across someone who loves to
+just spend their time making videos and listens to awesome music and I become
+just as inspired. So what am I really interested in? Exploring the technical
+field of computers or honing and more “artsy” skill that makes me feel all warm
+inside.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-do-i-want-to-do&quot;&gt;What do I want to do?&lt;/h2&gt;
+&lt;p&gt;A part of me knows that becoming good at everything is not viable, but another
+part of me feels that if I have a passion for something, simply pursue it. But
+is pursuing a passion a destined path for happiness in that field? Maybe not,
+and probably not I feel, so maybe its best to just enjoy the hard work of others
+and simply extract as much learning from them as possible. And maybe this
+learning can somehow reflect the way I approach my own pursuable passion.&lt;/p&gt;
+
+&lt;h2 id=&quot;pursuable-passion&quot;&gt;Pursuable Passion&lt;/h2&gt;
+
+&lt;h2 id=&quot;is-it-enough-to-just-do-or-do-we-also-have-to-show-to-be-fulfilled&quot;&gt;Is it enough to just do or do we also have to show to be fulfilled?&lt;/h2&gt;
+&lt;p&gt;One question that I ask myself is that if I pursue any sort of creative passion
+such as music or film making, it is enough to just do it or will I only feel
+fulfilled if I show it to others. Social media has made it so easy to simply
+click and share your work with almost anyone who wants to see your work. I
+previously thought that the sharing portion of creation is the most fulfilling
+part of it. I mean…why do directors make movies or musicians make music?
+Because they not only enjoy making it, they want to see other people enjoy it as
+well. Humans derive a lot of happiness from the happiness of others. I can see
+this in my own relationships and way of pursing life.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Nov 2018 00:00:00 -0600</pubDate>
+        <link>dylanhuang.com/2018/11/22/diary-maybe/</link>
+        <guid isPermaLink="true">dylanhuang.com/2018/11/22/diary-maybe/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Self Analysis</title>
@@ -197,6 +265,8 @@ schema for questions. To do the packet sniffing, I used a web debugging proxy
 called &lt;a href=&quot;https://www.charlesproxy.com/&quot;&gt;Charles&lt;/a&gt; and proxied my phone’s network
 through my computer.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/assets/image/hqtrivia/sniff.png&quot; alt=&quot;sniff sniff&quot; /&gt;&lt;/p&gt;
+
 &lt;h3 id=&quot;choosing-the-model&quot;&gt;choosing the model&lt;/h3&gt;
 &lt;p&gt;The next thing I knew was that I wanted to use some sort of machine learning
 model to solve the questions (lol buzz words), but I had no previous experience using a model to
@@ -262,7 +332,7 @@ of us and we decided to split on the last question to guarantee a win)!&lt;/p&gt
 
 &lt;p&gt;&lt;img src=&quot;/assets/image/hqtrivia/win.jpg&quot; alt=&quot;Yay!&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;All the gathered questions, mode, and source code can be found &lt;a href=&quot;https://github.com/dphuang2/hqtrivia-solver&quot;&gt;here&lt;/a&gt; :)!&lt;/p&gt;
+&lt;p&gt;All the gathered questions, model, and source code can be found &lt;a href=&quot;https://github.com/dphuang2/hqtrivia-solver&quot;&gt;here&lt;/a&gt; :)!&lt;/p&gt;
 </description>
         <pubDate>Thu, 22 Mar 2018 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2018/03/22/hqtrivia/</link>
@@ -715,22 +785,6 @@ yields 173 Stars, 71 Issues, and 30 Pull Requests.&lt;/p&gt;
         <pubDate>Wed, 27 Jul 2016 00:00:00 -0500</pubDate>
         <link>dylanhuang.com/2016/07/27/pogobag/</link>
         <guid isPermaLink="true">dylanhuang.com/2016/07/27/pogobag/</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Google Summer of Code Internship</title>
-        <description>&lt;p&gt;• Worked on data integration to allow quick and scalable calculations of data for the Data Platform and Dashboard Widgets&lt;/p&gt;
-
-&lt;p&gt;• Ruby on Rails, JavaSript, and Data integration platform experience&lt;/p&gt;
-
-&lt;p&gt;Documentation for all of my work during the summer can be found &lt;a href=&quot;http://dylanhuang.com/streamsets_scripts/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>dylanhuang.com/2016/05/20/berkman/</link>
-        <guid isPermaLink="true">dylanhuang.com/2016/05/20/berkman/</guid>
         
         
       </item>
