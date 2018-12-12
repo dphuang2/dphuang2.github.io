@@ -23,5 +23,5 @@ image_webp: /assets/image/webp/ece.webp
 
 • Currently refactoring entire website with Ruby on Rails
 
-Working under PhD Candidate [Kristen Vaccaro](http://kvaccaro.com/) and Professor [Karrie Karahalios](http://social.cs.uiuc.edu/people/kkarahal.html).
+Working with PhD Candidate [Kristen Vaccaro](http://kvaccaro.com/) and Professor [Karrie Karahalios](http://social.cs.uiuc.edu/people/kkarahal.html).
 
