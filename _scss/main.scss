@@ -1,0 +1,179 @@
+@import
+'base',
+'mixins',
+'extends',
+'layout',
+'components',
+'animations',
+'syntax',
+'helpers',
+'github-activity',
+'github-markdown'
+;
+
+.icon{
+  color: white;
+}
+
+.bullet-desc{
+  font-size: 1.3em;
+}
+
+#about{
+  padding: 30px ;
+  margin: 0;
+}
+
+#picture-caption{
+  margin-left: .5em;
+  font-size: 0.7em;
+}
+
+.post-image-wrapper{
+  height: 7em;
+  width: 7em;
+  border-radius: 50%;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+
+  @media(min-width: $mq-md){
+    right: 2em;
+  }
+  @media(min-width: $mq-lg){
+    right: 3em;
+  }
+  @media(min-width: $mq-xl){
+    right: 5em;
+  }
+}
+
+.post-image{
+  width: initial;
+  max-width: initial;
+
+  height: inherit;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#sj-quote{
+  font-size: .9em;
+}
+
+#vimaddict{
+  position: relative;
+  padding-left: 19px;
+}
+#vimsvg{
+  position: absolute;
+  top: 3px;
+  left: 0px;
+}
+
+/*
+ *Github Activity Feed
+ */
+
+#gh-wrapper{
+
+  height: 100%;
+  left: -17.3em;
+  position: fixed;
+  top: 0px;
+  transition: all 400ms ease;
+  z-index: 20;
+
+  #feed{
+    height: 100%;
+    left: 0px;
+    overflow: scrollable;
+    position: absolute;
+    top: 0px;
+    width: 17.3em;
+    z-index: 10;
+  }
+
+  .gha-header{
+    height: 80px;
+    width: calc(100% - 1px);
+  }
+
+  .gha-footer{
+    width: calc(100% - 2px);
+    bottom: 0px;
+    height: 25px;
+  }
+
+  .gha-gravatar-commit{
+    width: 16px;
+    display: inline;
+  }
+
+  #gh-button{
+    transform: rotate(90deg);
+    font-weight: bold;
+    font-family: Helvetica;
+    padding: 7px;
+    border-radius: 10px;
+    color: rgb(73, 89, 97);
+    position: absolute;
+    top: 30%;
+    left: 14em;
+    width: 8em;
+    background: rgb(255, 255, 255);
+    z-index: 5;
+    cursor: e-resize;
+    //&:hover{
+      //background: rgb(73, 89, 97);
+      //color: rgb(255, 255, 255);
+    //}
+  }
+  @media( max-width: $mq-md ){
+    display: none;
+  }
+}
+
+[class*=" devicon-"],[class^=devicon-]{
+  font-size: 1.5em;
+}
+
+.no-webp .hero_profile_img {
+    background-image: url('/assets/image/profile.jpg');
+}
+
+.webp .hero_profile_img {
+    background-image: url('/assets/image/webp/profile.webp');
+}
+
+.no-webp .post_card_img{
+    background-image: url('/assets/image/card.jpg');
+}
+
+.webp .post_card_img{
+    background-image: url('/assets/image/webp/card.webp');
+}
+
+.markdown-body {
+    box-sizing: border-box;
+    min-width: 200px;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 45px;
+    ol, ul {
+        list-style-type: unset;
+    }
+}
+
+@media (max-width: 767px) {
+    .markdown-body {
+        padding: 15px;
+    }
+}
+
+.highlight {
+    overflow: auto;
+}

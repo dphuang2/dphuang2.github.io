@@ -1,0 +1,25 @@
+<div class="tab">
+  <ul itemscope itemtype="http://schema.org/Blog">
+    {% for post in site.posts %}
+    <li class="preview" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      <a class="preview__link" href="{{ post.url | prepend: site.baseurl }}" itemprop="url"> 
+        <span class="preview__date" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</span> 
+        {% for tech in post.techs %}
+        <i class="devicon-{{tech}}"></i>
+        {% endfor %}
+        <h2 class="preview__header" itemprop="name">{{ post.title }}</h2>
+        <div class="post-image-wrapper">
+          <picture class="post-image">
+            <source srcset="{{post.image_webp}}" type="image/webp">
+            <source srcset="{{post.image}}" type="image/jpeg"> 
+            <img class="post-image" src="{{post.image}}" alt="Alt Text!">
+          </picture>
+        </div>
+        <!--<p class="preview__excerpt" itemprop="description">{{ post.content | strip_html | truncatewords: 10 }}</p>-->
+        <p class="preview__excerpt" itemprop="description">{{ post.location }}</p>
+        <!--<span class="preview__more">Read More</span>-->
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
