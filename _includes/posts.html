@@ -9,7 +9,10 @@
         {% endfor %}
         <h2 class="preview__header" itemprop="name">{{ post.title }}</h2>
         <div class="post-image-wrapper">
-            <img class="post-image" src="{{post.image_webp}}" type="image/webp">
+            <picture class="post-image">
+                <source srcset="{{post.image_webp}}" type="image/webp">
+                <img class="post-image" src="{{post.image}}">
+            </picture>
         </div>
         <!--<p class="preview__excerpt" itemprop="description">{{ post.content | strip_html | truncatewords: 10 }}</p>-->
         <p class="preview__excerpt" itemprop="description">{{ post.location }}</p>
