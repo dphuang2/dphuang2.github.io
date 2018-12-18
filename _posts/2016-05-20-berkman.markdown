@@ -14,6 +14,6 @@ image_webp: /assets/image/webp/berkman.webp
 
 • Ruby on Rails, JavaSript, and Data integration platform experience
 
-Documentation for all of my work during the summer can be found [here](http://dylanhuang.com/streamsets_scripts/).
+Documentation for all of my work during the summer can be found [here](http://dphuang2.github.io/streamsets_scripts/).
 
 
