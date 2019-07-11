@@ -58,9 +58,10 @@ section {
         width: 45%;
       }
 
-      &:after {
-        @extend %overlay;
-      }
+      //&:after {
+        //@extend %overlay;
+      //}
+
     }
 
     &:last-child {

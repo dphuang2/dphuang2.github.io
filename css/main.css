@@ -106,7 +106,7 @@ ol, ul {
 /**
  * Black Color Overlay
  */
-.previews > *:first-child:after, .card__img:after, .mast:after, .next__link:after {
+.card__img:after, .mast:after, .next__link:after {
   content: '';
   position: absolute;
   top: 0;
@@ -1437,10 +1437,10 @@ span.gha-time {
   font-size: 1.5em; }
 
 .no-webp .hero_profile_img {
-  background-image: url("/assets/image/profile.jpg"); }
+  background-image: url("/assets/image/seoul.jpeg"); }
 
 .webp .hero_profile_img {
-  background-image: url("/assets/image/webp/profile.webp"); }
+  background-image: url("/assets/image/webp/seoul.webp"); }
 
 .no-webp .post_card_img {
   background-image: url("/assets/image/card.jpg"); }
