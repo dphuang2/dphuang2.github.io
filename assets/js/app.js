@@ -127,7 +127,7 @@ var GithubTab = (function() {
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-    Tabs.init();
+    //Tabs.init();
     wow.init();
     GithubTab.init();
     GitHubActivity.feed({
