@@ -6,7 +6,7 @@
         <span class="preview__date" itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</span> 
         <h2 class="preview__header" itemprop="name">{{ post.title }}</h2>
         <p style="font-style: italic;">
-        {{ post.content | strip_html | strip | remove: "•" | truncatewords: 30 }}
+        {{ post.excerpt | strip_html | strip | remove: "•" | truncatewords: 30 }}
         </p>
         <!--<div class="post-image-wrapper">-->
             <!--<picture class="post-image">-->
