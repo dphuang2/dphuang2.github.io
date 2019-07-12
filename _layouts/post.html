@@ -12,9 +12,9 @@ layout: default
     <div class="mast__container">
       <span>
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
-        {% for tech in page.techs %}
-        <i class="devicon-{{tech}}"></i>
-        {% endfor %}
+        <!--{% for tech in page.techs %}-->
+        <!--<i class="devicon-{{tech}}"></i>-->
+        <!--{% endfor %}-->
       </span>
       <h1 itemprop="name headline">{{ page.title }}</h1>
         <span>
