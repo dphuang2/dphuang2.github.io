@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hack Illinois 2016"
+title: Hack Illinois
 date: 2016-2-21
 location: University of Illinois at Urbana–Champaign
 description: 

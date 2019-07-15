@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Solving HQTrivia with machine learning"
+title: HQTrivia Solver
 date: 2018-3-22
 description: 
 location: University of Illinois at Urbana–Champaign

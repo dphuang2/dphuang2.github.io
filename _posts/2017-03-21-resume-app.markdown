@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Resume Database Web App"
+title: Resume Database
 date: 2017-3-21
 location: Champaign, Illinois
 description: 

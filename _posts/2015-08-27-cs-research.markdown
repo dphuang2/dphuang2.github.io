@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Research with UIUC CS Department"
+title: Research
 date: 2015-8-27
 description: 
 location: University of Illinois at Urbana–Champaign

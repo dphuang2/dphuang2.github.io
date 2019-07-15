@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Arm Internship"
+title: Arm Internship
 date: 2017-5-22
 description: 
 location: Austin, Texas

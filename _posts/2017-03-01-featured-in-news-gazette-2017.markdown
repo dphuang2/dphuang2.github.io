@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Featured in the local news!"
+title: News Feature
 date: 2017-3-1
 description: 
 location: East Central Illinois
@@ -8,7 +8,7 @@ image: /assets/image/unofficial.jpeg
 image_webp: /assets/image/webp/unofficial.webp
 ---
 
-While pledging for Theta Tau a group of 9 students and I are running a
+A group of 9 students and I are ran a
 fundraiser for Camp Quality, a charity that helps kids with cancer, by
 delivering breakfast food to students the morning after Unofficial!
 

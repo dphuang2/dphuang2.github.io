@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My viral web app, pogobag.me"
+title: pogobag.me
 date: 2016-7-27
 description: 
 location: Palo Alto, California

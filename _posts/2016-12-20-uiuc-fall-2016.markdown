@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "UIUC Fall Semester 2016 Overview"
+title: UIUC Fall 2016
 date: 2016-12-20
 description: 
 location: University of Illinois at Urbana–Champaign

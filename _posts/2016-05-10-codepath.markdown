@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CodePath iOS Bootcamp"
+title: iOS Bootcamp
 date: 2016-5-10
 location: Online
 description: 

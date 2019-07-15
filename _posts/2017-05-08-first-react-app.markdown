@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "First React App!"
+title: React App
 date: 2017-05-08
 description: 
 location: University of Illinois at Urbana–Champaign
