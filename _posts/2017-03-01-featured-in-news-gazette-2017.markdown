@@ -8,9 +8,9 @@ image: /assets/image/unofficial.jpeg
 image_webp: /assets/image/webp/unofficial.webp
 ---
 
-A group of 9 students and I are ran a
-fundraiser for Camp Quality, a charity that helps kids with cancer, by
-delivering breakfast food to students the morning after Unofficial!
+A group of 9 students and I ran a fundraiser for Camp Quality, a charity that
+helps kids with cancer, by delivering breakfast food to students the morning
+after Unofficial!
 
 On Wednesday, March 1, 2017, we were featured in an online article in the local
 news. I was the main point of contact and was quoted throughout the article.
