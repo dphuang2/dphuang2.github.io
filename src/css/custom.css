@@ -38,9 +38,6 @@ a {
   --ifm-font-color-base: var(--ifm-color-emphasis-800);
   --ifm-blockquote-color: var(--ifm-color-emphasis-900);
   --ifm-heading-color: var(--ifm-color-emphasis-900);
-  --ifm-leading-desktop: 3;
-  --ifm-list-margin: 3rem;
-  --ifm-global-spacing: 2rem;
 }
 
 ol ::marker {

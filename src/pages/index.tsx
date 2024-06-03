@@ -43,7 +43,7 @@ function About() {
         I'm Dylan, a passionate software engineer and avid learner with a
         romantic relationship with entrepreneurship.
       </p>
-      <h4>Here are my proudest achievements:</h4>
+      <h3>Here are my proudest achievements:</h3>
       <ul>
         <li>
           2023 - Wrote technical articles that reached the front page of Hacker
@@ -128,7 +128,7 @@ function About() {
         <li>2013 - Achieved Platinum rank (top 5%) in League of Legends</li>
         <li>2013 - Awarded a cash prize for filmmaking</li>
       </ul>
-      <h4>Here is what colleagues have said about me:</h4>
+      <h3>Here is what colleagues have said about me:</h3>
       <p>
         <blockquote>
           I have no hesitation in saying that Dylan exhibited exceptional drive,
