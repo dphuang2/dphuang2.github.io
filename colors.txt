@@ -1,0 +1,5 @@
+Navy Black: HSL(216, 100, 4)
+Midnight Blue: HSL(211, 100, 12)
+Dark Blue: HSL(209, 100, 20)
+Bright Yellow: HSL(46, 100, 50)
+Lemon Yellow: HSL(50, 100, 52)
