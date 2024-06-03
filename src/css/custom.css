@@ -19,6 +19,27 @@
   --ifm-color-primary-lightest: #004585;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-color-base: var(--ifm-color-emphasis-800);
+  --ifm-blockquote-color: var(--ifm-color-emphasis-900);
+  --ifm-heading-color: var(--ifm-color-emphasis-900);
+}
+
+ol ::marker {
+  color: var(--ifm-color-emphasis-700);
+}
+
+ul ::marker {
+  color: var(--ifm-color-emphasis-600);
+}
+
+strong {
+  font-weight: var(--ifm-font-weight-bold);
+  color: var(--ifm-color-emphasis-900);
+}
+
+blockquote {
+  font-style: italic;
+  font-weight: var(--ifm-font-weight-semibold);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
