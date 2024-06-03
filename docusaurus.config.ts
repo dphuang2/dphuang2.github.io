@@ -4,9 +4,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 import tailwindPlugin from "./plugins/tailwind-config.cjs"; // add this
 
 const config: Config = {
-  title: "Dylan Huang's Personal Website",
+  title: "Dylan Huang - Software Engineer",
   tagline: "Passionate engineer",
-  favicon: "img/favicon.ico",
+  favicon: "img/dylan.png",
 
   // Set the production url of your site here
   url: "https://dylanhuang.com",

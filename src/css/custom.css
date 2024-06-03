@@ -1,12 +1,28 @@
-@tailwind base;
+@layer {
+  @tailwind base;
+}
 @tailwind components;
 @tailwind utilities;
+
+/* I don't know why border's don't have this styling by default:
+ * https://tailwindcss.com/docs/preflight#border-styles-are-reset-globally */
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: theme("borderColor.DEFAULT", currentColor);
+}
 
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+
+a {
+  font-weight: var(--ifm-font-weight-semibold);
+}
 
 /* You can override the default Infima variables here. */
 :root {
@@ -22,6 +38,9 @@
   --ifm-font-color-base: var(--ifm-color-emphasis-800);
   --ifm-blockquote-color: var(--ifm-color-emphasis-900);
   --ifm-heading-color: var(--ifm-color-emphasis-900);
+  --ifm-leading-desktop: 3;
+  --ifm-list-margin: 3rem;
+  --ifm-global-spacing: 2rem;
 }
 
 ol ::marker {
