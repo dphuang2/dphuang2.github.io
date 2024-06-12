@@ -30,7 +30,18 @@ const config: Config = {
     locales: ["en"],
   },
 
-  plugins: [tailwindPlugin],
+  plugins: [
+    tailwindPlugin,
+    // Use custom blog plugin from https://kgajera.com/blog/display-recent-blog-posts-on-home-page-with-docusaurus/
+    [
+      "./plugins/blog-plugin",
+      {
+        id: "blog",
+        routeBasePath: "blog",
+        path: "./blog",
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -43,13 +54,8 @@ const config: Config = {
           // editUrl:
           //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        blog: {
-          // showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        // Disable default blog plugin
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },

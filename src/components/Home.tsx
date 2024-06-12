@@ -1,42 +1,47 @@
-import CodeBlock from "@theme/CodeBlock";
 import LayoutProvider from "@theme/Layout/Provider";
+import BlogPostItem from "@theme/BlogPostItem";
+import { Content } from "@theme/BlogPostPage";
+import { BlogPostProvider } from "@docusaurus/theme-common/internal";
 
-export default function Home(): JSX.Element {
+interface Props {
+  readonly recentPosts: readonly { readonly content: Content }[];
+}
+
+export default function Home({ recentPosts }: Props): JSX.Element {
   return (
     <LayoutProvider>
       <main>
-        <body>
-          <div className="min-h-screen bg-gray-50 py-8 flex flex-col justify-center relative overflow-hidden lg:py-12">
-            <img
-              src="/img/beams.jpg"
-              alt=""
-              className="fixed top-48 left-1/2 -translate-x-2/3 -translate-y-1/2 max-w-none"
-              width={1308}
-            />
-            <div className="absolute inset-0 bg-[url(/img/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <div className="relative w-full px-6 py-12 bg-white shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl lg:pt-16 lg:pb-28">
-              <div className="mx-auto max-w-prose">
-                <img
-                  src="/img/dylan.png"
-                  alt="Dylan"
-                  className="w-20 h-20 rounded-full border-slate-700 mb-1"
-                />
-                <h1 className="text-4xl italic font-bold tracking-tighter">
-                  Hey There!
-                </h1>
-                <div className="mt-8">
-                  <About />
-                </div>
+        <div className="min-h-screen bg-gray-50 py-8 flex flex-col justify-center relative overflow-hidden lg:py-12">
+          <img
+            src="/img/beams.jpg"
+            alt=""
+            className="fixed top-48 left-1/2 -translate-x-2/3 -translate-y-1/2 max-w-none"
+            width={1308}
+          />
+          <div className="absolute inset-0 bg-[url(/img/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+          <div className="relative w-full px-6 py-12 bg-white shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl lg:pt-16 lg:pb-28">
+            <div className="mx-auto max-w-prose">
+              <img
+                src="/img/dylan.png"
+                alt="Dylan"
+                className="w-20 h-20 rounded-full border-slate-700 mb-1"
+              />
+              <h1 className="text-4xl italic font-bold tracking-tighter">
+                Hey There!
+              </h1>
+              <div className="mt-8">
+                <About recentPosts={recentPosts} />
               </div>
             </div>
           </div>
-        </body>
+        </div>
       </main>
     </LayoutProvider>
   );
 }
 
-function About() {
+function About({ recentPosts }: Props) {
+  console.log(recentPosts);
   return (
     <div>
       <p className="text-lg -mt-4">
@@ -51,8 +56,22 @@ function About() {
           <LinkedInLogo />
         </a>
       </p>
-      <h3>Here are my proudest achievements:</h3>
-      <ul>
+      <h3>My blog posts:</h3>
+      <ul className="list-none">
+        {recentPosts.map(({ content }) => {
+          return (
+            <li key={content.metadata.permalink}>
+              <span className="mr-3 text-gray-400 italic">
+                {new Date(content.metadata.date).getFullYear()}-
+                {new Date(content.metadata.date).getMonth() + 1}
+              </span>
+              <a href={content.metadata.permalink}>{content.metadata.title} </a>
+            </li>
+          );
+        })}
+      </ul>
+      <h3>My proudest achievements:</h3>
+      <ul className="list-none">
         <li>
           2023 - Wrote technical articles that reached the front page of Hacker
           News{" "}
@@ -136,34 +155,27 @@ function About() {
         <li>2013 - Achieved Platinum rank (top 5%) in League of Legends</li>
         <li>2013 - Awarded a cash prize for filmmaking</li>
       </ul>
-      <h3>Here is what colleagues have said about me:</h3>
-      <p>
-        <blockquote>
-          I have no hesitation in saying that Dylan exhibited exceptional drive,
-          competency and leadership abilities. I wholeheartedly recommend him
-          and would welcome the opportunity to work together again. Dylan would
-          be a great asset for any organization!
-          <p>
-            — <a href="https://www.linkedin.com/in/cherifjazra">Cherif Jazra</a>
-          </p>
-        </blockquote>
-      </p>
-      <p>
-        <blockquote>
-          With organizational growth and new projects, it was an easy decision
-          for me to make Dylan the technical lead for a new engineering team in
-          my org, working on a greenfield project at the intersection of data
-          infrastructure and machine learning...I would without a doubt work
-          again with Dylan, and would highly recommend him to anyone looking for
-          a highly skilled engineering leader!
-          <p>
-            —{" "}
-            <a href="https://www.linkedin.com/in/manastalukdar/">
-              Manas Talukdar
-            </a>
-          </p>
-        </blockquote>
-      </p>
+      <h3>What colleagues have said about me:</h3>
+      <blockquote>
+        I have no hesitation in saying that Dylan exhibited exceptional drive,
+        competency and leadership abilities. I wholeheartedly recommend him and
+        would welcome the opportunity to work together again. Dylan would be a
+        great asset for any organization!
+        <br />—{" "}
+        <a href="https://www.linkedin.com/in/cherifjazra">Cherif Jazra</a>
+      </blockquote>
+      <blockquote>
+        With organizational growth and new projects, it was an easy decision for
+        me to make Dylan the technical lead for a new engineering team in my
+        org, working on a greenfield project at the intersection of data
+        infrastructure and machine learning...I would without a doubt work again
+        with Dylan, and would highly recommend him to anyone looking for a
+        highly skilled engineering leader! <br />—{" "}
+        <a href="https://www.linkedin.com/in/manastalukdar/">
+          {" "}
+          Manas Talukdar{" "}
+        </a>
+      </blockquote>
     </div>
   );
 }
