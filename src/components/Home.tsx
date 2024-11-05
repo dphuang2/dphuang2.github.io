@@ -13,7 +13,7 @@ export default function Home({ recentPosts }: Props): JSX.Element {
         <PaperPage>
           <div className="mx-auto max-w-prose">
             <img
-              src="/img/dylan.png"
+              src="/img/dylan.avif"
               alt="Dylan"
               className="w-20 h-20 rounded-full border-slate-700 mb-1"
             />

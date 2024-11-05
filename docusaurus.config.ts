@@ -6,7 +6,7 @@ import tailwindPlugin from "./plugins/tailwind-config.cjs"; // add this
 const config: Config = {
   title: "Dylan Huang - Software Engineer",
   tagline: "Passionate engineer",
-  favicon: "img/dylan.png",
+  favicon: "img/dylan.avif",
 
   // Set the production url of your site here
   url: "https://dylanhuang.com",
