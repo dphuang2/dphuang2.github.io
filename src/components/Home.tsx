@@ -144,7 +144,8 @@ function About({ recentPosts }: Props) {
         I'm Dylan, a passionate software engineer and avid learner with a
         romantic relationship with entrepreneurship.
       </p>
-      <p className="flex items-center -mt-2 mb-10 space-x-4">
+
+      <p className="flex items-center mt-4 mb-12 space-x-4">
         <a target="_blank" href="https://github.com/dphuang2">
           <GitHubLogo />
         </a>
@@ -152,8 +153,9 @@ function About({ recentPosts }: Props) {
           <LinkedInLogo />
         </a>
       </p>
-      <h3>My blog posts:</h3>
-      <ul className="list-none">
+
+      <h3 className="mb-6">My blog posts:</h3>
+      <ul className="list-none mb-12">
         {recentPosts.map(({ content }) => {
           return (
             <li key={content.metadata.permalink}>
@@ -166,8 +168,9 @@ function About({ recentPosts }: Props) {
           );
         })}
       </ul>
-      <h3>My proudest achievements:</h3>
-      <ul className="list-none">
+
+      <h3 className="mb-6">My proudest achievements:</h3>
+      <ul className="list-none mb-12">
         {achievements.map((achievement, index) => (
           <li key={index}>
             <span className="mr-3 text-gray-400 font-semibold">
@@ -183,8 +186,9 @@ function About({ recentPosts }: Props) {
           </li>
         ))}
       </ul>
-      <h3>What colleagues have said about me:</h3>
-      <blockquote>
+
+      <h3 className="mb-6">What colleagues have said about me:</h3>
+      <blockquote className="mb-8">
         I have no hesitation in saying that Dylan exhibited exceptional drive,
         competency and leadership abilities. I wholeheartedly recommend him and
         would welcome the opportunity to work together again. Dylan would be a
@@ -192,6 +196,7 @@ function About({ recentPosts }: Props) {
         <br />—{" "}
         <a href="https://www.linkedin.com/in/cherifjazra">Cherif Jazra</a>
       </blockquote>
+
       <blockquote>
         With organizational growth and new projects, it was an easy decision for
         me to make Dylan the technical lead for a new engineering team in my
