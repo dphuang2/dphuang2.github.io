@@ -12,7 +12,9 @@ export default function BlogPostPageWrapper(props: Props): JSX.Element {
   return (
     <PaperPage>
       <div className="mx-auto prose">
-        <h1 className="text-4xl font-bold tracking-tight mb-8">{title}</h1>
+        <h1 className="text-4xl font-bold tracking-tight mb-8 text-balance">
+          {title}
+        </h1>
         <p className="text-gray-500 -mt-6 mb-8">
           by{" "}
           <a href="/" className="hover:text-gray-700">
