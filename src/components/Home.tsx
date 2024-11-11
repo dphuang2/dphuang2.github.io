@@ -46,7 +46,7 @@ function About({ recentPosts }: Props) {
           <LinkedInLogo />
         </a>
       </p>
-      {/* <h3>My blog posts:</h3>
+      <h3>My blog posts:</h3>
       <ul className="list-none">
         {recentPosts.map(({ content }) => {
           return (
@@ -59,7 +59,7 @@ function About({ recentPosts }: Props) {
             </li>
           );
         })}
-      </ul> */}
+      </ul>
       <h3>My proudest achievements:</h3>
       <ul className="list-none">
         <li>
