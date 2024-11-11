@@ -31,7 +31,6 @@ export default function Home({ recentPosts }: Props): JSX.Element {
 }
 
 function About({ recentPosts }: Props) {
-  console.log(recentPosts);
   return (
     <div>
       <p className="text-lg -mt-4">
