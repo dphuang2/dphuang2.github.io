@@ -7,7 +7,8 @@ type Props = WrapperProps<typeof BlogPostPageType>;
 
 export default function BlogPostPageWrapper(props: Props): JSX.Element {
   const BlogPostContent = props.content;
-  const title = props.content.frontMatter.title;
+  const title = props.content.frontMatter.title ?? props.content.contentTitle;
+  const date = props.content.metadata.date;
   return (
     <PaperPage>
       <div className="mx-auto prose">
@@ -16,20 +17,15 @@ export default function BlogPostPageWrapper(props: Props): JSX.Element {
           by{" "}
           <a href="/" className="hover:text-gray-700">
             Dylan Huang
-          </a>
+          </a>{" "}
+          on{" "}
+          {new Date(date).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
         </p>
         <BlogPostContent />
-        <p className="text-gray-500 mt-8">
-          This post is by{" "}
-          <a href="/" className="hover:text-gray-700">
-            Dylan Huang
-          </a>
-          . You can learn more about me{" "}
-          <a href="/" className="hover:text-gray-700">
-            here
-          </a>
-          .
-        </p>
       </div>
     </PaperPage>
   );
