@@ -30,6 +30,113 @@ export default function Home({ recentPosts }: Props): JSX.Element {
   );
 }
 
+interface Achievement {
+  year: number;
+  description: string;
+  link?: {
+    text: string;
+    url: string;
+  };
+}
+
+const achievements: Achievement[] = [
+  {
+    year: 2023,
+    description:
+      "Wrote technical articles that reached the front page of Hacker News",
+    link: {
+      text: "[Hacker News Thread]",
+      url: "https://news.ycombinator.com/item?id=37078606",
+    },
+  },
+  {
+    year: 2023,
+    description:
+      "Sold three different software products to real recurring customers in the same year",
+  },
+  { year: 2022, description: "Ran a half marathon" },
+  { year: 2022, description: "Broke 100 in golf" },
+  { year: 2022, description: "Started a company to sell innovative software" },
+  { year: 2022, description: "Interviewed at YCombinator as a solo founder" },
+  { year: 2022, description: "Quit my job" },
+  {
+    year: 2020,
+    description:
+      "Promoted to Senior Software Engineer nine months after starting my first job out of college at C3.ai",
+  },
+  {
+    year: 2020,
+    description:
+      "Booked round-trip flights to Hawaii for only 24,000 credit card points",
+  },
+  {
+    year: 2019,
+    description:
+      "Received a cease and desist letter for a Shopify App Store side project",
+  },
+  {
+    year: 2019,
+    description:
+      "Graduated with a B.S. and M.Eng. in Computer Engineering from UIUC in four years",
+  },
+  {
+    year: 2019,
+    description: "Worked at a boba shop for a semester in college",
+  },
+  {
+    year: 2019,
+    description:
+      "Received 4 software engineering job offers from Benchling, Facebook, AppDynamics, and C3.ai before graduating",
+  },
+  {
+    year: 2019,
+    description: "Created a robotic caricature artist for Senior Design",
+  },
+  {
+    year: 2018,
+    description: "Authored a research paper as an undergraduate at UIUC",
+    link: {
+      text: "[Paper]",
+      url: "https://dl.acm.org/doi/abs/10.1145/3173574.3173590",
+    },
+  },
+  {
+    year: 2018,
+    description:
+      "Lead climbed for the first time outdoors at Horseshoe Canyon Ranch in Arkansas",
+  },
+  {
+    year: 2017,
+    description: "Won a game of HQ Trivia using AI",
+    link: {
+      text: "[Blog Post]",
+      url: "https://github.com/dphuang2/dphuang2.github.io/blob/v2/_posts/2018-01-10-hqtrivia.markdown",
+    },
+  },
+  {
+    year: 2016,
+    description:
+      "Learned how to snowboard despite suffering a severe concussion the first time I tried snowboarding",
+  },
+  { year: 2016, description: "Hatched a Gyrados in Pokemon Go" },
+  {
+    year: 2016,
+    description:
+      "Built a website with over 210,000 users, which required me to dodge IP range blocks from Niantic",
+    link: {
+      text: "[Reddit Launch Thread]",
+      url: "https://www.reddit.com/r/pokemongodev/comments/4wn8sa/wwwpogobagme_a_seriously_powerful_pokémon_go",
+    },
+  },
+  { year: 2016, description: "Won an Intel-sponsored prize at Hack Illinois" },
+  { year: 2015, description: "Played two varsity sports in high school" },
+  {
+    year: 2013,
+    description: "Achieved Platinum rank (top 5%) in League of Legends",
+  },
+  { year: 2013, description: "Awarded a cash prize for filmmaking" },
+];
+
 function About({ recentPosts }: Props) {
   return (
     <div>
@@ -61,88 +168,20 @@ function About({ recentPosts }: Props) {
       </ul>
       <h3>My proudest achievements:</h3>
       <ul className="list-none">
-        <li>
-          2023 - Wrote technical articles that reached the front page of Hacker
-          News{" "}
-          <a
-            target="_blank"
-            href="https://news.ycombinator.com/item?id=37078606"
-          >
-            [Hacker News Thread]
-          </a>
-        </li>
-        <li>
-          2023 - Sold three different software products to real recurring
-          customers in the same year
-        </li>
-        <li>2022 - Ran a half marathon</li>
-        <li>2022 - Broke 100 in golf</li>
-        <li>2022 - Started a company to sell innovative software</li>
-        <li>2022 - Interviewed at YCombinator as a solo founder</li>
-        <li>2022 - Quit my job</li>
-        <li>
-          2020 - Promoted to Senior Software Engineer nine months after starting
-          my first job out of college at C3.ai
-        </li>
-        <li>
-          2020 - Booked round-trip flights to Hawaii for only 24,000 credit card
-          points
-        </li>
-        <li>
-          2019 - Received a cease and desist letter for a Shopify App Store side
-          project
-        </li>
-        <li>
-          2019 - Graduated with a B.S. and M.Eng. in Computer Engineering from
-          UIUC in four years
-        </li>
-        <li>2019 - Worked at a boba shop for a semester in college</li>
-        <li>
-          2019 - Received 4 software engineering job offers from Benchling,
-          Facebook, AppDynamics, and C3.ai before graduating
-        </li>
-        <li>2019 - Created a robotic caricature artist for Senior Design</li>
-        <li>
-          2018 - Authored a research paper as an undergraduate at UIUC{" "}
-          <a
-            target="_blank"
-            href="https://dl.acm.org/doi/abs/10.1145/3173574.3173590"
-          >
-            [Paper]
-          </a>
-        </li>
-        <li>
-          2018 - Lead climbed for the first time outdoors at Horseshoe Canyon
-          Ranch in Arkansas
-        </li>
-        <li>
-          2017 - Won a game of HQ Trivia using AI{" "}
-          <a
-            target="_blank"
-            href="https://github.com/dphuang2/dphuang2.github.io/blob/v2/_posts/2018-01-10-hqtrivia.markdown"
-          >
-            [Blog Post]
-          </a>
-        </li>
-        <li>
-          2016 - Learned how to snowboard despite suffering a severe concussion
-          the first time I tried snowboarding
-        </li>
-        <li>2016 - Hatched a Gyrados in Pokemon Go</li>
-        <li>
-          2016 - Built a website with over 210,000 users, which required me to
-          dodge IP range blocks from Niantic{" "}
-          <a
-            target="_blank"
-            href="https://www.reddit.com/r/pokemongodev/comments/4wn8sa/wwwpogobagme_a_seriously_powerful_pokémon_go"
-          >
-            [Reddit Launch Thread]
-          </a>
-        </li>
-        <li>2016 - Won an Intel-sponsored prize at Hack Illinois</li>
-        <li>2015 - Played two varsity sports in high school</li>
-        <li>2013 - Achieved Platinum rank (top 5%) in League of Legends</li>
-        <li>2013 - Awarded a cash prize for filmmaking</li>
+        {achievements.map((achievement, index) => (
+          <li key={index}>
+            <span className="mr-3 text-gray-400 font-semibold">
+              {achievement.year}
+            </span>
+            {achievement.description}
+            {achievement.link && (
+              <a target="_blank" href={achievement.link.url}>
+                {" "}
+                {achievement.link.text}
+              </a>
+            )}
+          </li>
+        ))}
       </ul>
       <h3>What colleagues have said about me:</h3>
       <blockquote>
