@@ -138,6 +138,9 @@ const achievements: Achievement[] = [
 ];
 
 function About({ recentPosts }: Props) {
+  const filteredPosts = recentPosts.filter(
+    (post) => (post.content.frontMatter as any).published === true
+  );
   return (
     <div>
       <p className="text-lg -mt-4">
@@ -154,20 +157,26 @@ function About({ recentPosts }: Props) {
         </a>
       </p>
 
-      <h3 className="mb-6">My blog posts:</h3>
-      <ul className="list-none mb-12">
-        {recentPosts.map(({ content }) => {
-          return (
-            <li key={content.metadata.permalink}>
-              <span className="mr-3 text-gray-400 font-semibold">
-                {new Date(content.metadata.date).getFullYear()}-
-                {new Date(content.metadata.date).getMonth() + 1}
-              </span>
-              <a href={content.metadata.permalink}>{content.metadata.title} </a>
-            </li>
-          );
-        })}
-      </ul>
+      {filteredPosts.length > 0 && (
+        <>
+          <h3 className="mb-6">My blog posts:</h3>
+          <ul className="list-none mb-12">
+            {filteredPosts.map(({ content }) => {
+              return (
+                <li key={content.metadata.permalink}>
+                  <span className="mr-3 text-gray-400 font-semibold">
+                    {new Date(content.metadata.date).getFullYear()}-
+                    {new Date(content.metadata.date).getMonth() + 1}
+                  </span>
+                  <a href={content.metadata.permalink}>
+                    {content.metadata.title}{" "}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
 
       <h3 className="mb-6">My proudest achievements:</h3>
       <ul className="list-none mb-12">
