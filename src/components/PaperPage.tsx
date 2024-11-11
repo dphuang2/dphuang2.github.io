@@ -4,7 +4,7 @@ export default function PaperPage({
   children,
 }: PropsWithChildren<{}>): JSX.Element {
   return (
-    <div className="min-h-screen md:bg-gray-50 py-8 flex flex-col justify-center relative overflow-hidden lg:py-12">
+    <div className="md:min-h-screen md:bg-gray-50 py-8 flex flex-col relative overflow-hidden lg:py-12">
       <img
         src="/img/beams.jpg"
         alt=""
