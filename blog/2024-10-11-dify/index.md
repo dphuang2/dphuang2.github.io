@@ -1,7 +1,8 @@
 ---
-image: dify.jpeg
+image: ./dify.jpeg
 published: true
 slug: dify
+description: After using Dify.AI extensively for building a demo, here are six key improvements I'd like to see in this powerful prompt engineering tool based on my hands-on experience.
 ---
 
 import Figure from "@site/src/components/Figure";
