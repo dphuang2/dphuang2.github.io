@@ -37,7 +37,7 @@ const config: Config = {
       "./plugins/blog-plugin",
       {
         id: "blog",
-        routeBasePath: "blog",
+        archiveBasePath: null,
         path: "./blog",
       },
     ],
