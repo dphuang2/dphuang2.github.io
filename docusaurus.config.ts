@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import tailwindPlugin from "./plugins/tailwind-config.cjs"; // add this
 
 const config: Config = {
-  title: "Dylan Huang - Software Engineer",
+  title: "Dylan Huang",
   tagline: "Passionate engineer",
   favicon: "img/dylan.avif",
 
