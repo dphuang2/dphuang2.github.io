@@ -1,6 +1,7 @@
 import LayoutProvider from "@theme/Layout/Provider";
 import { Content } from "@theme/BlogPostPage";
 import PaperPage from "./PaperPage";
+import { useState } from "react";
 
 interface Props {
   readonly recentPosts: readonly { readonly content: Content }[];
@@ -33,6 +34,7 @@ export default function Home({ recentPosts }: Props): JSX.Element {
 interface Achievement {
   year: number;
   description: string;
+  type: "professional" | "personal";
   link?: {
     text: string;
     url: string;
@@ -42,6 +44,7 @@ interface Achievement {
 const achievements: Achievement[] = [
   {
     year: 2023,
+    type: "professional",
     description:
       "Wrote technical articles that reached the front page of Hacker News",
     link: {
@@ -51,49 +54,66 @@ const achievements: Achievement[] = [
   },
   {
     year: 2023,
+    type: "professional",
     description:
       "Sold three different software products to real recurring customers in the same year",
   },
-  { year: 2022, description: "Ran a half marathon" },
-  { year: 2022, description: "Broke 100 in golf" },
-  { year: 2022, description: "Started a company to sell innovative software" },
-  { year: 2022, description: "Interviewed at YCombinator as a solo founder" },
-  { year: 2022, description: "Quit my job" },
+  { year: 2022, type: "personal", description: "Ran a half marathon" },
+  { year: 2022, type: "personal", description: "Broke 100 in golf" },
+  {
+    year: 2022,
+    type: "professional",
+    description: "Started a company to sell innovative software",
+  },
+  {
+    year: 2022,
+    type: "professional",
+    description: "Interviewed at YCombinator as a solo founder",
+  },
+  { year: 2022, type: "professional", description: "Quit my job" },
   {
     year: 2020,
+    type: "professional",
     description:
       "Promoted to Senior Software Engineer nine months after starting my first job out of college at C3.ai",
   },
   {
     year: 2020,
+    type: "personal",
     description:
       "Booked round-trip flights to Hawaii for only 24,000 credit card points",
   },
   {
     year: 2019,
+    type: "professional",
     description:
       "Received a cease and desist letter for a Shopify App Store side project",
   },
   {
     year: 2019,
+    type: "professional",
     description:
       "Graduated with a B.S. and M.Eng. in Computer Engineering from UIUC in four years",
   },
   {
     year: 2019,
+    type: "personal",
     description: "Worked at a boba shop for a semester in college",
   },
   {
     year: 2019,
+    type: "professional",
     description:
       "Received 4 software engineering job offers from Benchling, Facebook, AppDynamics, and C3.ai before graduating",
   },
   {
     year: 2019,
+    type: "professional",
     description: "Created a robotic caricature artist for Senior Design",
   },
   {
     year: 2018,
+    type: "professional",
     description: "Authored a research paper as an undergraduate at UIUC",
     link: {
       text: "[Paper]",
@@ -102,11 +122,13 @@ const achievements: Achievement[] = [
   },
   {
     year: 2018,
+    type: "personal",
     description:
       "Lead climbed for the first time outdoors at Horseshoe Canyon Ranch in Arkansas",
   },
   {
     year: 2017,
+    type: "professional",
     description: "Won a game of HQ Trivia using AI",
     link: {
       text: "[Blog Post]",
@@ -115,12 +137,18 @@ const achievements: Achievement[] = [
   },
   {
     year: 2016,
+    type: "personal",
     description:
       "Learned how to snowboard despite suffering a severe concussion the first time I tried snowboarding",
   },
-  { year: 2016, description: "Hatched a Gyrados in Pokemon Go" },
   {
     year: 2016,
+    type: "personal",
+    description: "Hatched a Gyrados in Pokemon Go",
+  },
+  {
+    year: 2016,
+    type: "professional",
     description:
       "Built a website with over 210,000 users, which required me to dodge IP range blocks from Niantic",
     link: {
@@ -128,19 +156,38 @@ const achievements: Achievement[] = [
       url: "https://www.reddit.com/r/pokemongodev/comments/4wn8sa/wwwpogobagme_a_seriously_powerful_pokémon_go",
     },
   },
-  { year: 2016, description: "Won an Intel-sponsored prize at Hack Illinois" },
-  { year: 2015, description: "Played two varsity sports in high school" },
+  {
+    year: 2016,
+    type: "professional",
+    description: "Won an Intel-sponsored prize at Hack Illinois",
+  },
+  {
+    year: 2015,
+    type: "personal",
+    description: "Played two varsity sports in high school",
+  },
   {
     year: 2013,
+    type: "personal",
     description: "Achieved Platinum rank (top 5%) in League of Legends",
   },
-  { year: 2013, description: "Awarded a cash prize for filmmaking" },
+  {
+    year: 2013,
+    type: "personal",
+    description: "Awarded a cash prize for filmmaking",
+  },
 ];
 
 function About({ recentPosts }: Props) {
+  const [showPersonal, setShowPersonal] = useState(false);
   const filteredPosts = recentPosts.filter(
     (post) => (post.content.frontMatter as any).published === true
   );
+
+  const filteredAchievements = achievements.filter((achievement) =>
+    showPersonal ? true : achievement.type === "professional"
+  );
+
   return (
     <div>
       <p className="text-lg -mt-4">
@@ -178,14 +225,27 @@ function About({ recentPosts }: Props) {
         </>
       )}
 
-      <h3 className="mb-6">My proudest achievements:</h3>
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="mb-0">My proudest achievements:</h3>
+        <button
+          onClick={() => setShowPersonal(!showPersonal)}
+          className="text-sm px-3 py-1 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white"
+        >
+          {showPersonal ? "Hide" : "Show"} personal achievements
+        </button>
+      </div>
       <ul className="list-none mb-12">
-        {achievements.map((achievement, index) => (
+        {filteredAchievements.map((achievement, index) => (
           <li key={index}>
             <span className="mr-3 text-gray-400 font-semibold">
               {achievement.year}
             </span>
             {achievement.description}
+            {achievement.type === "personal" && (
+              <span className="ml-2 text-xs px-1.5 py-0.5 text-gray-500 border border-gray-300 rounded">
+                personal
+              </span>
+            )}
             {achievement.link && (
               <a target="_blank" href={achievement.link.url}>
                 {" "}
