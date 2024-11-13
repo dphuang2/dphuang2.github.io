@@ -75,7 +75,7 @@ const achievements: Achievement[] = [
     year: 2020,
     type: "professional",
     description:
-      "Promoted to Senior Software Engineer nine months after starting my first job out of college at C3.ai",
+      "Promoted to Senior Software Engineer only 9 months after starting my first job out of college at C3.ai",
   },
   {
     year: 2020,
