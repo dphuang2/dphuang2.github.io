@@ -7,7 +7,7 @@ description: After using Dify.AI extensively for building a demo, here are six k
 
 import Figure from "@site/src/components/Figure";
 
-# 6 Things I Would Change About Dify.AI
+# 6 Things I Would Improve About Dify.AI
 
 <Figure src={require("./dify.jpeg").default} caption="Screenshot of a workflow on our self-hosted Dify instance" />
 
@@ -19,7 +19,7 @@ to building [agentic workflows](https://www.youtube.com/watch?v=sal78ACtGTc),
 which I believe is the future of AI automation, Dify feels like a better fit. In
 particular, I appreciate its great UI design, workflow editor, and self-hosting
 option. But there is **always** room for improvement. Here are the things I would
-change about dify.ai today.
+improve about dify.ai today.
 
 1. When testing workflows from the studio, it would be really nice to be able to select
    inputs from previous runs to be used as inputs for testing.
