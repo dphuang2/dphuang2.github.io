@@ -247,11 +247,11 @@ function About({ recentPosts }: Props) {
         </>
       )}
 
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col space-y-4 mb-6">
         <h3 className="mb-0">My proudest achievements:</h3>
         <button
           onClick={() => setShowPersonal(!showPersonal)}
-          className="text-xs px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white"
+          className="text-xs px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white self-start"
         >
           {showPersonal ? "Hide" : "Show"} personal achievements
         </button>
