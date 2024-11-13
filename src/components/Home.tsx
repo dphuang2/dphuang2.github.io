@@ -35,10 +35,10 @@ interface Achievement {
   year: number;
   description: string;
   type: "professional" | "personal";
-  link?: {
+  links?: Array<{
     text: string;
     url: string;
-  };
+  }>;
 }
 
 const achievements: Achievement[] = [
@@ -47,10 +47,12 @@ const achievements: Achievement[] = [
     type: "professional",
     description:
       "Wrote technical articles that reached the front page of Hacker News",
-    link: {
-      text: "[Hacker News Thread]",
-      url: "https://news.ycombinator.com/item?id=37078606",
-    },
+    links: [
+      {
+        text: "[Hacker News Thread]",
+        url: "https://news.ycombinator.com/item?id=37078606",
+      },
+    ],
   },
   {
     year: 2023,
@@ -110,15 +112,31 @@ const achievements: Achievement[] = [
     year: 2019,
     type: "professional",
     description: "Created a robotic caricature artist for Senior Design",
+    links: [
+      {
+        text: "[Demo Video]",
+        url: "https://www.youtube.com/watch?v=FUzM6eXq0LY",
+      },
+      {
+        text: "[Presentation]",
+        url: "https://courses.grainger.illinois.edu/ece445/getfile.asp?id=12847",
+      },
+      {
+        text: "[Final Paper]",
+        url: "https://courses.grainger.illinois.edu/ece445/getfile.asp?id=12783",
+      },
+    ],
   },
   {
     year: 2018,
     type: "professional",
     description: "Authored a research paper as an undergraduate at UIUC",
-    link: {
-      text: "[Paper]",
-      url: "https://dl.acm.org/doi/abs/10.1145/3173574.3173590",
-    },
+    links: [
+      {
+        text: "[Paper]",
+        url: "https://dl.acm.org/doi/abs/10.1145/3173574.3173590",
+      },
+    ],
   },
   {
     year: 2018,
@@ -130,10 +148,12 @@ const achievements: Achievement[] = [
     year: 2017,
     type: "professional",
     description: "Won a game of HQ Trivia using AI",
-    link: {
-      text: "[Blog Post]",
-      url: "https://github.com/dphuang2/dphuang2.github.io/blob/v2/_posts/2018-01-10-hqtrivia.markdown",
-    },
+    links: [
+      {
+        text: "[Blog Post]",
+        url: "https://github.com/dphuang2/dphuang2.github.io/blob/v2/_posts/2018-01-10-hqtrivia.markdown",
+      },
+    ],
   },
   {
     year: 2016,
@@ -151,10 +171,12 @@ const achievements: Achievement[] = [
     type: "professional",
     description:
       "Built a website with over 210,000 users, which required me to dodge IP range blocks from Niantic",
-    link: {
-      text: "[Reddit Launch Thread]",
-      url: "https://www.reddit.com/r/pokemongodev/comments/4wn8sa/wwwpogobagme_a_seriously_powerful_pokémon_go",
-    },
+    links: [
+      {
+        text: "[Reddit Launch Thread]",
+        url: "https://www.reddit.com/r/pokemongodev/comments/4wn8sa/wwwpogobagme_a_seriously_powerful_pokémon_go",
+      },
+    ],
   },
   {
     year: 2016,
@@ -229,7 +251,7 @@ function About({ recentPosts }: Props) {
         <h3 className="mb-0">My proudest achievements:</h3>
         <button
           onClick={() => setShowPersonal(!showPersonal)}
-          className="text-sm px-3 py-1 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white"
+          className="text-xs px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white"
         >
           {showPersonal ? "Hide" : "Show"} personal achievements
         </button>
@@ -246,12 +268,12 @@ function About({ recentPosts }: Props) {
                 personal
               </span>
             )}
-            {achievement.link && (
-              <a target="_blank" href={achievement.link.url}>
+            {achievement.links?.map((link, i) => (
+              <a key={i} target="_blank" href={link.url}>
                 {" "}
-                {achievement.link.text}
+                {link.text}
               </a>
-            )}
+            ))}
           </li>
         ))}
       </ul>
