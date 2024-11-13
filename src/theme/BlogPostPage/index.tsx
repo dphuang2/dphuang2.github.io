@@ -11,6 +11,26 @@ import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import BlogPostPageStructuredData from "@theme/BlogPostPage/StructuredData";
 import clsx from "clsx";
 
+const FormattedDate = ({ date }: { date: string }) => {
+  const [year, month, day] = date.split("T")[0].split("-");
+  const monthNames = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December",
+  };
+
+  return <>{`${monthNames[month]} ${parseInt(day)}, ${year}`}</>;
+};
+
 type Props = WrapperProps<typeof BlogPostPageType>;
 
 export default function BlogPostPageWrapper(props: Props): JSX.Element {
@@ -37,12 +57,7 @@ export default function BlogPostPageWrapper(props: Props): JSX.Element {
               <a href="/" className="hover:text-gray-700">
                 Dylan Huang
               </a>{" "}
-              on{" "}
-              {new Date(date).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
+              on <FormattedDate date={date} />
             </p>
             <BlogPostContent />
           </div>
