@@ -1,68 +1,67 @@
-import React, {type ReactNode} from 'react';
-import clsx from 'clsx';
-import {HtmlClassNameProvider, ThemeClassNames} from '@docusaurus/theme-common';
-import {BlogPostProvider, useBlogPost} from '@docusaurus/theme-common/internal';
-import BlogLayout from '@theme/BlogLayout';
-import BlogPostItem from '@theme/BlogPostItem';
-import BlogPostPaginator from '@theme/BlogPostPaginator';
-import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
-import BlogPostPageStructuredData from '@theme/BlogPostPage/StructuredData';
-import TOC from '@theme/TOC';
-import type {Props} from '@theme/BlogPostPage';
-import Unlisted from '@theme/Unlisted';
-import type {BlogSidebar} from '@docusaurus/plugin-content-blog';
+import type BlogPostPageType from "@theme/BlogPostPage";
+import type { WrapperProps } from "@docusaurus/types";
+import PaperPage from "@site/src/components/PaperPage";
+import React from "react";
+import {
+  HtmlClassNameProvider,
+  ThemeClassNames,
+} from "@docusaurus/theme-common";
+import { BlogPostProvider } from "@docusaurus/theme-common/internal";
+import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
+import BlogPostPageStructuredData from "@theme/BlogPostPage/StructuredData";
+import clsx from "clsx";
 
-function BlogPostPageContent({
-  sidebar,
-  children,
-}: {
-  sidebar: BlogSidebar;
-  children: ReactNode;
-}): JSX.Element {
-  const {metadata, toc} = useBlogPost();
-  const {nextItem, prevItem, frontMatter, unlisted} = metadata;
-  const {
-    hide_table_of_contents: hideTableOfContents,
-    toc_min_heading_level: tocMinHeadingLevel,
-    toc_max_heading_level: tocMaxHeadingLevel,
-  } = frontMatter;
-  return (
-    <BlogLayout
-      sidebar={sidebar}
-      toc={
-        !hideTableOfContents && toc.length > 0 ? (
-          <TOC
-            toc={toc}
-            minHeadingLevel={tocMinHeadingLevel}
-            maxHeadingLevel={tocMaxHeadingLevel}
-          />
-        ) : undefined
-      }>
-      {unlisted && <Unlisted />}
+const FormattedDate = ({ date }: { date: string }) => {
+  const [year, month, day] = date.split("T")[0].split("-");
+  const monthNames = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December",
+  };
 
-      <BlogPostItem>{children}</BlogPostItem>
+  return <>{`${monthNames[month]} ${parseInt(day)}, ${year}`}</>;
+};
 
-      {(nextItem || prevItem) && (
-        <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-      )}
-    </BlogLayout>
-  );
-}
+type Props = WrapperProps<typeof BlogPostPageType>;
 
-export default function BlogPostPage(props: Props): JSX.Element {
+export default function BlogPostPageWrapper(props: Props): JSX.Element {
   const BlogPostContent = props.content;
+  const title = props.content.frontMatter.title ?? props.content.contentTitle;
+  const date = props.content.metadata.date;
   return (
     <BlogPostProvider content={props.content} isBlogPostPage>
       <HtmlClassNameProvider
         className={clsx(
           ThemeClassNames.wrapper.blogPages,
-          ThemeClassNames.page.blogPostPage,
-        )}>
+          ThemeClassNames.page.blogPostPage
+        )}
+      >
         <BlogPostPageMetadata />
         <BlogPostPageStructuredData />
-        <BlogPostPageContent sidebar={props.sidebar}>
-          <BlogPostContent />
-        </BlogPostPageContent>
+        <PaperPage>
+          <div className="mx-auto prose">
+            <h1 className="text-4xl font-bold tracking-tight mb-8 text-balance">
+              {title}
+            </h1>
+            <p className="text-gray-500 -mt-6 mb-8">
+              by{" "}
+              <a href="/" className="hover:text-gray-700">
+                Dylan Huang
+              </a>{" "}
+              on <FormattedDate date={date} />
+            </p>
+            <BlogPostContent />
+          </div>
+        </PaperPage>
       </HtmlClassNameProvider>
     </BlogPostProvider>
   );
