@@ -16,10 +16,10 @@ export default function Figure({
 
   return (
     <>
-      <figure className="mx-0 my-8 flex flex-col items-center">
+      <figure className="mx-0 my-8 flex flex-col items-center [&_img]:my-0">
         <div className="inline-block">
-          {<div className="mb-2">{childExists ? newChild : children}</div>}
-          <figcaption className="text-sm text-gray-600 italic flex justify-center">
+          {<div>{childExists ? newChild : children}</div>}
+          <figcaption className="text-sm mt-0 text-gray-600 italic flex justify-center">
             <div>{caption}</div>
           </figcaption>
         </div>

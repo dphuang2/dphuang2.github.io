@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ReactNode } from "react";
 
 interface FigureProps {
   src: string;
-  caption?: string;
+  caption?: ReactNode;
 }
 
 export default function Figure({ src, caption }: FigureProps): JSX.Element {
@@ -38,7 +38,7 @@ export default function Figure({ src, caption }: FigureProps): JSX.Element {
         <div className="inline-block">
           <img
             src={src}
-            alt={caption}
+            alt={typeof caption === "string" ? caption : undefined}
             onClick={toggleEnlarged}
             onKeyDown={handleKeyPress}
             role="button"
@@ -76,7 +76,7 @@ export default function Figure({ src, caption }: FigureProps): JSX.Element {
             <div className="relative">
               <img
                 src={src}
-                alt={caption}
+                alt={typeof caption === "string" ? caption : undefined}
                 className="my-0 max-w-full max-h-[80vh] object-contain rounded-lg"
               />
             </div>
