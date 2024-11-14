@@ -13,17 +13,18 @@ export default function Figure({
         className: classNameWithMxAuto,
       })
     : children;
+
   return (
-    <figure className="mb-4">
-      {/* w-full is to ensure putting a code block inside figure doesn't overflow off the page */}
-      {/* flex flex-col items-center is to center the inner div */}
-      {<div className="mb-2">{childExists ? newChild : children}</div>}
-      <b>
-        <figcaption className="text-center font-light text-sm">
-          {caption}
-        </figcaption>
-      </b>
-    </figure>
+    <>
+      <figure className="mx-0 my-8 flex flex-col items-center">
+        <div className="inline-block">
+          {<div className="mb-2">{childExists ? newChild : children}</div>}
+          <figcaption className="text-sm text-gray-600 italic flex justify-center">
+            <div>{caption}</div>
+          </figcaption>
+        </div>
+      </figure>
+    </>
   );
 }
 
