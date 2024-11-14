@@ -1,14 +1,14 @@
 import React from 'react';
-import StructuredData from '@theme-original/BlogPostPage/StructuredData';
-import type StructuredDataType from '@theme/BlogPostPage/StructuredData';
-import type {WrapperProps} from '@docusaurus/types';
+import Head from '@docusaurus/Head';
+import {useBlogPostStructuredData} from '@docusaurus/theme-common';
 
-type Props = WrapperProps<typeof StructuredDataType>;
-
-export default function StructuredDataWrapper(props: Props): JSX.Element {
+export default function BlogPostStructuredData(): JSX.Element {
+  const structuredData = useBlogPostStructuredData();
   return (
-    <>
-      <StructuredData {...props} />
-    </>
+    <Head>
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+    </Head>
   );
 }
