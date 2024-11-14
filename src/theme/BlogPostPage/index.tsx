@@ -6,10 +6,14 @@ import {
   HtmlClassNameProvider,
   ThemeClassNames,
 } from "@docusaurus/theme-common";
-import { BlogPostProvider } from "@docusaurus/theme-common/internal";
+import {
+  BlogPostProvider,
+  ColorModeProvider,
+} from "@docusaurus/theme-common/internal";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import BlogPostPageStructuredData from "@theme/BlogPostPage/StructuredData";
 import clsx from "clsx";
+import MDXContent from "@theme/MDXContent";
 
 const FormattedDate = ({ date }: { date: string }) => {
   const [year, month, day] = date.split("T")[0].split("-");
@@ -59,7 +63,11 @@ export default function BlogPostPageWrapper(props: Props): JSX.Element {
               </a>{" "}
               on <FormattedDate date={date} />
             </p>
-            <BlogPostContent />
+            <ColorModeProvider>
+              <MDXContent>
+                <BlogPostContent />
+              </MDXContent>
+            </ColorModeProvider>
           </div>
         </PaperPage>
       </HtmlClassNameProvider>
