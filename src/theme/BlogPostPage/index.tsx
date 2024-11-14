@@ -68,6 +68,9 @@ export default function BlogPostPageWrapper(props: Props): JSX.Element {
                 <BlogPostContent />
               </MDXContent>
             </ColorModeProvider>
+            <div className="mt-16 text-center">
+              <a href="/">← Back to all posts</a>
+            </div>
           </div>
         </PaperPage>
       </HtmlClassNameProvider>
