@@ -65,14 +65,19 @@ const achievements: Achievement[] = [
   {
     year: 2022,
     type: "professional",
-    description: "Started a company to sell innovative software",
+    description:
+      "Started a Company to Sell SDKs, Documentation, and Demos as a Service for API-First Companies",
   },
   {
     year: 2022,
     type: "professional",
     description: "Interviewed at YCombinator as a solo founder",
   },
-  { year: 2022, type: "professional", description: "Quit my job" },
+  {
+    year: 2022,
+    type: "professional",
+    description: "Quit my job to pursue my entrepreneurial dreams",
+  },
   {
     year: 2020,
     type: "professional",
