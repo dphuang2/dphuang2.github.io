@@ -1,0 +1,486 @@
+---
+slug: graphql-vs-rest
+title: "I Reviewed 1,000s of GraphQL vs. REST perspectives"
+description: "Ask any developer: do you prefer GraphQL or REST? This often leads to opinionated conversations, sometimes even devolving into vulgar opinions rather than objective facts."
+image: ./graphql-vs-rest-assets/banner.png
+published: true
+---
+
+import Head from '@docusaurus/Head';
+import FigureWithChildren from "@site/src/components/FigureWithChildren";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  CarouselIndicator
+} from "@site/src/components/ui/carousel";
+
+
+<Head>
+  <title>I Reviewed 1,000s of GraphQL vs. REST perspectives</title>
+  <meta property="og:title" content="I Reviewed 1,000s of GraphQL vs. REST perspectives"/>
+</Head>
+
+Ask any developer: do you prefer GraphQL or REST? This often leads to
+opinionated conversations, sometimes even devolving into vulgar opinions rather
+than objective facts.
+
+To delve into the GraphQL vs. REST debate, I scoured platforms where developers
+frequently discuss such matters: YouTube, Reddit, Twitter, and Hacker News. I
+parsed 1,000s of discussions and synthesized my findings in this article,
+striving to present only thought-provoking perspectives.
+
+<FigureWithChildren caption='Funnel for gathering through-provoking perspectives'>
+<img src={require("./graphql-vs-rest-assets/discussion-funnel.png").default} />
+</FigureWithChildren>
+
+Next, I transcribed these discussions onto a whiteboard, organizing them into
+"Pro GraphQL," "Pro REST," or "Neutral" categories, and then clustering them
+into distinct perspectives. Each section in this post showcases a perspective
+while referencing pertinent discussions. To conclude, I highlight blog posts
+from GitHub and Shopify that serve as informative case studies in this ongoing
+debate.
+
+<FigureWithChildren caption={<div><a href="https://www.figma.com/figjam/">FigJam</a> I used to organize perspectives</div>}>
+<img src={require("./graphql-vs-rest-assets/figma-board.png").default} />
+</FigureWithChildren>
+
+{/* TRUNCATE */}
+
+## Pro REST Perspectives
+
+REST APIs have been around for decades. Much of the world's networking
+infrastructure is built on the HTTP standard, so it's no surprise that REST
+enjoys substantial support. However, similar to how
+[SOAP](https://en.wikipedia.org/wiki/SOAP) was eventually [overtaken by
+REST](https://stackify.com/soap-vs-rest/#:~:text=SOAP%20was%20long%20the%20standard,primary%20differences%20between%20SOAP%20vs.),
+GraphQL now poses a challenge to REST. As with any technological shift, there
+will always be those who express skepticism.
+
+### Perspective: GraphQL is not worth the complication
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/13z6amn/what_are_some_harsh_truths_that_rwebdev_needs_to/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-blog.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=PTfZcN20fro">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-difficult-to-maintain.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=yWzKJPw_VzM">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-footgun.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://twitter.com/jmhodges/status/1522387231033335808">Twitter</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-works-for-facebook.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-keep-graphql-dumb.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=yWzKJPw_VzM">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-knowledge-gap.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=25014582">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-over-querying.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/15i073y/i_need_to_get_this_off_my_chest/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-overcomplicated.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-pain-to-use.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=19147742">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-patch-work.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/128xzeg/graphql_trending_down/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-pretend.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=PTfZcN20fro">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-unnecessary-complexity.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselIndicator label="Opinion"/>
+</Carousel>
+
+#### Key Takeaway 🔑
+
+GraphQL is complicated.
+
+A few features that are simple to implement with REST instantly become a huge
+pain with GraphQL:
+
+- Access control
+- Rate limiting
+- Caching
+- [DOS](https://en.wikipedia.org/wiki/Denial-of-service_attack) protection
+- Using Maps/Tables/Dictionaries
+- [N + 1 Problem](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping)
+
+The complexity that arises from adopting GraphQL can sometimes outweigh its benefits for most engineering teams.
+Does your organization have a substantial budget allocated for engineers?
+Is your data model extremely relational? Is
+your API catering to a vast user base? Do all your engineers possess a proficient understanding of GraphQL? If not, you probably shouldn't be adopting
+GraphQL for its flexible query language.
+
+Entire companies like [Stellate](https://stellate.co/) and
+[Apollo](https://www.apollographql.com/) were born out of the need to solve these arguably over-complicated characteristics of GraphQL.
+
+### Perspective: GraphQL is not an optimization
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://twitter.com/jmhodges/status/1522385068974432256">Twitter</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-infinite-performance-work.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://betterprogramming.pub/graphql-from-excitement-to-deception-f81f7c95b7cf">betterprogramming.hub</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-lower-quality-images.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-overhead-to-server.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=yWzKJPw_VzM">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/rest-caching-is-automatic.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselIndicator label="Opinion"/>
+</Carousel>
+
+#### Key Takeaway 🔑
+
+GraphQL is not an automatic performance optimization.
+
+If your team faces similar challenges as Facebook, feel free to focus on
+optimizing your API layer. Otherwise, there are likely other optimizations you
+can implement for your application beyond the query layer.
+
+Despite its flexible query language, GraphQL can become a performance
+bottleneck. Writing a query that slows down your API is quite easy. Tasks like
+optimized DB queries, precise access control, query complexity analysis, and
+HTTP-level caching are complex to implement and introduce additional overhead to
+your server.
+
+GraphQL does not inherently enhance the speed of your API. The responsibility to
+optimize your API performance still rests on your shoulders.
+
+## Pro GraphQL Perspectives
+
+Despite the naysayers, GraphQL has still captured the minds of thousands of
+developers. The experiences of using GraphQL are undeniable, and it's easy to
+see why so many developers are excited about it.
+
+### Perspective: GraphQL has an amazing developer experience
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-autogeneration.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=PTfZcN20fro">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-endpoints-for-every-scenario.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=19147742">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-faster-and-better.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=25014582">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-fewer-bugs.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/128xzeg/graphql_trending_down/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-frontend-is-automatic.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=VjXb3PRL9WI&lc=UgxvVQA2cxk78ncRmVh4AaABAg">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-in-one-call.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/1509p4m/im_not_impressed_by_graphql_and_i_still_prefer/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-nice-fun-easy.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/128xzeg/graphql_trending_down/jemy0ig/?context=3">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-wouldnt-go-back.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/128xzeg/graphql_trending_down/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-highly-relational.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselIndicator label="Opinion"/>
+</Carousel>
+
+#### Key Takeaway 🔑
+
+Developers prioritize developer experience.
+
+Ask any developer you know; developer experience is the key to unlocking
+productivity. The GraphQL community has undoubtedly prioritized developer
+experience for users. Check out the [abundant and growing ecosystem of
+tools](https://graphql.org/code/) available for free. I'm impressed with [The
+Guild](https://the-guild.dev/) and their work on building a comprehensive
+GraphQL suite of tools.
+
+From documentation and client generators to data validation, server
+implementations, and API gateways, mature open-source projects cover it all. The
+caveat is that Node.js/JavaScript is the most popular language for GraphQL,
+resulting in differing levels of support for other languages. However, this
+situation is rapidly changing.
+
+Because GraphQL mandates the creation of an API schema, unlike REST, code
+generation stands out as a prominent feature among most GraphQL technology
+stacks. This significantly benefits developers by reducing the amount of
+boilerplate code they need to write. The ability to generate code from "front to
+back" is a game-changer for rapid development. While the REST ecosystem is
+progressing, it took a back seat for many years until [OpenAPI](/blog/openapi)
+emerged.
+
+Whether in small or large-scale software systems, GraphQL addresses a crucial
+aspect of the developer experience problem like never before. Personally, I
+believe this is a significant factor contributing to GraphQL's current traction.
+The compelling developer experience offered by GraphQL often leads people to
+overlook the tradeoffs.
+
+
+### Perspective: GraphQL has proven itself in the largest organizations
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://github.blog/2016-09-14-the-github-graphql-api/">github.blog</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-github.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-organizational-problem.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/1509p4m/im_not_impressed_by_graphql_and_i_still_prefer/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-payload-size.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.shopify.com/partners/blog/graphql-vs-rest">shopify.com</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-shopify-partner.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://thenewstack.io/why-shopify-favors-graphql-over-rest-for-its-apis/#:~:text=This%20meant%20that%20when%20Shopify,it%20comes%20to%20mapping%20data.">thenewstack.io</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/graphql-shopify.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselIndicator label="Opinion"/>
+</Carousel>
+
+You can't ignore the use of GraphQL in hyper-scale organizations like Facebook,
+GitHub, and Shopify.
+
+There are compelling case studies for the performance of GraphQL in some of the
+largest engineering organizations in the world. But it's important to note that
+these organizations have the resources to invest in the infrastructure and
+engineering talent required to make GraphQL work at scale.
+
+For most organizations, those resources are not available and important to the
+immediate business goals. In these cases, GraphQL is not the right choice if you
+are purely looking for an optimization.
+
+That being said, I still feel developer experience is a compelling reason to
+adopt GraphQL if your team is willing to invest in the learning curve.
+
+## Neutral Perspectives
+
+I think it's important to highlight the neutral perspectives. In my
+opinion, these are the ones that hold the most truth in that they acknowledge
+the tradeoffs of each approach. They are also the rarest opinions to find since
+most developers are stubborn in their ways.
+
+### Perspective: GraphQL is great for some use cases, but not all
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.youtube.com/watch?v=eIQh02xuVw4">YouTube</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-2.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/128xzeg/graphql_trending_down/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-1.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/1509p4m/im_not_impressed_by_graphql_and_i_still_prefer/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-90-percent.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselIndicator label="Opinion"/>
+</Carousel>
+
+#### Key Takeaway 🔑
+
+GraphQL proves valuable for intricate relational data models and sizable teams
+grappling with substantial scalability challenges, but it's not a silver bullet.
+
+GraphQL emerged as a solution to a specific predicament at Facebook: the
+migration of the social media giant's newsfeed functionality from web to mobile.
+(Read more about it
+[here](https://engineering.fb.com/2015/09/14/core-data/graphql-a-data-query-language/)).
+
+This perspective may seem apparent and lacking in provocation, yet, as with any engineering choice, trade-offs come into play. Because Facebook has contributed [so many great projects to open
+source](https://opensource.fb.com/), it's easy for engineers to blindly adopt
+the latest and greatest from Facebook in hopes it will help you preemptively
+solve scaling problems. But as always, you have to understand the problem you
+are solving to make the right technical decision for your team or you risk
+over-engineering your solution.
+
+### Perspective: The benefits of GraphQL are great, but difficult to implement in practice
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-everyone-faster.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=25014582">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-joy-querying-rest-deterministic.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://news.ycombinator.com/item?id=32366759">Hacker News</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-high-skill.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://www.reddit.com/r/webdev/comments/128xzeg/graphql_trending_down/">Reddit</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-misunderstood.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+    <CarouselItem>
+      <FigureWithChildren caption={<a href="https://twitter.com/mattknox/status/1522641060341579776">Twitter</a>}>
+        <img src={require("./graphql-vs-rest-assets/slides/after/neutral-persisted-queries.png").default} />
+      </FigureWithChildren>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselIndicator label="Opinion"/>
+</Carousel>
+
+#### Key Takeaway 🔑
+
+To successfully implement GraphQL at scale, a high level of skill is required to
+ensure optimal performance.
+
+In practice, GraphQL provides an exceptional
+interface for frontend and API consumers, enabling them to query and explore the
+API efficiently. However, it does shift a significant portion of complexity to
+the backend. For instance, in the absence of [persisted
+queries](https://www.apollographql.com/docs/apollo-server/performance/apq/),
+GraphQL exposes an interface that can be potentially hazardous, allowing
+unbounded query requests to your API. Have a public GraphQL API? Then you are forced to rate limit
+by calculating [query complexity like
+Shopify](https://shopify.engineering/rate-limiting-graphql-apis-calculating-query-complexity).
+Without access to skilled engineers and the resources for substantial
+infrastructure investment, GraphQL can become a recipe for disaster when it
+comes to scalability.
+
+Nonetheless, when executed correctly, GraphQL can bring immense benefits to
+client-heavy applications, offering tools like
+[GraphiQL](https://github.com/graphql/graphiql) for interactive query
+exploration, [cache normalization with
+urql](https://formidable.com/open-source/urql/docs/) for efficient data
+management, and the ability to create granular queries without much hassle.
+Without GraphQL, incorporating these features would demand a significant amount
+of effort.
+
+REST doesn't share these scalability challenges to the same
+extent, as backend developers can pinpoint performance issues to specific
+endpoints. Developers can also rely on the mature and well-defined HTTP
+specification that existing infrastructure is already equipped to handle.
+
+## Conclusion
+
+Before this exercise, I built GraphQL and REST APIs in both toy and production
+examples and always leaned towards DX. After reading 1,000s of perspectives, I
+am convinced that you should start with REST to avoid the complications of
+GraphQL. If you are lucky enough to be making technical decisions at "unicorn
+scale", I would consider looking at GraphQL to optimize the query interface.
+Meanwhile, take advantage of the [growing OpenAPI
+ecosystem](/blog/openapi#openapi-tools-and-ecosystem).
+
+In most cases, for GraphQL to effectively address the problems it was originally
+designed to solve, a team should ideally possess a considerable number of
+developers, and their API should handle traffic at a "unicorn scale." Most
+likely it's not necessary to overly concern yourself with such extensive
+scalability, as the complexity involved might not be justified. Notable giants
+like Twilio and Stripe, for instance, have not yet integrated GraphQL into their
+public APIs despite being well beyond unicorn status.
+
+Nevertheless, if you have a workflow that takes advantage of the remarkable
+developer experience offered by GraphQL, then by all means, embrace it! Just
+ensure that you are fully aware of the tradeoffs involved. Ultimately, the most
+suitable choice for most teams is whatever enables faster development.
+
+Side note: If you are just looking to build fast, checkout
+[tRPC](https://trpc.io/) - the DX is pretty awesome. I have no affiliation other
+than building a production app using tRPC.
