@@ -94,7 +94,7 @@ const achievements: Achievement[] = [
     year: 2019,
     type: "professional",
     description:
-      "Received a cease and desist letter for a Shopify App Store side project",
+      "Built and launched a Shopify app in a week that had revenue on day 1 of launch",
   },
   {
     year: 2019,
@@ -152,7 +152,8 @@ const achievements: Achievement[] = [
   {
     year: 2017,
     type: "professional",
-    description: "Won a game of HQ Trivia using AI",
+    description:
+      "Won a game of HQ Trivia using classical NLP techniques (pre-LLM era)",
     links: [
       {
         text: "[Blog Post]",
