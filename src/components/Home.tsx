@@ -241,15 +241,18 @@ function About({ recentPosts }: Props) {
       {filteredPosts.length > 0 && (
         <>
           <h3 className="mb-6">My blog posts:</h3>
-          <ul className="list-none mb-12">
+          <ul className="list-none mb-12 pl-0">
             {filteredPosts.map(({ content }) => {
               return (
-                <li key={content.metadata.permalink}>
-                  <span className="mr-3 text-gray-400 font-semibold">
+                <li key={content.metadata.permalink} className="flex flex-row">
+                  <span className="shrink-0 w-16 sm:w-20 text-gray-400 font-semibold text-sm sm:text-base">
                     {new Date(content.metadata.date).getFullYear()}-
                     {new Date(content.metadata.date).getMonth() + 1}
                   </span>
-                  <a href={content.metadata.permalink}>
+                  <a
+                    href={content.metadata.permalink}
+                    className="text-sm sm:text-base"
+                  >
                     {content.metadata.title}{" "}
                   </a>
                 </li>
@@ -263,35 +266,37 @@ function About({ recentPosts }: Props) {
         <h3 className="mb-0">My proudest achievements:</h3>
         <button
           onClick={() => setShowPersonal(!showPersonal)}
-          className="text-xs px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white self-start"
+          className="text-xs px-1.5 sm:px-2 py-0.5 rounded-full border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer bg-white self-start"
         >
           {showPersonal ? "Hide" : "Show"} personal achievements
         </button>
       </div>
-      <ul className="list-none mb-12">
+      <ul className="list-none mb-12 pl-0">
         {filteredAchievements.map((achievement, index) => (
-          <li key={index}>
-            <span className="mr-3 text-gray-400 font-semibold">
+          <li key={index} className="flex flex-row">
+            <span className="shrink-0 w-12 sm:w-14 text-gray-400 font-semibold text-sm sm:text-base">
               {achievement.year}
             </span>
-            {achievement.description}
-            {achievement.type === "personal" && (
-              <span className="ml-2 text-xs px-1.5 py-0.5 text-gray-500 border border-gray-300 rounded">
-                personal
-              </span>
-            )}
-            {achievement.links?.map((link, i) => (
-              <a key={i} target="_blank" href={link.url}>
-                {" "}
-                {link.text}
-              </a>
-            ))}
+            <div className="text-sm sm:text-base">
+              {achievement.description}
+              {achievement.type === "personal" && (
+                <span className="ml-1 sm:ml-2 text-xs px-1 sm:px-1.5 py-0.5 text-gray-500 border border-gray-300 rounded">
+                  personal
+                </span>
+              )}
+              {achievement.links?.map((link, i) => (
+                <a key={i} target="_blank" href={link.url}>
+                  {" "}
+                  {link.text}
+                </a>
+              ))}
+            </div>
           </li>
         ))}
       </ul>
 
       <h3 className="mb-6">What colleagues have said about me:</h3>
-      <blockquote className="mb-8">
+      <blockquote className="mb-8 text-sm sm:text-base">
         I have no hesitation in saying that Dylan exhibited exceptional drive,
         competency and leadership abilities. I wholeheartedly recommend him and
         would welcome the opportunity to work together again. Dylan would be a
@@ -300,7 +305,7 @@ function About({ recentPosts }: Props) {
         <a href="https://www.linkedin.com/in/cherifjazra">Cherif Jazra</a>
       </blockquote>
 
-      <blockquote>
+      <blockquote className="text-sm sm:text-base">
         With organizational growth and new projects, it was an easy decision for
         me to make Dylan the technical lead for a new engineering team in my
         org, working on a greenfield project at the intersection of data
