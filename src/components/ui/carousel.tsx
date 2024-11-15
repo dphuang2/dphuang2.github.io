@@ -292,8 +292,8 @@ CarouselNext.displayName = "CarouselNext";
 
 const CarouselIndicator = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+  React.HTMLAttributes<HTMLDivElement> & { label?: string }
+>(({ className, label = "Slide", ...props }, ref) => {
   const { current, total } = useCarousel();
 
   return (
@@ -302,7 +302,7 @@ const CarouselIndicator = React.forwardRef<
       className={cn("text-center text-sm text-muted-foreground", className)}
       {...props}
     >
-      Slide {current} of {total}
+      {label} {current} of {total}
     </div>
   );
 });
