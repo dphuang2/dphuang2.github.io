@@ -218,8 +218,8 @@ function About({ recentPosts }: Props) {
   return (
     <div>
       <p className="text-lg -mt-4">
-        I'm Dylan, a passionate software engineer and avid learner with a
-        romantic relationship with entrepreneurship.
+        I'm Dylan, a passionate software engineer and avid learner with
+        entrepreneurship at my core.
       </p>
 
       <p className="flex items-center mt-4 mb-12 space-x-4">
