@@ -12,8 +12,8 @@ async function blogPluginExtended(...pluginArgs) {
      * Override the default `contentLoaded` hook to access blog posts data
      */
     contentLoaded: async function (data) {
-      // Get the 5 latest blog posts
-      const recentPosts = [...data.content.blogPosts].splice(0, 5);
+      // Get all blog posts
+      const recentPosts = [...data.content.blogPosts];
 
       data.actions.addRoute({
         // Add route for the home page
