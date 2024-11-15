@@ -197,7 +197,7 @@ const achievements: Achievement[] = [
   {
     year: 2013,
     type: "personal",
-    description: "Achieved Platinum rank (top 5%) in League of Legends",
+    description: "Platinum rank (top 5%) in League of Legends",
   },
   {
     year: 2013,
