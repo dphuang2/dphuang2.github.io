@@ -69,7 +69,7 @@ const achievements: Achievement[] = [
       "Started a Company to Sell SDKs, Documentation, and Demos as a Service for API-First Companies",
     links: [
       {
-        text: "Customer Case Study",
+        text: "[Customer Case Study]",
         url: "https://www.linkedin.com/posts/activity-7093352065749422081-AytP",
       },
     ],
