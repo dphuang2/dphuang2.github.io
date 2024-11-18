@@ -1,0 +1,93 @@
+---
+published: true
+---
+# Not All Problems Are Great Fits for LLMs
+
+Many startups are racing to find product-market fit at the intersection of AI
+and various industries. Several successful use-cases have already emerged,
+including coding assistants ([Cursor](https://cursor.sh)), marketing copy
+([Jasper](https://www.jasper.ai)), search
+([Perplexity](https://www.perplexity.ai)), real estate
+([Elise](https://www.eliseai.com/)), and RFPs ([GovDash](https://govdash.ai)).
+While there are likely other successful LLM applications out there, these are
+the ones I'm familiar with off the top of my head. Through my experience
+building and selling LLM tools, I've discovered a new important criteria for
+evaluating an idea.
+
+## Are LLMs Especially Good at Solving This Problem?
+
+Traditional business advice emphasizes finding and solving urgent, critical
+problems. While this principle remains valid, not all pressing problems are
+well-suited for LLM solutions, given their current capabilities and limitations.
+As non-deterministic algorithms, LLMs cannot be tested with the same rigor as
+traditional software. During controlled product demos, LLMs may appear to handle
+use-cases flawlessly, creating an illusion of broader applicability. However,
+when deployed to production environments with diverse, unpredictable inputs,
+carefully crafted prompts often fail to maintain consistent performance.
+
+## Where LLMs Excel
+
+However, LLMs can excel when their non-deterministic nature doesn't matter or
+even provides benefits. Let's examine successful LLM use-cases where this is
+true.
+
+### Coding Copilots
+
+Think of coding assistants like Cursor that help you write code and complete
+your lines.
+
+When you code, there's usually a "right way" to solve a problem. Even though
+there are many ways to write code, most good solutions look similar—this is what
+we call **"low entropy"**, like how puzzle pieces only fit together in a few
+ways. LLMs are really good at pattern matching, which is perfect for coding
+because writing code is all about recognizing and applying common patterns. Just
+like how you might see similar ways to write a login form or sort a list across
+different projects, LLMs have learned these patterns from seeing lots of code,
+making them great at suggesting the right solutions.
+
+### Copywriting Generator
+
+Marketing copy is more art than science, making non-deterministic LLM outputs
+acceptable. Since copywriting involves ideation and iteration rather than
+precision, it has a naturally **high margin of error**.
+
+### Search
+
+Search is unique because users don't expect perfect first results - they're used
+to scrolling and exploring multiple options on platforms like Google or Amazon.
+While search traditionally relies on complex algorithms, LLMs can enhance the
+experience by leveraging their **ability to synthesize and summarize information
+within their context window**. This enables a hybrid approach where traditional
+search algorithms surface results that LLMs can then summarize to guide users to
+what they're looking for.
+
+### Real Estate Assistant
+
+Leasing agents primarily answer questions about properties to help renters find
+suitable homes and sign leases. Since their core function involves retrieving
+and relaying property information, a **real estate assistant effectively becomes
+a specialized search problem**.
+
+### RFPs
+
+RFP responses combine two LLM strengths: extracting questions from lengthy,
+unstructured documents and searching internal knowledge bases for relevant
+answers. This makes the RFP response process essentially **a document extraction
+and search problem**.
+
+## Conclusion
+
+When building an LLM startup, focus on problems with these key characteristics:
+
+ - Low Entropy
+ - High margin of error
+ - Search
+ - Document extraction
+
+Problems requiring high precision or having high entropy may not be suitable for
+LLMs. However, LLMs can still excel at predictable tasks, as seen in copywriting
+and coding assistance.
+
+Beyond traditional business evaluation, ask yourself: "Are LLMs particularly
+well-suited to solve this problem?" If not, reconsider unless you have unique
+insights into making it work.
