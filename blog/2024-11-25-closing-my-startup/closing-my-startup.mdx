@@ -1,0 +1,101 @@
+---
+slug: closing-my-startup
+image: ./repo.png
+---
+
+import Figure from "@site/src/components/Figure";
+
+# After 3 Years, I Failed. Here's All My Startup's Code.
+
+
+And by "all," I mean everything: core product, failed pivots, miscellaneous
+scripts, deployment configurations, marketing website, and more. Hopefully the
+codebase is interesting or potentially helpful to somebody out there!
+
+## The Startup
+
+Konfig was a developer tools startup focused on making API integrations easier.
+We started in late 2022 with the mission of simplifying how developers work with
+APIs by providing better tooling around SDK generation, documentation, and
+testing.
+
+Our main product was an SDK Generator that could take any OpenAPI specification
+and generate high-quality client libraries in multiple programming languages. We
+expanded this with additional tools for API documentation and interactive API
+testing environments.
+
+While we gained some traction with some startups, we ultimately weren't able to
+build a hyper-growth business. It was too difficult to get potential customers to
+sign contracts with us and that price points were too low despite the
+demonstrably ROI. We then decided to pivot into a vertical B2B SaaS AI product
+because we felt we could use the breakthroughs in Gen AI to solve previously
+unsolvable problems, but after going through user interviews and the sales cycle
+for many different ideas, we haven't been able to find enough traction to make
+us believe that we were on the right track to build a huge business.
+
+Despite the outcome, we're proud of the technology we built and believe our work
+could be helpful for others. That's why we're open-sourcing our entire codebase.
+
+<Figure
+  src={require("./landing.png").default}
+  caption="The Konfig landing page"
+/>
+
+## The Repo
+
+Here is the public [GitHub repo](https://github.com/konfig-dev/konfig). I'm releasing it exactly as it was when we shut down—no cleanup, no polishing, no modifications. This is our startup's codebase in its true, unfiltered form.
+
+<Figure
+  src={require("./repo.png").default}
+  caption="The Konfig GitHub repository containing all our startup's code: the good, the bad, and the ugly."
+/>
+
+## The Products
+
+In the past 3 years, we built 4 main products.
+
+1. [SDK Generator](https://github.com/konfig-dev/konfig/tree/main/generator)
+2. [Markdown and OpenAPI Documentation](https://github.com/konfig-dev/konfig/tree/main/generator/konfig-next-app)
+3. [API Demos (Markdown Based Jupyter Notebooks)](https://github.com/konfig-dev/konfig/tree/main/generator/konfig-python-remote-code-executor)
+4. [SDKs for Public APIs](https://github.com/konfig-dev/konfig/tree/main/sdks)
+
+## Random Things
+
+And lots of miscellaneous things:
+
+1. [Shell script for generating cold outbound message](https://github.com/konfig-dev/konfig/blob/main/misc/sales/generate_message.sh)
+2. [Programmatic SEO Scripting](https://github.com/konfig-dev/konfig/blob/main/sdks/scripts/generate-published.ts)
+3. [References to live customer deployments and pre-sales artifacts](https://github.com/konfig-dev/konfig/tree/main/customers)
+4. [Marketing website](https://github.com/konfig-dev/konfig/tree/main/konfigthis.com)
+5. [Product Documentation](https://github.com/konfig-dev/konfig/tree/main/generator/konfig-docs)
+6. [Modified Changeset Bot](https://github.com/konfig-dev/konfig/tree/main/generator/konfig-changeset-bot) - Supports our custom monorepo setup
+7. [SDK Generator Integration Tests using Earthly](https://github.com/konfig-dev/konfig/tree/main/generator/konfig-integration-tests)
+8. [Python Code Formatting Service](https://github.com/konfig-dev/konfig/tree/main/generator/konfig-python-formatter-server-blackd)
+9. [AI Pivot Experimentation](https://github.com/konfig-dev/konfig/tree/main/misc/building_ai_applications)
+10. [render.com deployment configuration](https://github.com/konfig-dev/konfig/blob/main/render.yaml) - `render.yaml`
+11. [API Documentation Generator Tool using LLMs/HTMX/Django](https://github.com/konfig-dev/konfig/tree/main/enterprise)
+12. [Custom Notion Database Integration](https://github.com/konfig-dev/konfig/blob/main/generator/konfig-dash/api/src/functions/sdkSignupForm/sdkSignupForm.ts)
+
+## Thank You
+
+I want to express my deepest gratitude to everyone who supported us on this
+journey. To our investors who believed in our vision and backed us financially,
+thank you for taking a chance on us. To our customers who trusted us with their
+business and provided invaluable feedback, you helped shape our products and
+understanding of the market. And to Eddie and Anh-Tuan, my incredible
+teammates—thank you for your dedication, hard work, and partnership through all
+the ups and downs. Your contributions made this startup journey not just
+possible, but truly meaningful and worthwhile.
+
+Looking back to March 2022 when I left my job to pursue this startup full-time,
+I have absolutely no regrets. I knew the risks—that failure was a very real
+possibility—but I also knew I had to take this chance. Today, even as we close
+this chapter, I'm grateful for the failure because it has taught me more than
+success ever could. The experience has been transformative, showing me what I'm
+capable of and what I still need to learn.
+
+As for what's next, I'm excited to explore new opportunities, see where the job
+market thinks I fit (haha), and continue learning and growing. Who knows? Maybe
+someday I'll take another shot at building something of my own. But for now, I'm
+thankful for the journey, the lessons learned, and the relationships built. This
+experience has been invaluable, and I'm grateful for everyone involved.
