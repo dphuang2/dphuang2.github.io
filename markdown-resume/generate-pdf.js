@@ -13,8 +13,8 @@ async function generatePDF() {
     preferCSSPageSize: true,
     margin: {
       top: "1cm",
-      right: "2cm",
-      bottom: "2cm",
+      right: "1cm",
+      bottom: "1cm",
       left: "1cm",
     },
   });
