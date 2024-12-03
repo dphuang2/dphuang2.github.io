@@ -32,7 +32,7 @@ h6 {
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-align: center;
   color: #000;
 }
@@ -70,7 +70,7 @@ h6 {
 
 /* Text elements */
 p {
-  margin: 0.75rem 0;
+  margin: 0.25rem 0 0.5rem 0;
   color: #000;
 }
 
@@ -84,7 +84,7 @@ a {
 ul,
 ol {
   padding-left: 1.25rem;
-  margin: 0.75rem 0;
+  margin: 0.25rem 0 0.5rem 0;
   color: #000;
 }
 
@@ -97,12 +97,18 @@ code,
 pre {
   font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
   font-size: 0.85rem;
-  background: #f7fafc;
+  background: #f8fafc;
   border-radius: 0.25rem;
+  color: #1a202c;
+  border: 1px solid #e2e8f0;
 }
 
 code {
-  padding: 0.15em 0.3em;
+  padding: 0.2em 0.4em;
+  margin: 0.2em 0.2em;
+  font-weight: 500;
+  background: #edf2f7;
+  display: inline-block;
 }
 
 pre {
@@ -180,6 +186,7 @@ textarea:focus {
 /* Definition lists */
 dl {
   display: flex;
+  margin: 0;
 }
 
 dl dt,
@@ -187,4 +194,8 @@ dl dd:not(:last-child) {
   flex-basis: 0%;
   flex-grow: 1;
   flex-shrink: 1;
+}
+
+dd {
+  margin-inline-start: 0;
 }

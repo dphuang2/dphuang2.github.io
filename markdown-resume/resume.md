@@ -10,47 +10,50 @@ title: Dylan Huang
 [dylanhuang.com](https://dylanhuang.com) | [dylan.p.huang@gmail.com](mailto:dylan.p.huang@gmail.com) | [LinkedIn](https://www.linkedin.com/in/dphuang2/) | [GitHub](https://github.com/dphuang2)
 </div>
 
+Software engineer and entrepreneur with experience founding startups, leading teams, and solving challenging technical problems.
+
 ## Experience
 
 **Co-Founder**
 : **Konfig**
-: **July 2022 - December 2024**
+: **Jul 2022 - Dec 2024**
 
-- Sales, Customer Support, Engineering, Marketing
-- Reached 5 figure ARR selling SDKs and Documentation as a service to API-first companies
-- Wrote technical marketing blog posts reaching 31,000 readers and the front page of hacker news
-- Built an SDK generator capable of publishing high quality libraries across all the most popular languages (Python, TypeScript, Java, Swift, Go, C#, Ruby, PHP, Dart)
-- Built Markdown based documentation platform with code generation and dynamic code execution capabilities
+- Built and sold SDKs and Documentation-as-a-Service to API-first companies, reaching 5-figure ARR
+- Authored viral technical content reaching 31K readers and front page of Hacker News
+- Developed multi-language SDK generator (Python, TypeScript, Java, Go, etc.) and documentation platform with code generation capabilities
 
 **Senior Software Engineer**
 : **C3.ai**
-: **August 2019 - March 2022**
+: **Aug 2019 - Mar 2022**
 
-- Led a team of 5 engineers in building a scalable and intelligent big data exploration framework leveraging distributed compute and built on the popular Pandas API
-- Coordinated product stakeholders and engineering leadership in weekly high visibility meetings
-- Translated product requirements into well-defined and equally distributed engineering tasks
-- Reduced 12 hour CI times for a team of 50 engineers by 50% using parallelization
-- Built AST-based Java migration framework capable of translating millions of lines of code using a rules based framework
-- Helped grow a team from 5 to 20 by conducting over 160 technical interviews
-- Helped develop a proprietary DSL capable of bootstrapping petabyte scale data applications in millions of generated code in Java
-- Contributed to customer facing Python and JavaScript SDKs leveraging a proprietary RPC protocol
-- Designed and implemented critical code paths and testing infrastructure for a proprietary low-code AI application platform
+- Led 5-engineer team building scalable data exploration framework on Pandas API and contributed to proprietary DSL for petabyte-scale applications
+- Reduced CI pipeline runtime by 50% for 50-engineer team through parallelization and built AST-based Java migration framework
+- Conducted 160+ technical interviews, helping grow engineering team from 5 to 20 engineers
 
 **Software Engineering Intern**
 : **AppDynamics**
-: **May 2018 - August 2018**
+: **May 2018 - Aug 2018**
 
-- Researched and implemented proof of concept to measure JavaScript execution time on real user devices across any browser
-- Designed and built JavaScript agent and API to generate replays based on user sessions and classify user behaviors based on browser events
+- Implemented cross-browser JavaScript execution time measurement and user session replay system
 
 **Research Assistant**
-: **University of Illinois Urbana-Champaign**
-: **August 2015 - August 2018**
+: **UIUC**
+: **Aug 2015 - Aug 2018**
 
-- Published author [Paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=dylan+Huang&btnG=#d=gs_qabs&t=1706418435284&u=%23p%3DpOIaC76K7kAJ)
-- Built web applications to run UX experiments focused on social media
-- Integrated with Twitter API
+- Developed web applications for HCI/social media research, resulting in [published paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=dylan+Huang&btnG=#d=gs_qabs&t=1706418435284&u=%23p%3DpOIaC76K7kAJ)
+- Built sentiment analysis system for Twitter data and led student research cohort
 - Led cohort of student researchers in various projects
+
+## Projects
+
+- [dylanhuang.com](https://dylanhuang.com) - Features technical blog posts focused on software engineering and system design with comprehensive list of achievements and testimonials from engineering colleagues
+- **Pokemon Go App** ([GitHub](https://github.com/dphuang2/PoGoBag)) - Reached over 210,000 users and 3.3M views in two weeks
+- **Shopify App** ([Reddit Launch Post](https://www.reddit.com/r/shopify/comments/dirbr5/loopr_optimize_user_experiences_with_pixelperfect/)) - Built session replay analytics tool that captures and visualizes customer browsing behavior on Shopify stores, generating revenue from day one after launch
+- **HQTrivia Solver** ([Blog Post](https://github.com/dphuang2/dphuang2.github.io/blob/v2/_posts/2018-01-10-hqtrivia.markdown)) - Built automated solver for HQ Trivia game using NLP and web scraping techniques to analyze questions and search results to determine correct answers (pre-LLM era)
+
+## Skills
+
+`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Code Generation`
 
 ## Education
 
