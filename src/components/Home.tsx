@@ -2,6 +2,7 @@ import LayoutProvider from "@theme/Layout/Provider";
 import { Content } from "@theme/BlogPostPage";
 import PaperPage from "./PaperPage";
 import { useState } from "react";
+import { FileText } from "lucide-react";
 
 interface Props {
   readonly recentPosts: readonly { readonly content: Content }[];
@@ -235,6 +236,9 @@ function About({ recentPosts }: Props) {
         </a>
         <a target="_blank" href="https://www.linkedin.com/in/dphuang2/">
           <LinkedInLogo />
+        </a>
+        <a target="_blank" href="/resume.pdf">
+          <FileText className="h-4 w-4 text-slate-400 hover:text-slate-700 transition-colors" />
         </a>
       </p>
 
