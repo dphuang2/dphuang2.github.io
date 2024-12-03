@@ -1,0 +1,15 @@
+{
+  "name": "markdown-resume",
+  "version": "1.0.0",
+  "description": "This repo allows you to build/maintain your resume in a Markdown file, and then publish it into an HTML or PDF file. Technically, you could output it into any file you wanted with pandoc, or wkhtmltopdf, but I wasn't interested in those scenarios so I explore those avenues.",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^23.10.0"
+  }
+}

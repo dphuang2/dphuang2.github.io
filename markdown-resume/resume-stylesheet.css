@@ -2,18 +2,18 @@
 
 /* Base styles with denser UI */
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans",
+    "Nimbus Sans L", "Noto Sans", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.4;
   font-size: 14px;
-  color: #4a5568;
+  color: #000;
 }
 
 body {
   margin: 0 auto;
   padding: 1rem;
-  max-width: 55ch;
+  max-width: 95ch;
   background: #fff;
 }
 
@@ -38,8 +38,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
   margin-bottom: 0.75rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid #000;
@@ -50,14 +50,14 @@ h3 {
   font-size: 1.25rem;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
-  color: #1a202c;
+  color: #000;
 }
 
 h4 {
   font-size: 1.1rem;
   margin-top: 1rem;
   margin-bottom: 0.4rem;
-  color: #1a202c;
+  color: #000;
 }
 
 h5,
@@ -65,23 +65,19 @@ h6 {
   font-size: 0.9rem;
   margin-top: 0.75rem;
   margin-bottom: 0.4rem;
-  color: #1a202c;
+  color: #000;
 }
 
 /* Text elements */
 p {
   margin: 0.75rem 0;
-  color: #4a5568;
+  color: #000;
 }
 
 a {
-  color: #4299e1;
-  text-decoration: none;
+  color: #4b7be5 !important;
+  text-decoration: none !important;
   transition: color 0.1s ease;
-}
-
-a:hover {
-  color: #2b6cb0;
 }
 
 /* Lists */
@@ -89,7 +85,7 @@ ul,
 ol {
   padding-left: 1.25rem;
   margin: 0.75rem 0;
-  color: #4a5568;
+  color: #000;
 }
 
 li {
@@ -139,7 +135,7 @@ blockquote {
   padding: 0.5rem 0.75rem;
   border-left: 3px solid #e2e8f0;
   background: #f7fafc;
-  color: #4a5568;
+  color: #000;
 }
 
 /* Horizontal rule */
@@ -169,7 +165,7 @@ textarea {
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
-  color: #4a5568;
+  color: #000;
   transition: all 0.1s ease;
 }
 
@@ -181,35 +177,14 @@ textarea:focus {
   border-color: #4299e1;
 }
 
-/* Print styles */
-@media print {
-  body {
-    color: #000;
-    background: #fff;
-  }
-  a {
-    color: #000;
-    text-decoration: underline;
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-}
-
 /* Definition lists */
 dl {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.75rem 0;
 }
 
 dl dt,
-dl dd {
-  margin: 0;
-  font-weight: bold;
+dl dd:not(:last-child) {
+  flex-basis: 0%;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
