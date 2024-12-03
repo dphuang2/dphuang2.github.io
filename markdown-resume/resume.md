@@ -3,15 +3,7 @@ margin-left: 2cm
 margin-right: 2cm
 margin-top: 1cm
 margin-bottom: 2cm
-title: Your Resume in Markdown
-description-meta: "This is the meta description for the HTML file, and one day the PDF file, for better SEO?"
-keywords:
-  - "php"
-  - "mysql"
-  - "linux"
-author:
-  - I am the author
-subject: "Subject"
+title: Dylan Huang
 ---
 
 ###### [[example.com](https://example.com)] . [ me@example.com] . [ 123 456 7890 ]
