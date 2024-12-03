@@ -4,32 +4,33 @@ margin-right: 2cm
 margin-top: 1cm
 margin-bottom: 2cm
 title: Your Resume in Markdown
-description-meta: 'This is the meta description for the HTML file, and one day the PDF file, for better SEO?'
+description-meta: "This is the meta description for the HTML file, and one day the PDF file, for better SEO?"
 keywords:
-  - 'php'
-  - 'mysql'
-  - 'linux'
+  - "php"
+  - "mysql"
+  - "linux"
 author:
-- I am the author
-subject: 'Subject'
+  - I am the author
+subject: "Subject"
 ---
+
 ###### [[example.com](https://example.com)] . [ me@example.com] . [ 123 456 7890 ]
 
 ### This is where you have your statement, that describes who you are and what you're looking for. Hopefully it's not cliche and it stands out in a good way
 
 ## Skills
 
-```programming```
-```devops```
-```databases```
-```containers```
-```linux systems administration```
-```webservers```
-```project management```
-```system architecture & design```
-```entrepreneurship```
-```load/stress testing```
-```WordPress```
+`programming`
+`devops`
+`databases`
+`containers`
+`linux systems administration`
+`webservers`
+`project management`
+`system architecture & design`
+`entrepreneurship`
+`load/stress testing`
+`WordPress`
 
 **Programming**: Lua, Haskell, Erlang, Go, Javascript
 **Databases**: MySQL, Postgres, sqlite, SQL Server, Oracle, Pick
@@ -63,7 +64,7 @@ start-date-end-date, City, State and remote
 
 ## Projects
 
-**[*Personal Blog*](http://luther.io)** (2021-present)
+**[_Personal Blog_](http://luther.io)** (2021-present)
 
 - Authored a series of articles covering a wide variety of topics and tools related to technology like PHP, WordPress, Ruby, Linux, Docker, and Privacy.
 
