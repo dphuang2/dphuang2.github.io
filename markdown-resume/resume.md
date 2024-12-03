@@ -6,39 +6,16 @@ margin-bottom: 2cm
 title: Dylan Huang
 ---
 
-###### [[example.com](https://example.com)] . [ me@example.com] . [ 123 456 7890 ]
-
-### This is where you have your statement, that describes who you are and what you're looking for. Hopefully it's not cliche and it stands out in a good way
-
-## Skills
-
-`programming`
-`devops`
-`databases`
-`containers`
-`linux systems administration`
-`webservers`
-`project management`
-`system architecture & design`
-`entrepreneurship`
-`load/stress testing`
-`WordPress`
-
-**Programming**: Lua, Haskell, Erlang, Go, Javascript
-**Databases**: MySQL, Postgres, sqlite, SQL Server, Oracle, Pick
-**Linux**: Gentoo, Alpine, CentOS, Ubuntu, Debian
-**DevOps**: Ansible, Chef, Kubernetes, etc.
+<div style="text-align: center">
+[dylanhuang.com](https://dylanhuang.com) | [dylan.p.huang@gmail.com](mailto:dylan.p.huang@gmail.com) | [LinkedIn](https://www.linkedin.com/in/dphuang2/) | [GitHub](https://github.com/dphuang2)
+</div>
 
 ## Experience
 
-### CEO and Founder, Pied Piper
-
-start-date-end-date, City, State and remote
+### CEO and Founder, Pied Piper | start-date-end-date | City, State and remote |
 
 - Things you did/do here
 - More things that you do here.
-
-**Technologies used:** Tell people about the languages, apps, technologies you used to succeed at this job.
 
 ### Senior Software Architect, Hooli
 
@@ -49,22 +26,22 @@ start-date-end-date, City, State and remote
 
 **Technologies used:** Tell people about the languages, apps, technologies you used to succeed at this job.
 
-## Awards & Recognition
-
-- Winner TechCrunch Disrupt 2001
-- People Magazine's sexiest man alive at 123 My Address, MyCity, TX
-
 ## Projects
 
-**[_Personal Blog_](http://luther.io)** (2021-present)
+**[\_Personal ](http://luther.io)** (2021-present)
 
 - Authored a series of articles covering a wide variety of topics and tools related to technology like PHP, WordPress, Ruby, Linux, Docker, and Privacy.
 
 ## Education
 
-### Masters in BS, Example University
+### University of Illinois at Urbana-Champaign
 
-- 4.0 GPA
-- Deans List
-- Member of xyz club, etc.
-- I didn't really go to college so I don't know what you would put here.
+#### M.Eng. Computer Engineering
+
+#### B.S. Computer Engineering
+
+- Completed dual degree program in 4 years (May 2019)
+
+<div style="display: flex; flex-direction: row; gap: 0.5rem; align-items: center;">
+<div>**M.S. in Computer Science**</div> <div>**Sep 2021 - Jan 2023**</div> <div>**test**</div>
+</div>
