@@ -6,7 +6,9 @@ title: Dylan Huang
 [dylanhuang.com](https://dylanhuang.com) | [dylan.p.huang@gmail.com](mailto:dylan.p.huang@gmail.com) | [LinkedIn](https://www.linkedin.com/in/dphuang2/) | [GitHub](https://github.com/dphuang2)
 </div>
 
-Software engineer and entrepreneur with experience founding startups, leading teams, and solving challenging technical problems.
+Software engineer and entrepreneur with experience founding startups, leading
+teams, and solving challenging technical problems. Currently focused on
+generative AI infrastructure.
 
 ## Experience
 
@@ -16,7 +18,8 @@ Software engineer and entrepreneur with experience founding startups, leading te
 
 - Built and sold SDKs and Documentation-as-a-Service to API-first companies, reaching 5-figure ARR
 - Authored viral technical content reaching 31K readers and front page of Hacker News
-- Developed multi-language SDK generator (Python, TypeScript, Java, Go, etc.) and documentation platform with code generation capabilities
+- Built RAG, agentic workflow, and evaluation systems for production-ready AI
+  medical writer and API Guide writer as part of pivots
 
 **Senior Software Engineer**
 : **C3.ai**
@@ -49,7 +52,7 @@ Software engineer and entrepreneur with experience founding startups, leading te
 
 ## Skills
 
-`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Code Generation`
+`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Code Generation` `Prompt Engineering` `LLM Evals`
 
 ## Education
 
