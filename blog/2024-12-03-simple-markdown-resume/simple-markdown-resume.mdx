@@ -7,23 +7,23 @@ import Figure from "@site/src/components/Figure";
 
 # I Built My Resume In Markdown
 
-Recently unemployed [(see why)](/blog/closing-my-startup), so I need to create a
+Recently back on the job market [(see why)](/blog/closing-my-startup), so I need to create a
 resume which I haven't done in 6 years, since the beginning of 2019 (when I
-graudated college). That being said, it was time to make one crucial system
-design decision, how am I going to make it. I could use good-ol Microsoft Word,
+graduated college). That being said, it was time to make one crucial system
+design decision, how I am going to make it. I could use good-ol Microsoft Word,
 choose a template, and run with it. Or...I could leverage my big brain
 engineering experience to devise a more robust and portable solution. One that
 is:
 
 1. Easy to maintain.
-2. Does not require messing around with clanky word processing software.
+2. Does not require messing around with clunky word processing software.
 3. Lets me just put my content to file without thinking about any of the formatting.
 
-After a couple years of online content creation and software engineering, i've
+After a couple years of online content creation and software engineering, I've
 never found something more simple yet feature-complete as markdown for authoring
-content. Previously i've built my resume using LaTex and a template
+content. Previously I've built my resume using LaTeX and a template
 ([iykyk](https://github.com/deedy/Deedy-Resume)), but after looking back at the
-source for that resume, I just don't want to dive back into writing LaTex. Its
+source for that resume, I just don't want to dive back into writing LaTeX. It's
 great, but not nearly as simple as Markdown. I did a quick [Perplexity
 search](https://www.perplexity.ai/search/markdown-based-resume-builder-Ev.04RITRd2Ehyy3r1l2Ig#0)
 which led me to a [GitHub repo](https://github.com/vidluther/markdown-resume)
@@ -44,7 +44,7 @@ pandoc resume.md -f markdown -t html -c resume-stylesheet.css -s -o resume.html
 node generate-pdf.js
 ```
 
-Here is a the JavaScript to kick off a headless puppeteer browser to export the HTML to PDF.
+Here is the JavaScript to kick off a headless puppeteer browser to export the HTML to PDF.
 
 ```javascript title="generate-pdf.js"
 const puppeteer = require("puppeteer");
@@ -73,9 +73,10 @@ async function generatePDF() {
 generatePDF();
 ```
 
-Checkout the output [here](/resume.pdf) and the source markdown
+Check out the output [here](/resume.pdf) and the source markdown
 [here](https://github.com/dphuang2/dphuang2.github.io/blob/main/markdown-resume/resume.md).
-You can also checkout the custom `.css` file I used, its simple and classic. I
-tried not to stray too far away from traditional resume styling but adde a
-little but of fundamentals from refactoring UI, primarily about visual hierachy
-and spacing.
+You can also check out the custom `.css` file I used
+[here](https://github.com/dphuang2/dphuang2.github.io/blob/main/markdown-resume/resume-stylesheet.css),
+it's simple and classic. I tried not to stray too far away from traditional
+resume styling but added a little bit of fundamentals from Refactoring UI,
+primarily about visual hierarchy and spacing.
