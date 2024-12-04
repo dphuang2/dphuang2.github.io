@@ -16,17 +16,18 @@ generative AI infrastructure.
 : **Konfig**
 : **Jul 2022 - Dec 2024**
 
-- Built and sold SDKs and Documentation-as-a-Service to API-first companies, reaching 5-figure ARR
+- Built and sold SDKs and Documentation-as-a-Service to API-first companies,
+  generating $65K total revenue with 83% NRR from 11 customers
 - Authored viral technical content reaching 31K readers and front page of Hacker News
-- Built RAG, agentic workflow, and evaluation systems for production-ready AI
-  medical writer and API Guide writer as part of pivots
+- Built RAG, agentic workflow, and evaluation systems for production-ready AI medical
+  writer and API Guide writer as part of pivots
 
 **Senior Software Engineer**
 : **C3.ai**
 : **Aug 2019 - Mar 2022**
 
-- Led 5-engineer team building scalable data exploration framework on Pandas API and contributed to proprietary DSL for petabyte-scale applications
-- Reduced CI pipeline runtime by 50% for 50-engineer team through parallelization and built AST-based Java migration framework
+- Led 5-engineer team building data exploration framework on Pandas API and built proprietary DSL for petabyte-scale apps
+- Reduced CI pipeline runtime by 50% through parallelization and built AST-based Java migration framework
 - Conducted 160+ technical interviews, helping grow engineering team from 5 to 20 engineers
 
 **Software Engineering Intern**
@@ -52,7 +53,7 @@ generative AI infrastructure.
 
 ## Skills
 
-`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Code Generation` `Prompt Engineering` `LLM Evals`
+`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Code Generation` `Prompt Engineering` `Agentic Workflows` `LLM Observability` `LLM Evals`
 
 ## Education
 
