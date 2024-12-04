@@ -39,7 +39,7 @@ generative AI infrastructure.
 : **UIUC**
 : **Aug 2015 - Aug 2018**
 
-- Developed web applications for HCI/social media research, resulting in [published paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=dylan+Huang&btnG=#d=gs_qabs&t=1706418435284&u=%23p%3DpOIaC76K7kAJ)
+- Developed web applications for HCI/social media research, resulting in [published paper](https://dl.acm.org/doi/abs/10.1145/3173574.3173590)
 - Built sentiment analysis system for Twitter data and led student research cohort
 - Led cohort of student researchers in various projects
 
