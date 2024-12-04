@@ -1,0 +1,81 @@
+---
+slug: simple-markdown-resume
+published: true
+---
+
+import Figure from "@site/src/components/Figure";
+
+# I Built My Resume In Markdown
+
+Recently unemployed [(see why)](/blog/closing-my-startup), so I need to create a
+resume which I haven't done in 6 years, since the beginning of 2019 (when I
+graudated college). That being said, it was time to make one crucial system
+design decision, how am I going to make it. I could use good-ol Microsoft Word,
+choose a template, and run with it. Or...I could leverage my big brain
+engineering experience to devise a more robust and portable solution. One that
+is:
+
+1. Easy to maintain.
+2. Does not require messing around with clanky word processing software.
+3. Lets me just put my content to file without thinking about any of the formatting.
+
+After a couple years of online content creation and software engineering, i've
+never found something more simple yet feature-complete as markdown for authoring
+content. Previously i've built my resume using LaTex and a template
+([iykyk](https://github.com/deedy/Deedy-Resume)), but after looking back at the
+source for that resume, I just don't want to dive back into writing LaTex. Its
+great, but not nearly as simple as Markdown. I did a quick [Perplexity
+search](https://www.perplexity.ai/search/markdown-based-resume-builder-Ev.04RITRd2Ehyy3r1l2Ig#0)
+which led me to a [GitHub repo](https://github.com/vidluther/markdown-resume)
+showing how to use [pandoc](https://pandoc.org/) to convert Markdown to HTML.
+Then you can use one of many HTML to PDF tools along with your own custom `.css` file to
+produce a final PDF.
+
+## The Workflow
+
+The entire workflow consists of one shell script to run two commands.
+
+```shell title="generate-pdf.sh"
+#!/bin/sh
+
+# Generate HTML first
+pandoc resume.md -f markdown -t html -c resume-stylesheet.css -s -o resume.html
+# Use puppeteer to convert HTML to PDF
+node generate-pdf.js
+```
+
+Here is a the JavaScript to kick off a headless puppeteer browser to export the HTML to PDF.
+
+```javascript title="generate-pdf.js"
+const puppeteer = require("puppeteer");
+
+async function generatePDF() {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(`file://${process.cwd()}/resume.html`, {
+    waitUntil: "networkidle0",
+  });
+  await page.pdf({
+    path: "resume.pdf",
+    format: "A4",
+    printBackground: true,
+    preferCSSPageSize: true,
+    margin: {
+      top: "1cm",
+      right: "1cm",
+      bottom: "1cm",
+      left: "1cm",
+    },
+  });
+  await browser.close();
+}
+
+generatePDF();
+```
+
+Checkout the output [here](/resume.pdf) and the source markdown
+[here](https://github.com/dphuang2/dphuang2.github.io/blob/main/markdown-resume/resume.md).
+You can also checkout the custom `.css` file I used, its simple and classic. I
+tried not to stray too far away from traditional resume styling but adde a
+little but of fundamentals from refactoring UI, primarily about visual hierachy
+and spacing.
