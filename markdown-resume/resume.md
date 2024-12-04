@@ -1,8 +1,4 @@
 ---
-margin-left: 2cm
-margin-right: 2cm
-margin-top: 1cm
-margin-bottom: 2cm
 title: Dylan Huang
 ---
 
