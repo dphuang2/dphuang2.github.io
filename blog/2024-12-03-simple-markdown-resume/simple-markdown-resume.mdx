@@ -50,8 +50,11 @@ node generate-pdf.js
 ```
 
 Here is the JavaScript to kick off a headless puppeteer browser to export the
-HTML to PDF. I chose puppeteer over alternatives like wkhtmltopdf because
-wkhtmltopdf wasn't properly respecting flex CSS properties.
+HTML to PDF. I chose puppeteer over alternatives like wkhtmltopdf and weasyprint
+because neither properly respected the CSS I wrote - specifically trying to
+style the role/company/dates line in the experiences section to be in a single
+yet evenly spaced row was not possible with wkhtmltopdf, and weasyprint's output
+styling did not match my CSS either.
 
 ```javascript title="generate-pdf.js"
 const puppeteer = require("puppeteer");
