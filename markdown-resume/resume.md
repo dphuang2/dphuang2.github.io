@@ -28,7 +28,7 @@ generative AI infrastructure.
 
 - Led 5-engineer team building data exploration framework on Pandas API and built proprietary DSL for petabyte-scale apps
 - Reduced CI pipeline runtime by 50% through parallelization and built AST-based Java migration framework
-- Conducted 160+ technical interviews, helping grow engineering team from 5 to 20 engineers
+- Conducted 160+ technical interviews, helping grow engineering organization from 5 to 20 engineers
 
 **Software Engineering Intern**
 : **AppDynamics**
