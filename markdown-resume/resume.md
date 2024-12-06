@@ -14,7 +14,7 @@ generative AI infrastructure.
 
 **Co-Founder**
 : **Konfig**
-: **Jul 2022 - Dec 2024**
+: **Jul 2022—Dec 2024**
 
 - Built and sold SDKs and Documentation-as-a-Service to API-first companies,
   generating $65K total revenue with 83% NRR from 11 customers
@@ -24,7 +24,7 @@ generative AI infrastructure.
 
 **Senior Software Engineer**
 : **C3.ai**
-: **Aug 2019 - Mar 2022**
+: **Aug 2019—Mar 2022**
 
 - Led 5-engineer team building data exploration framework on Pandas API and built proprietary DSL for petabyte-scale apps
 - Reduced CI pipeline runtime by 50% through parallelization and built AST-based Java migration framework
@@ -32,13 +32,13 @@ generative AI infrastructure.
 
 **Software Engineering Intern**
 : **AppDynamics**
-: **May 2018 - Aug 2018**
+: **May 2018—Aug 2018**
 
 - Implemented cross-browser JavaScript execution time measurement and user session replay system
 
 **Research Assistant**
 : **UIUC**
-: **Aug 2015 - Aug 2018**
+: **Aug 2015—Aug 2018**
 
 - Developed web applications for HCI/social media research, resulting in [published paper](https://dl.acm.org/doi/abs/10.1145/3173574.3173590)
 - Built sentiment analysis system for Twitter data and led student research cohort
@@ -58,6 +58,6 @@ generative AI infrastructure.
 ## Education
 
 **M.Eng. / B.S. in Computer Engineering**
-: **Aug 2015 - May 2019**
+: **Aug 2015—May 2019**
 
 University of Illinois at Urbana-Champaign
