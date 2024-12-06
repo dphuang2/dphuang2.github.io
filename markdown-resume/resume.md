@@ -7,8 +7,8 @@ title: Dylan Huang
 </div>
 
 Software engineer and entrepreneur with experience founding startups, leading
-teams, and solving challenging technical problems. Currently focused on
-generative AI infrastructure.
+teams, and solving challenging technical problems. Currently interested in
+generative AI.
 
 ## Experience
 
