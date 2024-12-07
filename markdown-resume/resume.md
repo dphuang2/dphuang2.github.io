@@ -42,7 +42,6 @@ generative AI.
 
 - Developed web applications for HCI/social media research, resulting in [published paper](https://dl.acm.org/doi/abs/10.1145/3173574.3173590)
 - Built sentiment analysis system for Twitter data and led student research cohort
-- Led cohort of student researchers in various projects
 
 ## Projects
 
