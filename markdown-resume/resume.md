@@ -52,7 +52,7 @@ generative AI.
 
 ## Skills
 
-`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Code Generation` `Prompt Engineering` `Agentic Workflows` `LLM Observability` `LLM Evals`
+`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Remote Code Execution` `Code Generation` `Prompt Engineering` `Agentic Workflows` `LLM Observability` `LLM Evals`
 
 ## Education
 
