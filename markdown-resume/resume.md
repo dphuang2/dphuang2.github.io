@@ -21,6 +21,7 @@ generative AI.
 - Authored viral technical content reaching 31K readers and front page of Hacker News
 - Built RAG, agentic workflow, and evaluation systems for production-ready AI medical
   writer and API Guide writer as part of pivots
+- [Viral blog post](https://dylanhuang.com/blog/closing-my-startup/) about my experience building and shutting down the company ([Reddit](https://www.reddit.com/r/programming/comments/1hg9mu3/after_3_years_i_failed_heres_all_my_startups_code/)) ([HN](https://news.ycombinator.com/item?id=42440886))
 
 **Senior Software Engineer**
 : **C3.ai**
@@ -52,7 +53,7 @@ generative AI.
 
 ## Skills
 
-`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Django` `Rails` `Next.js` `React` `CSS` `TailwindCSS` `GitHub Actions` `Redis` `Postgres` `Docker` `System Design` `Remote Code Execution` `Code Generation` `Prompt Engineering` `Agentic Workflows` `LLM Observability` `LLM Evals`
+`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Next.js` `React` `TailwindCSS` `Containers` `Databases` `System Design` `Remote Code Execution` `Code Generation` `Prompt Engineering` `Agentic Workflows` `LLM Observability` `LLM Evals`
 
 ## Education
 
