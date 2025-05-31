@@ -1,0 +1,286 @@
+---
+slug: why-mcp
+image: ./image.png
+published: true
+---
+
+# What's the fuss about MCP? (code examples)
+
+Lately i've been seeing all this craze about MCP. And the other day, my
+colleague was also wondering what exactly MCP does and why it has been trending
+recently. Since the current tool calling paradigm does not really seem to be
+*broken* at the surface. But after reading a bit more about it, I have a simple
+example that shows why MCP is a good idea.
+
+Lets take a simple example of how you would have connected LLMs to external
+tools before MCP.
+
+```python title="main.py"
+from openai import OpenAI
+
+client = OpenAI()
+
+def get_capital(country: str) -> str:
+    # This is a mock function that returns the capital of a country
+    return "Washington, D.C."
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What is the capital of the moon?"},
+    ],
+    tools=[
+        {
+            "type": "function",
+            "function": {"name": "get_capital", "description": "Get the capital of a country", "parameters": {"type": "string", "name": "country"}},
+        }
+    ],
+)
+
+tool_calls = response.choices[0].message.tool_calls
+
+for tool_call in tool_calls:
+    if tool_call.function.name == "get_capital":
+        country = tool_call.function.arguments["country"]
+        capital = get_capital(country)
+        print(f"The capital of {country} is {capital}")
+```
+
+This is a very simple example, and you can see that the tool calling paradigm is
+not really *broken* at the surface. You can accomplish what you need to do with
+the current paradigm.
+
+But now, lets say that you want to add another tool that can do a web search.
+
+```python title="main.py"
+# highlight-start
+def web_search(query: str) -> str:
+    # This is a mock function that returns the first result of a web search
+    return "https://www.google.com"
+# highlight-end
+
+...
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What is the capital of the moon?"},
+    ],
+    tools=[
+        {
+            "type": "function",
+            "function": {"name": "get_capital", "description": "Get the capital of a country", "parameters": {"type": "string", "name": "country"}},
+        },
+        # highlight-start
+        {
+            "type": "function",
+            "function": {"name": "web_search", "description": "Search the web for information", "parameters": {"type": "string", "name": "query"}},
+        }
+        # highlight-end
+    ],
+)
+
+tool_calls = response.choices[0].message.tool_calls
+
+for tool_call in tool_calls:
+    if tool_call.function.name == "get_capital":
+        country = tool_call.function.arguments["country"]
+        capital = get_capital(country)
+        print(f"The capital of {country} is {capital}")
+    # highlight-start
+    if tool_call.function.name == "web_search":
+        query = tool_call.function.arguments["query"]
+        result = web_search(query)
+        print(f"The first result of {query} is {result}")
+    # highlight-end
+```
+
+The key takeaway here is that for each tool call, you need to write a new
+function. With MCP, you write your client code once, and you modularly add new
+tools as you need them. Here is the [example from the MCP docs](https://modelcontextprotocol.io/quickstart/client#query-processing-logic).
+
+```python title="tool_call_with_mcp.py"
+async def process_query(self, query: str) -> str:
+    """Process a query using Claude and available tools"""
+    messages = [
+        {
+            "role": "user",
+            "content": query
+        }
+    ]
+
+    # highlight-start
+    response = await self.session.list_tools()
+    available_tools = [{
+        "name": tool.name,
+        "description": tool.description,
+        "input_schema": tool.inputSchema
+    } for tool in response.tools]
+    # highlight-end
+
+    # Initial Claude API call
+    response = self.anthropic.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        max_tokens=1000,
+        messages=messages,
+        tools=available_tools
+    )
+
+    # Process response and handle tool calls
+    final_text = []
+
+    assistant_message_content = []
+    for content in response.content:
+        if content.type == 'text':
+            final_text.append(content.text)
+            assistant_message_content.append(content)
+        elif content.type == 'tool_use':
+            tool_name = content.name
+            tool_args = content.input
+
+            # highlight-start
+            # Execute tool call
+            result = await self.session.call_tool(tool_name, tool_args)
+            # highlight-end
+            final_text.append(f"[Calling tool {tool_name} with args {tool_args}]")
+
+            assistant_message_content.append(content)
+            messages.append({
+                "role": "assistant",
+                "content": assistant_message_content
+            })
+            messages.append({
+                "role": "user",
+                "content": [
+                    {
+                        "type": "tool_result",
+                        "tool_use_id": content.id,
+                        "content": result.content
+                    }
+                ]
+            })
+
+            # Get next response from Claude
+            response = self.anthropic.messages.create(
+                model="claude-3-5-sonnet-20241022",
+                max_tokens=1000,
+                messages=messages,
+                tools=available_tools
+            )
+
+            final_text.append(response.content[0].text)
+
+    return "\n".join(final_text)
+```
+
+The key line of code is `self.session.list_tools()`. This is what makes MCP
+powerful.  Now, what is `session` and how does it magically know about all the
+tools?
+
+Well, thats where MCP comes in. Since MCP standardizes the way that tools are
+discovered, you can create a single `MCPClient` that can be used to call any
+tool.
+
+```python title="mcp_client.py"
+import asyncio
+from typing import Optional
+from contextlib import AsyncExitStack
+
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+
+from anthropic import Anthropic
+from dotenv import load_dotenv
+
+load_dotenv()  # load environment variables from .env
+
+class MCPClient:
+    def __init__(self):
+        # Initialize session and client objects
+        self.session: Optional[ClientSession] = None
+        self.exit_stack = AsyncExitStack()
+        self.anthropic = Anthropic()
+
+    async def process_query(self, query: str):
+        """Includes the code above from tool_call_with_mcp.py"""
+        ...
+
+    async def connect_to_server(self, server_script_path: str):
+        """Connect to an MCP server
+
+        Args:
+            server_script_path: Path to the server script (.py or .js)
+        """
+        is_python = server_script_path.endswith('.py')
+        is_js = server_script_path.endswith('.js')
+        if not (is_python or is_js):
+            raise ValueError("Server script must be a .py or .js file")
+
+        command = "python" if is_python else "node"
+        server_params = StdioServerParameters(
+            command=command,
+            args=[server_script_path],
+            env=None
+        )
+
+        stdio_transport = await self.exit_stack.enter_async_context(stdio_client(server_params))
+        self.stdio, self.write = stdio_transport
+        # highlight-start
+        self.session = await self.exit_stack.enter_async_context(ClientSession(self.stdio, self.write))
+        # highlight-end
+
+        await self.session.initialize()
+
+        # List available tools
+        response = await self.session.list_tools()
+        tools = response.tools
+        print("\nConnected to server with tools:", [tool.name for tool in tools])
+
+    async def cleanup(self):
+        """Clean up resources"""
+        await self.exit_stack.aclose()
+```
+
+Notice how we have a session that was initialized with an interface to the
+provided server script. You can insantiate multiple MCP clients, each with their
+own unique server script, and they will all be able to call the tools provided
+by the server script. In this example, we have a single MCP client, but you can
+easily imagine how you would add more clients to your application.
+
+Then, you can write an entrypoint for your application that would call the
+`MCPClient` and pass it the path to the server script.
+
+```python title="main.py"
+async def main():
+    # highlight-start
+    if len(sys.argv) < 2:
+        print("Usage: python client.py <path_to_server_script>")
+        sys.exit(1)
+    # highlight-end
+
+    client = MCPClient()
+    try:
+        await client.connect_to_server(sys.argv[1])
+        await client.process_query("What is the capital of the moon?")
+    finally:
+        await client.cleanup()
+
+if __name__ == "__main__":
+    import sys
+    asyncio.run(main())
+```
+
+Notice how this can be done programatically through a CLI. This is where
+application developers like Cursor or others would allow users to
+programatically plugin MCP servers to provide their application with more tools,
+amplifying the capabilities of the application.
+
+## Conclusion
+
+MCP is a new tool calling paradigm that allows application developers to
+programatically provide LLMs with access to external tools without having to
+worry about the underlying implementation details of the tool call interfaces.
+MCP actually does even more than this to give LLMs more context and higher tool
+usage accuracy, but I suspect this was the core impetus for its invention.
