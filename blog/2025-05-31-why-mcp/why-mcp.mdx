@@ -47,9 +47,9 @@ for tool_call in tool_calls:
         print(f"The capital of {country} is {capital}")
 ```
 
-This is a very simple example, and you can see that the tool calling paradigm is
-not really *broken* at the surface. You can accomplish what you need to do with
-the current paradigm.
+This is a very simple example, and you can see that the tool calling paradigm
+does not standout as broken. You can accomplish what you need to do with the
+current paradigm.
 
 But now, lets say that you want to add another tool that can do a web search.
 
@@ -98,8 +98,12 @@ for tool_call in tool_calls:
 ```
 
 The key takeaway here is that for each tool call, you need to write a new
-function. With MCP, you write your client code once, and you modularly add new
-tools as you need them. Here is the [example from the MCP docs](https://modelcontextprotocol.io/quickstart/client#query-processing-logic).
+function. While manageable for a few tools, this quickly becomes unscalable as
+your toolset grows. You end up maintaining complex dispatch logic and tight
+coupling between your app and tool implementations. With MCP, you write your
+client code once, and you modularly add new tools as you need them. Here is the
+[example from the MCP
+docs](https://modelcontextprotocol.io/quickstart/client#query-processing-logic).
 
 ```python title="tool_call_with_mcp.py"
 async def process_query(self, query: str) -> str:
@@ -175,9 +179,18 @@ async def process_query(self, query: str) -> str:
     return "\n".join(final_text)
 ```
 
-The key line of code is `self.session.list_tools()`. This is what makes MCP
-powerful.  Now, what is `session` and how does it magically know about all the
-tools?
+The key line of code is `self.session.list_tools()`, which would return a list of
+tools like the web search one we added earlier.
+
+```json title="web_search.json"
+{
+    "type": "function",
+    "function": {"name": "web_search", "description": "Search the web for information", "parameters": {"type": "string", "name": "query"}},
+}
+```
+
+This is what makes MCP powerful. Now, what is `session` and how does it
+magically know about all the tools?
 
 Well, thats where MCP comes in. Since MCP standardizes the way that tools are
 discovered, you can create a single `MCPClient` that can be used to call any
