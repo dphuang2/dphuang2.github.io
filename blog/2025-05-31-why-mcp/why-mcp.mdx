@@ -247,7 +247,8 @@ Notice how we have a session that was initialized with an interface to the
 provided server script. You can insantiate multiple MCP clients, each with their
 own unique server script, and they will all be able to call the tools provided
 by the server script. In this example, we have a single MCP client, but you can
-easily imagine how you would add more clients to your application.
+easily imagine how you would add more clients to your application by
+instantiating a list of MCP clients: `[MCPClient(), MCPClient(), ...]`.
 
 Then, you can write an entrypoint for your application that would call the
 `MCPClient` and pass it the path to the server script.
@@ -273,9 +274,9 @@ if __name__ == "__main__":
 ```
 
 Notice how this can be done programatically through a CLI. This is where
-application developers like Cursor or others would allow users to
-programatically plugin MCP servers to provide their application with more tools,
-amplifying the capabilities of the application.
+application developers would allow users to programatically plugin MCP servers
+to provide their application with more tools, amplifying the capabilities of the
+application.
 
 ## Conclusion
 
