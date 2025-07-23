@@ -1,11 +1,17 @@
 import React, { useState, useEffect, ReactNode } from "react";
+import clsx from "clsx";
 
 interface FigureProps {
   src: string;
   caption?: ReactNode;
+  noShadow?: boolean;
 }
 
-export default function Figure({ src, caption }: FigureProps): JSX.Element {
+export default function Figure({
+  src,
+  caption,
+  noShadow,
+}: FigureProps): JSX.Element {
   const [isEnlarged, setIsEnlarged] = useState(false);
 
   useEffect(() => {
@@ -46,7 +52,10 @@ export default function Figure({ src, caption }: FigureProps): JSX.Element {
             aria-label={`Click to ${isEnlarged ? "minimize" : "enlarge"} image${
               caption ? `: ${caption}` : ""
             }`}
-            className="my-0 w-full rounded-lg shadow-lg transition-transform duration-200 hover:scale-[1.02] hover:shadow-xl cursor-pointer"
+            className={clsx(
+              "my-0 w-full rounded-lg transition-transform duration-200 hover:scale-[1.02] cursor-pointer",
+              noShadow ? "" : "shadow-lg hover:shadow-xl"
+            )}
           />
           {caption && (
             <figcaption className="text-sm text-gray-600 italic flex justify-center">

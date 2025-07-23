@@ -1,8 +1,12 @@
 ---
 slug: why-mcp
-image: ./image.png
+image: ./after-mcp.png
 published: true
 ---
+
+import Figure from "@site/src/components/Figure";
+
+
 
 # What's the fuss about MCP? (code examples)
 
@@ -100,8 +104,77 @@ for tool_call in tool_calls:
 The key takeaway here is that for each tool call, you need to write a new
 function. While manageable for a few tools, this quickly becomes unscalable as
 your toolset grows. You end up maintaining complex dispatch logic and tight
-coupling between your app and tool implementations. With MCP, you write your
-client code once, and you modularly add new tools as you need them. Here is the
+coupling between your app and tool implementations.
+
+
+<Figure
+src={require("./before-mcp.png").default}
+caption="Application code handles tool calls before MCP"
+noShadow
+/>
+
+{/* ```mermaid
+graph TB
+    subgraph "App Team (Everything)"
+        A[App Code] --> B[Tool Definitions] --> C[Tool Implementations]
+        A --> D[Dispatch Logic] --> C
+    end
+
+    style A fill:#2196f3,stroke:#1976d2,stroke-width:2px,color:#ffffff
+    style B fill:#ff5722,stroke:#d84315,stroke-width:2px,color:#ffffff
+    style C fill:#ff5722,stroke:#d84315,stroke-width:2px,color:#ffffff
+    style D fill:#ff5722,stroke:#d84315,stroke-width:2px,color:#ffffff
+``` */}
+
+With MCP, you write your client code once, and you modularly add new tools as
+you need them. This separates the Responsibility of the tool call implementation
+from the application code.
+
+<Figure
+src={require("./after-mcp.png").default}
+caption="Separation of code between the app and the tool teams after MCP"
+noShadow
+/>
+
+
+{/* ```mermaid
+graph LR
+    subgraph "App Team"
+        A[App Code]
+        B[MCP Client]
+    end
+
+    subgraph "Tool Team 1"
+        C[Tool Server 1]
+        F[Tools A, B]
+    end
+
+    subgraph "Tool Team 2"
+        D[Tool Server 2]
+        G[Tools C, D]
+    end
+
+    subgraph "Tool Team 3"
+        E[Tool Server 3]
+        H[Tools E, F]
+    end
+
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    C --> F
+    D --> G
+    E --> H
+
+    style A fill:#2196f3,stroke:#1976d2,stroke-width:2px,color:#ffffff
+    style B fill:#4caf50,stroke:#388e3c,stroke-width:2px,color:#ffffff
+    style C fill:#ff9800,stroke:#f57c00,stroke-width:2px,color:#ffffff
+    style D fill:#9c27b0,stroke:#7b1fa2,stroke-width:2px,color:#ffffff
+    style E fill:#f44336,stroke:#d32f2f,stroke-width:2px,color:#ffffff
+``` */}
+
+Lets look at the
 [example from the MCP
 docs](https://modelcontextprotocol.io/quickstart/client#query-processing-logic).
 
