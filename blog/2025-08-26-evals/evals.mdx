@@ -1,0 +1,31 @@
+---
+title: "The Impossible Testing Problem for AI Applications"
+slug: evals
+published: true
+description: "LLMs make traditional testing untenable; enter benchmarks."
+---
+
+### The shift: from unit tests to benchmarks in the LLM era
+
+Traditional testing assumed deterministic, fast code. You could run thousands of unit tests in seconds because each test took microseconds-milliseconds and had a single correct answer.
+
+- **Old world**:
+  - 10,000 unit tests x 1 ms ≈ 10 seconds → easy to run on every commit.
+  - End-to-end tests were slower and run infrequently.
+
+LLM-powered apps flip this: calls are slow (network + model), stochastic, and paid. They're also your core business logic.
+
+- **New world**:
+  - 1,000 LLM tests x 5-10 s ≈ 1.5-3 hours per run.
+  - 10,000 tests ≈ 14-28 hours, plus real API cost.
+  - Running that on every change is impossible.
+
+The strategy shifts from exhaustive unit tests to benchmarks:
+- Curate fixed eval sets, score with clear metrics, track a baseline.
+- Run tiny “smoke” evals (5-20 cases) on every change.
+- Run full benchmarks nightly/weekly; gate major releases on deltas.
+- Monitor in production and refresh the benchmark set regularly.
+
+Bottom line: Deterministic unit tests don't scale to LLMs. Benchmarks and periodic, statistical evaluation are the new way to ensure quality without freezing velocity.
+
+Note: Continuously improving from production data—instrumentation, human/auto grading, error triage, and iterative prompt/model updates—is its own discipline: the evals flywheel. That's food for a separate discussion.
