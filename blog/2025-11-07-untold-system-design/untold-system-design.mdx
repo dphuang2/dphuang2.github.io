@@ -1,0 +1,45 @@
+---
+title: "The Untold System Design Problem in LLM Inference"
+slug: untold-system-design
+published: true
+image: ./image.png
+description: "The untold system design problem in LLM inference."
+---
+
+### From fixed-shape compute to variable-shape, memory-coupled inference
+
+For years, production ML looked like images or fixed-duration signals—tight, predictable tensors. You sized for FLOPs, picked a batch size, and rode the throughput curve.
+
+LLMs changed the physics: inputs and outputs vary; attention cost grows with sequence length; decoding accumulates a KV cache that ties compute to memory capacity and bandwidth. Prefill and decode are different workloads. Add MoE routing and quantization, and the hot path keeps moving.
+
+- **Old world**:
+  - Fixed shapes, stable FLOPs, single dominant bottleneck (compute)
+  - Larger batches → higher throughput (until a rare, clear memory cap)
+  - One-time kernel tuning; simple queueing (arrival rate, service time)
+
+- **New world**:
+  - Variable prompt and response lengths; prefill vs. decode have distinct profiles
+  - Compute- and memory-bound at once; KV cache growth shifts the limit over time
+  - Dynamic batching/padding/truncation trade latency for throughput on the fly
+  - State management: cache residency/eviction, cross-request reuse
+  - MoE: per-token expert routing skews load; hotspots drift; cold experts thrash
+  - Quantization: 2/3/4/8-bit trade speed, quality, and kernel availability
+  - Many first-order variables: length distributions, concurrency, cache hit rate, expert sparsity, scheduler policy
+
+ The knobs move with the workload, not just the hardware. Kernel block sizes, KV cache configs, sequence/tensor parallelism, and schedulers (batching windows, priority, admission control) must adapt to what’s actually arriving.
+
+Optimization is also use-case dependent: interactive chatbots target low
+TTFT/p50; large async/batch jobs target max throughput and cost efficiency. That
+means different batching windows, prioritization of prefill vs. decode, and
+distinct quantization/parallelism choices per tier.
+
+What to do:
+- Instrument length and cache-hit distributions; set SLOs by percentiles
+- Separate or phase-aware schedule prefill vs. decode
+- Use KV caches with explicit memory budgets and eviction policies
+- Dynamic batching with latency guardrails and backpressure/admission control
+- Route MoE and multi-model traffic by tier; co-locate hot experts; manage cold starts
+- Choose quantization per tier; align with available kernels and target SLOs
+- Re-tune continuously; treat inference as a control system, not a fixed config
+
+Bottom line: LLM inference breaks simple queueing. Optimal performance is workload-dependent and multi-dimensional—compute, memory, state, routing, and bits. Measure, adapt, and schedule accordingly.
