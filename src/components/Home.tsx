@@ -56,10 +56,10 @@ const achievements: Achievement[] = [
     ],
   },
   {
-    year: 2025,
+    year: 2024,
     type: "professional",
     description:
-      "Spend 8 months trying to sell vertical B2B AI SaaS products, most promising idea was a medical writer that could write clinical reports from medical notes (I still think this is a promising idea if you have the background to sell into the pharma industry)",
+      "Spent 8 months trying to sell vertical B2B AI SaaS products, most promising idea was a medical writer that could write clinical reports from medical notes (I still think this is a promising idea if you have the background to sell into the pharma industry)",
   },
   {
     year: 2023,
