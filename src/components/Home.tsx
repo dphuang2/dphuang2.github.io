@@ -47,7 +47,7 @@ const achievements: Achievement[] = [
     year: 2025,
     type: "professional",
     description:
-      "Promoted to Tech Lead / Manager at Fireworks AI after 9 months after joining",
+      "Promoted to Tech Lead / Manager at Fireworks AI 9 months after joining",
     links: [
       {
         text: "[Fireworks AI]",
