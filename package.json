@@ -54,6 +54,11 @@
       "last 5 safari version"
     ]
   },
+  "pnpm": {
+    "overrides": {
+      "undici": "^6.21.1"
+    }
+  },
   "engines": {
     "node": ">=18.0"
   }
