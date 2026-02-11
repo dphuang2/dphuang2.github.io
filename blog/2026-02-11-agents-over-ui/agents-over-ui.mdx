@@ -1,0 +1,64 @@
+---
+title: "APIs Over UIs: Agents Are the Future Interface to Everything"
+slug: agents-over-ui
+published: true
+image: ./image.png
+description: "Every database, application, and codebase will be accessed through agents. APIs and MCPs over UIs."
+---
+
+### The default interface is shifting from humans to agents
+
+I've been noticing a change in my own behavior lately. When I need to update a config file, run a simple command, or make a small code change, I reach for an agent instead of doing it myself. Not because I can't do it — but because it's faster and I'd rather not context-switch into the mechanical details.
+
+This isn't laziness. It's a signal.
+
+If even trivial tasks are better delegated to an agent, then the way we interact with every piece of software — databases, applications, codebases, infrastructure — is about to fundamentally change.
+
+### The pattern I keep seeing
+
+Think about how you interact with software today:
+
+- **Databases**: You open a GUI, write a query, click run, scan the results.
+- **Applications**: You navigate menus, fill out forms, click buttons.
+- **Codebases**: You open an editor, find the file, make the change, save.
+- **Infrastructure**: You open a console, click through dashboards, toggle settings.
+
+Every one of these interactions assumes a human is the one doing the work. The entire surface area of modern software — every dropdown, every sidebar, every modal — exists to help a human understand and manipulate state.
+
+But agents don't need any of that. They need APIs. They need structured, programmatic access to read state and take actions. The chrome that helps humans navigate is wasted on them.
+
+### APIs and MCPs over UIs
+
+This is the bet: the primary consumer of software interfaces is going to shift from humans to agents. And when that happens, the investment priority flips.
+
+- **Old world**: Build a great UI. Add an API later, maybe, if developers ask for it.
+- **New world**: Build a great API. The UI is one of many possible clients — and increasingly not the most important one.
+
+The Model Context Protocol (MCP) is an early example of this shift. Instead of building bespoke integrations, you expose your application's capabilities as structured tools that any agent can discover and use. It's the equivalent of going from "here's a form you can fill out" to "here's a function you can call."
+
+This changes what it means to build software:
+
+- **Databases** expose query and mutation endpoints that agents call directly, no SQL GUI needed.
+- **Applications** become collections of API actions that agents orchestrate on your behalf.
+- **Codebases** are navigated and modified by agents that understand the structure and can make targeted changes.
+- **Infrastructure** is managed through programmatic interfaces where agents handle the routine operational work.
+
+### Why even small tasks tip toward agents
+
+The counterargument is: "Why use an agent for something that takes 10 seconds to do yourself?"
+
+Because the real cost isn't the 10 seconds of execution. It's the context switch. It's remembering the exact flag, the exact file path, the exact syntax. It's opening the right tool, navigating to the right place, doing the thing, and then switching back to what you were actually thinking about.
+
+An agent absorbs all of that friction. You state your intent in natural language, and the mechanical translation happens without you leaving your current train of thought. The gap between "I want this to happen" and "this happened" collapses.
+
+And once that gap collapses for trivial tasks, it collapses for everything.
+
+### What this means for builders
+
+If you're building software today, the implication is clear: **your API is your product**. Your MCP server is your product. The programmatic surface area of your application is what agents will interact with, and agents are going to be the dominant consumers.
+
+This doesn't mean UIs disappear. Humans still need to review, approve, and understand what's happening. But the UI shifts from being the primary interaction layer to being an oversight layer — a place where you observe and direct, not where you do the mechanical work.
+
+The software that wins in this world is the software that's easiest for agents to use. That means clean APIs, well-documented capabilities, structured inputs and outputs, and tools that compose well.
+
+We're moving from a world where software is designed for human hands to a world where software is designed for agent calls. Every database, every application, every codebase — the interface to all of it is going to be an agent.
