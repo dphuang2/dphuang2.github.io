@@ -6,11 +6,17 @@ title: Dylan Huang
 [dylanhuang.com](https://dylanhuang.com) | [dylan.p.huang@gmail.com](mailto:dylan.p.huang@gmail.com) | [LinkedIn](https://www.linkedin.com/in/dphuang2/) | [GitHub](https://github.com/dphuang2)
 </div>
 
-Software engineer and entrepreneur with experience founding startups, leading
-teams, and solving challenging technical problems. Currently interested in
-generative AI.
+Technical leader and entrepreneur building startups and solving complex technical problems.
 
 ## Experience
+
+**Lead Software Engineer**
+: **[Fireworks AI](https://www.fireworks.ai)**
+: **Feb 2025—Present**
+
+- Led the design and implementation of an ergonomic Python SDK for rapid LLM fine-tuning experiments, informed by hundreds of user conversations and real-world usage feedback ([LinkedIn Post](https://www.linkedin.com/posts/fireworks-ai_launching-the-fireworks-ai-experimentation-activity-7338594262520950786-e0Va?utm_source=share&utm_medium=member_desktop&rcm=ACoAABndRmcBpm4Yye7FXowpjFeEUUMBs2FZM3g))
+- Led the creation of Eval Protocol, an open-source RL framework for fine-tuning agents across any language, container, or framework ([GitHub](https://github.com/eval-protocol/python-sdk))
+- Delivered talks, conducted demos, and led developer relations initiatives
 
 **Co-Founder**
 : **Konfig**
@@ -19,12 +25,11 @@ generative AI.
 - Built and sold SDKs and Documentation-as-a-Service to API-first companies,
   generating $65K total revenue with 83% NRR from 11 customers
 - Authored viral technical content reaching 31K readers and front page of Hacker News
-- Built RAG, agentic workflow, and evaluation systems for 8 months, pivoting to
-  AI medical writer and API integration guide writer
-- [Viral blog post](https://dylanhuang.com/blog/closing-my-startup/) about my experience building and shutting down the company ([Reddit](https://www.reddit.com/r/programming/comments/1hg9mu3/after_3_years_i_failed_heres_all_my_startups_code/)) ([HN](https://news.ycombinator.com/item?id=42440886))
+- Built RAG, agent, and evaluation systems for 8 months while pivoting
+- [Viral blog post](https://dylanhuang.com/blog/closing-my-startup/) about my experience building and shutting down the company; reached 549 points on Hacker News ([Reddit](https://www.reddit.com/r/programming/comments/1hg9mu3/after_3_years_i_failed_heres_all_my_startups_code/)) ([HN](https://news.ycombinator.com/item?id=42440886))
 
 **Senior Software Engineer**
-: **C3.ai**
+: **[C3.ai](https://www.c3.ai)**
 : **Aug 2019—Mar 2022**
 
 - Led 5-engineer team building data exploration framework on Pandas API and built proprietary DSL for building petabyte-scale apps
@@ -47,12 +52,11 @@ generative AI.
 ## Projects
 
 - [dylanhuang.com](https://dylanhuang.com) - Features technical blog posts focused on software engineering and system design with comprehensive list of achievements and testimonials from engineering colleagues
-- **Shopify App** ([Reddit Launch Post](https://www.reddit.com/r/shopify/comments/dirbr5/loopr_optimize_user_experiences_with_pixelperfect/)) - Built session replay analytics tool that captures and visualizes customer browsing behavior on Shopify stores, generating revenue from day one after launch
 - **Pokemon Go App** ([GitHub](https://github.com/dphuang2/PoGoBag)) - Built at age 18, reached over 210,000 users and 3.3M views in two weeks
 
 ## Skills
 
-`Python` `TypeScript` `Java` `OpenAPI` `GraphQL` `Next.js` `React` `TailwindCSS` `Containers` `Databases` `System Design` `Remote Code Execution` `Code Generation` `Prompt Engineering` `Agentic Workflows` `LLM Observability` `LLM Evals`
+`Developer Experience` `Reinforcement Learning` `Fine-tuning` `LLM Inference` `Evals` `Documentation` `Product Management` `Open-source` `Infrastructure` `Tooling`
 
 ## Education
 
