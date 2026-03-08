@@ -252,6 +252,9 @@ function About({ recentPosts }: Props) {
         <a target="_blank" href="https://github.com/dphuang2">
           <GitHubLogo />
         </a>
+        <a target="_blank" href="https://x.com/dphuang2">
+          <XLogo />
+        </a>
         <a target="_blank" href="https://www.linkedin.com/in/dphuang2/">
           <LinkedInLogo />
         </a>
@@ -354,6 +357,21 @@ function LinkedInLogo() {
       fill="currentColor"
     >
       <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+    </svg>
+  );
+}
+
+function XLogo() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className="h-4 w-4 text-slate-400 hover:text-slate-700 transition-colors"
+      fill="currentColor"
+    >
+      <path d="M18.901 1.154h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.639 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zm-1.291 19.49h2.039L6.486 3.24H4.298z" />
     </svg>
   );
 }
